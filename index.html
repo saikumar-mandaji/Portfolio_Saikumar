@@ -99,6 +99,9 @@
 ::-webkit-scrollbar:horizontal{
 display: none;
 }
+  .equal-columns .col-md-6 {
+    height: 100%; /* Ensure both columns have the same height */
+  }
     @keyframes typing {
       from {
         width: 0;
@@ -442,6 +445,7 @@ display: none;
       <div class="row"></div>
 
       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        
         <ol class="carousel-indicators">
           <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
           <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -452,10 +456,11 @@ display: none;
         <div class="carousel-inner">
           <div class="carousel-item active">
             <div class="row">
-              <div class="col-md-6">
+
+              <div class="col-md-6 align-items-stretch">
                 <div class="resume-wrap ftco-animate">
                   <img class="card-img-top" src="images/Projects/lora.png" alt="">
-                  <h3>BeetleGuard</h3>
+                  <h3 style="color: black;">BeetleGuard</h3>
                   <p class="text-justify font-weight-light" style="width: 100%;font-size: smaller;">
 
                     BeetleGuard combines IoT and LoRa technologies to monitor and optimize beetle grove environments
@@ -480,10 +485,10 @@ display: none;
               </div>
 
 
-              <div class="col-md-6">
+              <div class="col-md-6 align-items-stretch">
                 <div class="resume-wrap ftco-animate">
                   <img class="card-img-top" src="images/Projects/pf.png" alt="">
-                  <h3>Smart Card Payphone System</h3>
+                  <h3 style="color: black;">Smart Card Payphone System</h3>
                   <p class="text-justify font-weight-light" style="width: 100%;font-size: smaller;">
                     This system integrates RFID card technology with 4G GSM connectivity to create a smart payphone
                     system. Users can make calls and access data logs securely, while remote recharge functionality adds
@@ -511,10 +516,10 @@ display: none;
           <div class="carousel-item">
 
             <div class="row">
-              <div class="col-md-6">
+              <div class="col-md-6 d-flex align-items-stretch">
                 <div class="resume-wrap ftco-animate">
                   <img class="card-img-top" src="images/Projects/diya.jpeg" alt="">
-                  <h3>FlameSmart: Remote-Controlled Diya</h3>
+                  <h3 style="color: black;">FlameSmart: Remote-Controlled Diya</h3>
                   <p class="text-justify font-weight-light" style="width: 100%;font-size: smaller;">
                     FlameReplica is a professionally designed compact diya, controllable via remote,
                     offering adjustable brightness and extended battery life. It replicates the exact flame,
@@ -538,10 +543,10 @@ display: none;
                 </div>
               </div>
 
-              <div class="col-md-6">
+              <div class="col-md-6 d-flex align-items-stretch">
                 <div class="resume-wrap ftco-animate">
                   <img class="card-img-top" src="images/Projects/pc.jpeg" alt="">
-                  <h3>Advanced Position Counter with SD Card Data Logging</h3>
+                  <h3 style="color: black;">Advanced Position Counter with SD Card Data Logging</h3>
                   <p class="text-justify font-weight-light" style="width: 100%;font-size: smaller;">
 
                     This high-quality position counter system integrates precision position tracking, efficient SD
@@ -577,10 +582,10 @@ display: none;
           <div class="carousel-item">
 
             <div class="row">
-              <div class="col-md-6">
+              <div class="col-md-6 d-flex align-items-stretch">
                 <div class="resume-wrap ftco-animate">
                   <img class="card-img-top" src="images/Projects/rpi.jpeg" alt="">
-                  <h3>Efficient Lighting Control System with BLE and USB-C Power Management</h3>
+                  <h3 style="color: black;" >Advanced Facial Recognition Attendance Management System</h3>
                   <p class="text-justify font-weight-light" style="width: 100%;font-size: smaller;">
 
                     A comprehensive solution has been developed, leveraging Raspberry Pi hardware and Linux operating
@@ -606,10 +611,10 @@ display: none;
               </div>
 
 
-              <div class="col-md-6">
+              <div class="col-md-6 d-flex align-items-stretch">
                 <div class="resume-wrap ftco-animate">
                   <img class="card-img-top" src="images/Projects/esp.jpeg" alt="">
-                  <h3>Efficient Lighting Control System with BLE and USB-C Power Management</h3>
+                  <h3 style="color: black;">Efficient Lighting Control System with BLE and USB-C Power Management</h3>
                   <p class="text-justify font-weight-light" style="width: 100%;font-size: smaller;">
 
                     A sophisticated smart lighting control system has been developed, featuring an ESP32-based hardware
@@ -645,10 +650,10 @@ display: none;
           <div class="carousel-item">
 
             <div class="row">
-              <div class="col-md-6">
+              <div class="col-md-6 d-flex align-items-stretch">
                 <div class="resume-wrap ftco-animate">
                   <img class="card-img-top" src="images/Projects/hs.jpeg" alt="">
-                  <h3>Hand Sanitizer Dispenser: Efficient, Portable, and Powerful</h3>
+                  <h3 style="color: black;">Hand Sanitizer Dispenser: Efficient, Portable, and Powerful</h3>
                   <p class="text-justify font-weight-light" style="width: 100%;font-size: smaller;">
 
                     A cutting-edge solution for efficient hand sanitization, this battery-powered dispenser boasts a
@@ -675,10 +680,10 @@ display: none;
               </div>
 
 
-              <div class="col-md-6">
+              <div class="col-md-6 d-flex align-items-stretch">
                 <div class="resume-wrap ftco-animate">
                   <img class="card-img-top" src="images/Projects/ha.jpeg" alt="">
-                  <h3>SmartHome Connect</h3>
+                  <h3 style="color: black;">SmartHome Connect</h3>
                   <p class="text-justify font-weight-light" style="width: 100%;font-size: smaller;">
 
                     Transform your home into a smart oasis with SmartHome Connect, a comprehensive home automation
@@ -709,7 +714,17 @@ display: none;
 
 
             </div>
+            
           </div>
+
+          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
 
         </div>
 
@@ -746,9 +761,10 @@ display: none;
 
             <div class="block-18">
               <div class="text">
+                <h2>Total Experience</h2>
                 <strong class="number" id="exp">0</strong>
                 <strong class="number" id="Tim">0</strong>
-                <span>Total Experience</span>
+                <!-- <span>Total Experience</span> -->
               </div>
               <script>
                 function getTimeDuration(pastDate) {
