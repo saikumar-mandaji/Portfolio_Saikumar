@@ -75,33 +75,37 @@
       animation: typing-cursor 0.5s ease-in-out infinite;
     }
 
-  /* width */
-::-webkit-scrollbar {
-  width: 10px;
-}
+    /* width */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
 
-/* Track */
-::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 3px grey; 
-  border-radius: 10px;
-}
- 
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: rgb(64, 113, 47); 
-  border-radius: 10px;
-}
+    /* Track */
+    ::-webkit-scrollbar-track {
+      box-shadow: inset 0 0 3px grey;
+      border-radius: 10px;
+    }
 
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #b30000; 
-}
-::-webkit-scrollbar:horizontal{
-display: none;
-}
-  .equal-columns .col-md-6 {
-    height: 100%; /* Ensure both columns have the same height */
-  }
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+      background: rgb(64, 113, 47);
+      border-radius: 10px;
+    }
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+      background: #b30000;
+    }
+
+    ::-webkit-scrollbar:horizontal {
+      display: none;
+    }
+
+    .equal-columns .col-md-6 {
+      height: 100%;
+      /* Ensure both columns have the same height */
+    }
+
     @keyframes typing {
       from {
         width: 0;
@@ -445,7 +449,7 @@ display: none;
       <div class="row"></div>
 
       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-        
+
         <ol class="carousel-indicators">
           <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
           <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -585,7 +589,7 @@ display: none;
               <div class="col-md-6 d-flex align-items-stretch">
                 <div class="resume-wrap ftco-animate">
                   <img class="card-img-top" src="images/Projects/rpi.jpeg" alt="">
-                  <h3 style="color: black;" >Advanced Facial Recognition Attendance Management System</h3>
+                  <h3 style="color: black;">Advanced Facial Recognition Attendance Management System</h3>
                   <p class="text-justify font-weight-light" style="width: 100%;font-size: smaller;">
 
                     A comprehensive solution has been developed, leveraging Raspberry Pi hardware and Linux operating
@@ -714,7 +718,7 @@ display: none;
 
 
             </div>
-            
+
           </div>
 
           <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -858,18 +862,18 @@ display: none;
   </section>
   <!-- Gallery -->
   <section class="ftco-section Gallery ftco-no-pb" id="Gallery">
- 
-      <div class="container">
-        <div class="row justify-content-center mb-5 pb-3">
-          <div class="col-md-16 heading-section text-center ftco-animate">
-            <h1 class="big big-2">Gallery</h1>
-            <h2 class="mb-4">Gallery</h2>
-            <div id="img_gallery" class="row"></div>
-          </div>
+
+    <div class="container">
+      <div class="row justify-content-center mb-5 pb-3">
+        <div class="col-md-16 heading-section text-center ftco-animate">
+          <h1 class="big big-2">Gallery</h1>
+          <h2 class="mb-4">Gallery</h2>
+          <div id="img_gallery" class="row"></div>
         </div>
       </div>
-      
-      <script>
+    </div>
+
+    <script>
       var dv = document.getElementById("img_gallery");
       for (var i = 1; i < 24; i++) {
         var img = document.createElement("img");
@@ -877,7 +881,7 @@ display: none;
         img.setAttribute("class", "col-md-3 mb-2");
         dv.appendChild(img);
       }
-      </script>
+    </script>
 
 
 
@@ -897,45 +901,50 @@ display: none;
         <div class="col-md-6 col-lg-3 d-flex ftco-animate">
           <div class="align-self-stretch box p-4 text-center">
             <div class="icon d-flex align-items-center justify-content-center">
-              <span class="icon-map-signs"></span>
+
+              <a href="#">
+                <span class="icon-map-signs"></span>
+                Hyderabad
+              </a>
             </div>
             <h3 class="mb-4">Address</h3>
-            <p>Hyderabad</p>
+
           </div>
         </div>
         <div class="col-md-6 col-lg-3 d-flex ftco-animate">
           <div class="align-self-stretch box p-4 text-center">
             <div class="icon d-flex align-items-center justify-content-center">
-              <span class="icon-phone2"></span>
+              <a href="tel://7095797212">
+                <span class="icon-phone2"></span>
+                7095797212
+              </a>
+
             </div>
             <h3 class="mb-4">Contact Number</h3>
-            <p>
-              <a href="tel://7095797212">+91 7095797212</a>
-            </p>
           </div>
         </div>
         <div class="col-md-6 col-lg-3 d-flex ftco-animate">
           <div class="align-self-stretch box p-4 text-center">
             <div class="icon d-flex align-items-center justify-content-center">
-              <span class="icon-paper-plane"></span>
+              <a href="mailto:mandajisaikumar@gmail.com">
+                <span class="icon-paper-plane"></span>
+                mandajisaikumar@gmail.com
+              </a>
             </div>
             <h3 class="mb-4">Email Address</h3>
-            <p>
-              <a href="mailto:mandajisaikumar@gmail.com">mandajisaikumar@gmail.com</a>
-            </p>
           </div>
         </div>
 
         <div class="col-md-6 col-lg-3 d-flex ftco-animate">
           <div class="align-self-stretch box p-4 text-center">
             <div class="icon d-flex align-items-center justify-content-center">
-              <span class="icon-globe"></span>
+              <a href="images/res1.pdf">
+                <span class="icon-globe"></span>
+                Download</a>
             </div>
             <h3 class="mb-4">Download Resume</h3>
-            <p>
-              <a href="#">Not working</a>
-            </p>
           </div>
+  
         </div>
 
         <div class="container">
