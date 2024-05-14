@@ -858,36 +858,28 @@ display: none;
   </section>
   <!-- Gallery -->
   <section class="ftco-section Gallery ftco-no-pb" id="Gallery">
-    <div class="container">
-      <div class="row justify-content-center mb-5 pb-3">
-        <div class="col-md-7 heading-section text-center ftco-animate">
-          <h1 class="big big-2">Gallery</h1>
-          <h2 class="mb-4">Gallery</h2>
-
-          
-          <div id="img_gallery" class="row"></div>
-
-        </div>
-          <script>
-            var dv = document.getElementById("img_gallery");
-            for (var i=1;i<24;i++){
-              var img = document.createElement("img")
-              img.src = "images/gallery/"+i+".png";
-              img.setAttribute("class","col-md-4 mb-4")
-              dv.appendChild(img)
-              console.log(img)
-
-            }
-
-            
-
-          </script>
-
-
+ 
+      <div class="container">
+        <div class="row justify-content-center mb-5 pb-3">
+          <div class="col-md-16 heading-section text-center ftco-animate">
+            <h1 class="big big-2">Gallery</h1>
+            <h2 class="mb-4">Gallery</h2>
+            <div id="img_gallery" class="row"></div>
+          </div>
         </div>
       </div>
+      
+      <script>
+      var dv = document.getElementById("img_gallery");
+      for (var i = 1; i < 24; i++) {
+        var img = document.createElement("img");
+        img.src = "images/gallery/" + i + ".png";
+        img.setAttribute("class", "col-md-3 mb-2");
+        dv.appendChild(img);
+      }
+      </script>
 
-    </div>
+
 
   </section>
 

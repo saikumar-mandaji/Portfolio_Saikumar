@@ -12714,6 +12714,21 @@ h5,
 
 }
 
+/* #img_gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+} */
+
+#img_gallery img {
+  /* height: 100%; */
+  /* height: auto; */
+  /* margin-bottom: 10px; */
+  border-radius: 20px;
+}
+
+
+
 /* Hover effect */
 .carousel-control-prev:hover,
 .carousel-control-next:hover {
