@@ -12713,6 +12713,9 @@ h5,
   background-image: url('../images/next-svgrepo-com.svg');
 
 }
+h2{
+  color: #000;
+}
 
 /* #img_gallery {
   display: flex;
