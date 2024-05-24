@@ -2,1035 +2,480 @@
 <html lang="en">
 
 <head>
-  <title>Mandaji Saikumar Portfolio</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="./assets/img/bg_1.png" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
 
-  <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
-
-  <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
-  <link rel="stylesheet" href="css/animate.css">
-
-  <link rel="stylesheet" href="css/owl.carousel.min.css">
-  <link rel="stylesheet" href="css/owl.theme.default.min.css">
-  <link rel="stylesheet" href="css/magnific-popup.css">
-
-  <link rel="stylesheet" href="css/aos.css">
-
-  <link rel="stylesheet" href="css/ionicons.min.css">
-
-  <link rel="stylesheet" href="css/flaticon.css">
-  <link rel="stylesheet" href="css/icomoon.css">
-  <link rel="stylesheet" href="css/style.css">
-
-  <style>
-    /*======================================
-//--//-->   ABOUT
-======================================*/
-
-    .about-mf .box-shadow-full {
-      padding-top: 4rem;
-      padding-bottom: 4rem;
-    }
-
-    .about-mf .about-img {
-      margin-bottom: 2rem;
-    }
-
-    .about-mf .about-img img {
-      margin-left: 10px;
-    }
-
-    .skill-mf .progress {
-      /* background-color: #cde1f8; */
-      margin: 0.5rem 0 1.2rem;
-      border-radius: 0;
-      height: 0.7rem;
-    }
-
-    .skill-mf .progress .progress-bar {
-      height: 0.7rem;
-      background-color: #ffbd39;
-    }
-
-    /* Animation styles */
-    #typing-animation {
-      position: relative;
-      font-size: 30px;
-      font-weight: bold;
-      color: rgb(255, 255, 255);
-      overflow: hidden;
-      white-space: nowrap;
-      animation: typing 3s steps(20, end) infinite;
-    }
-
-    #typing-animation:before {
-      content: "";
-      /* position: absolute; */
-      top: 0;
-      left: 0;
-      width: 0;
-      height: 100%;
-      background-color: #ccc;
-      animation: typing-cursor 0.5s ease-in-out infinite;
-    }
-
-    /* width */
-    ::-webkit-scrollbar {
-      width: 10px;
-    }
-
-    /* Track */
-    ::-webkit-scrollbar-track {
-      box-shadow: inset 0 0 3px grey;
-      border-radius: 10px;
-    }
-
-    /* Handle */
-    ::-webkit-scrollbar-thumb {
-      background: rgb(64, 113, 47);
-      border-radius: 10px;
-    }
-
-    /* Handle on hover */
-    ::-webkit-scrollbar-thumb:hover {
-      background: #b30000;
-    }
-
-    ::-webkit-scrollbar:horizontal {
-      display: none;
-    }
-
-    .equal-columns .col-md-6 {
-      height: 100%;
-      /* Ensure both columns have the same height */
-    }
-
-    @keyframes typing {
-      from {
-        width: 0;
-      }
-
-      to {
-        width: 100%;
-      }
-    }
-
-    @keyframes typing-cursor {
-      from {
-        width: 5px;
-      }
-
-      to {
-        width: 0;
-      }
-    }
-
-    /* project image zoom effect */
-
-    .zoom-effect {
-      overflow: hidden;
-      transition: transform 0.3s ease-out;
-    }
-
-    .zoom-effect:hover {
-      transform: scale(1.1);
-    }
-
-    @media screen and (orientation: portrait) {
-      body {
-        margin-left: 5%;
-        margin-right: 5%;
-      }
-
-      .order-md-last {
-        visibility: hidden;
-        /* border-radius: 10px; */
-      }
-
-      .about-img img {
-        /* content: url("images/me.png"); */
-        height: 71px;
-      }
-    }
-  </style>
-
+  <!-- =====BOX ICONS===== -->
+  <link href="https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css" rel="stylesheet" />
+  <!--===== SCROLL REVEAL =====-->
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <title>Saikumar Mandaji</title>
 </head>
 
-<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+<body>
 
-  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
-    <div class="container">
-      <a class="navbar-brand" href="index.html">Mandaji Saikumar</a>
-      <button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse"
-        data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="oi oi-menu"></span>
-        Menu
-      </button>
 
-      <div class="collapse navbar-collapse" id="ftco-nav">
-        <ul class="navbar-nav nav ml-auto">
-          <li class="nav-item">
-            <a href="#home-section" class="nav-link">
-              <span>Home</span></a>
-          </li>
-          <li class="nav-item">
-            <a href="#about-section" class="nav-link">
-              <span>About</span></a>
-          </li>
-          <li class="nav-item">
-            <a href="#resume-section" class="nav-link">
-              <span>Projects</span></a>
-          </li>
-          <li class="nav-item">
-            <a href="#Gallery" class="nav-link">
-              <span>Gallery</span></a>
-          </li>
-          <li class="nav-item">
-            <a href="#contact-section" class="nav-link">
-              <span>Contact</span></a>
-          </li>
+  <!--===== HEADER =====-->
+  <header class="l-header">
+    <nav class="nav bd-grid">
+      <div>
+        <!-- &#60; Akshay Kanherkar</&#62; -->
 
+        <a href="#home" class="nav-logo"><img src="./assets/img/about-me.png" class="mylogo" alt="Z" /></a>
+      </div>
+      <div class="welcome-container">
+        <h1 class="Middle-Head"></h1>
+      </div>
+
+      <div class="nav-menu" id="nav-menu">
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a href="#home" class="nav-link home active">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="#about" class="nav-link about">About</a>
+          </li>
+          <li class="nav-item">
+            <a href="#skills" class="nav-link skills">Skills</a>
+          </li>
+          <li class="nav-item">
+            <a href="#projects" class="nav-link projects">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a href="#contact" class="nav-link contact">Contact</a>
+          </li>
         </ul>
       </div>
-    </div>
-  </nav>
-  <section id="home-section" class="hero">
-    <div class="home-slider  owl-carousel">
-      <div class="slider-item ">
-        <div class="overlay"></div>
-        <div class="container">
-          <div class="row d-md-flex no-gutters slider-text align-items-end justify-content-end"
-            data-scrollax-parent="true">
 
-            <!-- <div class="one-third js-fullheight order-md-last img" style="background-image:url(images/me.png);">
-              <div class="overlay"></div>
-            </div> -->
-            <div class="one-forth d-flex  align-items-center ftco-animate"
-              data-scrollax=" properties: { translateY: '70%' }">
-              <div class="text">
-                <span class="subheading">Hello!</span>
-                <h1 class="mb-4 mt-3">I'm
-                  <span>Mandaji Saikumar</span>
-                </h1>
-
-                <!-- Element to contain animated typing -->
-                <span id="typing-animation"></span>
-
-                <script>
-                  // Initialize the typing animation
-                  const typingAnimationElement = document.getElementById('typing-animation');
-
-                  // Create an array of typing text
-                  const typingTexts = ['IOT Developer     ', 'PCB Designer     ', 'Embedded Engineer    '];
-
-                  // Create a function to display the typing animation for a given text
-                  function playTypingAnimation(text) {
-                    // Loop through each character and add it to the element
-                    for (let i = 0; i < text.length; i++) {
-                      setTimeout(() => {
-                        typingAnimationElement.textContent += text[i];
-                      }, i * 100); // Decreased delay to speed up the typing animation
-                    }
-
-                    // Once the animation is complete, reset the text and start over
-                    setTimeout(() => {
-                      typingAnimationElement.textContent = '';
-                      playTypingAnimation(typingTexts[(typingTexts.indexOf(text) + 1) % typingTexts.length]);
-                    }, text.length * 100); // Adjusted delay accordingly
-                  }
-
-                  // Start the typing animation loop
-                  playTypingAnimation(typingTexts[0]);
-                </script><br><br>
-                <!-- <h2 class="d-flex" style="margin-bottom: 0">With over 5 years of experience</h2> -->
-                <!-- <br> -->
-                <p>
-                  <!-- <a href="https://www.instagram.com/anurag.sketches/" class="btn btn-primary py-3 px-4">My Instagram</a> -->
-                  <a href="https://linkedin.com/in/mandaji-saikumar-453b001b9"
-                    class="btn btn-white btn-outline-white py-3 px-4">My Linkedin</a>
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div class="nav-toggle" id="nav-toggle">
+        <i class="bx bx-menu"></i>
       </div>
-    </div>
-  </section>
+    </nav>
+  </header>
 
-  <section class="ftco-about img ftco-section ftco-no-pb" id="about-section">
-    <div class="container">
-      <div class="row">
-        <div class="row d-flex align-items-stretch">
-          <!-- <div class="row d-flex"> -->
-          <div class="col-md-6 col-lg-5 d-flex">
-            <div class="img-about img d-flex align-items-stretch">
-              <div class="overlay">
-                <div class="row">
-                  <div class="col-sm-6 col-md-4">
-                    <div class="about-img">
-                      <!-- <img src="images/bg_1.png" class="img-fluid rounded b-shadow-a" alt=""> -->
-                    </div>
-                  </div>
-                  <!-- Details next to profile image -->
-                  <!-- <div></div> -->
+  <main class="l-main">
+    <!--===== HOME =====-->
+    <section class="home bd-grid section" id="home">
+      <div class="home-data">
+        <h2 class="home-title">
+          Hy! 👋, I Am<br /> <span class="home-title-color Baloo">Mandaji Saikumar</span><br />
+          <!-- <span class="animate-charcter" id="typing-animation"></span> -->
+          <span id="typing-animation"></span>
+          <script>
+            const typingAnimationElement = document.getElementById('typing-animation');
+            const typingTexts = ['IOT Developer     ', 'PCB Designer     ', 'Embedded Engineer    '];
+            function playTypingAnimation(text) {
 
-                  <!-- <div class="col-sm-6 col-md-7">
-                      <div class="about-info">
-                        <p>
-                          <span class="title-s">Name:
-                          </span>
-                          <span>Mandaji Saikumar</span></p>
-                          
-                        <p>
-                          <span class="title-s">Programming:
-                          </span>
-                          <span>C, C++, Python,MicroPython,HTML CSS and JavaScript.</span></p>
-                        <p>
+              for (let i = 0; i < text.length; i++) {
+                setTimeout(() => {
+                  typingAnimationElement.textContent += text[i];
+                }, i * 100);
+              }
+              setTimeout(() => {
+                typingAnimationElement.textContent = '';
+                playTypingAnimation(typingTexts[(typingTexts.indexOf(text) + 1) % typingTexts.length]);
+              }, text.length * 100);
+            }
 
-                          <span class="title-s">Experience: </span> <span>5 Years 3 Months</span></p> <p>
-                          <span class="title-s">Address:
-                          </span>
-                          <span>HYD</span></p>
-                      </div>
-                    </div> -->
+            playTypingAnimation(typingTexts[0]);
+          </script>
+        </h2>
 
-                </div>
-
-                <div class="skill-mf">
-                  <p class="title-s"></p>
-                  <span></span>
-                  <!-- <span class="pull-right">85%</span>
-                    <div class="progress">
-                      <div class="progress-bar" role="progressbar" style="width: 99%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="10"></div>
-                    </div> -->
-
-
-                  <span>Skills</span>
-                  <!-- <span class="pull-right">99%</span> -->
-                  <div class="progress">
-                    <div class="progress-bar" role="progressbar" style="width: 99%" aria-valuenow="85" aria-valuemin="0"
-                      aria-valuemax="100"></div>
-                  </div>
-
-                  <ul class="about-info mt-4 px-md-0 px-2">
-                    <li class="d-flex">
-                      <span>Programming:</span>
-                      <span>C, C++, Python,MicroPython,HTML
-                        CSS and JavaScript.
-                      </span>
-                    </li>
-
-                    <li class="d-flex">
-                      <span>PCB Design:</span>
-                      <span>Orcad, KiCad, Altium, and
-                        EasyEDA Pro.
-                      </span>
-                    </li>
-
-                    <li class="d-flex">
-                      <span>Protocols:</span>
-                      <span>UART,CAN,SPI, I2C, Xbee,
-                        Bluetooth, Wi-Fi, and HTTP.
-                      </span>
-                    </li>
-
-                    <li class="d-flex">
-                      <span>Hardware Tools:</span>
-                      <span>oscilloscopes, multimeters, and
-                        signal generators.
-                      </span>
-                    </li>
-
-                    <li class="d-flex">
-                      <span>Other Tools:</span>
-                      <span>LTspice, EasyEDA and PuTTY.
-                      </span>
-                    </li>
-
-                  </ul>
-
-
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-7 pl-lg-5 pb-5">
-            <div class="row justify-content-start pb-3">
-              <div class="col-md-12 heading-section ftco-animate">
-
-                <h1 class="big">About</h1>
-                <h2 class="mb-4" style="color: #ccc;">About Me</h2>
-
-                <p class="text-justify">I'm a hardware engineer with extensive experience in PCB design and
-                  leading teams. I excel at understanding customer needs, ensuring
-                  project compliance, and troubleshooting. My expertise lies in
-                  microcontroller systems, device interfacing, motor control circuits, and
-                  communication interfaces. I have a proven track record of successful
-                  project leadership and mentorship.
-                </p>
-                <ul class="about-info mt-4 px-md-0 px-2">
-                  <li class="d-flex">
-                    <span>Name:</span>
-                    <span>MAndaji Saikumar</span>
-                  </li>
-                  <li class="d-flex">
-                    <span>Education:</span>
-                    <span>Bachelor of Technology - ECE</span>
-                  </li>
-                  <li class="d-flex">
-                    <span>Language:</span>
-                    <span>English, Hindi, Telugu</span>
-                  </li>
-                  <!-- <li class="d-flex"> <span>BI Tools:</span> <span>Microsoft Power BI, Looker &amp; Tableau</span></li> -->
-                  <li class="d-flex">
-                    <span>Interest:</span>
-                    <span>Traveling</span>
-                  </li>
-
-                </ul>
-              </div>
-            </div>
-
-            <div class="counter-wrap ftco-animate d-flex mt-md-3">
-              <div class="text">
-                <!-- <p class="mb-4"> <span class="number" data-number="30">0</span> <span>+</span> <span>&nbsp; Projects completed</span> </p> -->
-                <p>
-                  <a href="https://linkedin.com/in/mandaji-saikumar-453b001b9"
-                    class="btn btn-primary py-3 px-3">LinkedIn</a>
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <br>
-    <br>
-
-    <div class="row">
-      <h1 class="big-4">Education</h1>
-      <div class="underline"></div>
-    </div>
-    <br>
-
-    <div class="row">
-      <div class="col-md-6">
-        <div class="resume-wrap ftco-animate">
-          <span class="date">2016-2019</span>
-          <h3>B.Tech</h3>
-          <h2>Guru Nanak college of engineering</h2>
-          <span class="position">ELECTRONICS AND COMMUNICATION ENGINEERING</span>
-          <p class="mt-4">Grade: First class.</p>
-
-        </div>
+        <a href="/pdf/MandajiSaikumar.pdf" target="_blank" class="button">Resume</a>
       </div>
 
-      <div class="col-md-6">
-        <div class="resume-wrap ftco-animate">
-          <span class="date">2013-2016</span>
-          <h3>Diploma</h3>
-          <h2>Jyothishmathi Institute Of Technology</h2>
-          <span class="position">ELECTRONICS AND COMMUNICATION ENGINEERING</span>
-          <p class="mt-4">Grade: First class distinction.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="ftco-section ftco-no-pb" id="resume-section">
-    <div class="container">
-      <div class="row">
-        <h1 class="big-4">Projects</h1>
-        <div class="underline"></div>
-      </div>
-      <br>
-      <div class="row"></div>
-
-      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-
-        <ol class="carousel-indicators">
-          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-        </ol>
-
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <div class="row">
-
-              <div class="col-md-6 align-items-stretch">
-                <div class="resume-wrap ftco-animate">
-                  <img class="card-img-top" src="images/Projects/lora.png" alt="">
-                  <h3 style="color: black;">BeetleGuard</h3>
-                  <p class="text-justify font-weight-light" style="width: 100%;font-size: smaller;">
-
-                    BeetleGuard combines IoT and LoRa technologies to monitor and optimize beetle grove environments
-                    efficiently. With a battery life of 50 days, each network covering a 2km radius can accommodate
-                    200 nodes. Additionally, BeetleGuard integrates attendance monitoring, automates alerts via email,
-                    and sends holiday and important date notifications.
-                    It features both admin and user dashboards for seamless management and user experience.
-                  <ul style="font-size: smaller;">
-                    <li>BeetleGuard utilizes IoT and LoRa technologies to monitor and optimize beetle grove
-                      environments.
-                    </li>
-                    <li>Each network spans a 2km radius and supports up to 200 nodes, ensuring comprehensive coverage.
-                    </li>
-                    <li>The system incorporates attendance monitoring and automation for alerts via email, enhancing
-                      operational efficiency.</li>
-                    <li>BeetleGuard provides holiday and important date notifications via email, along with admin and
-                      user
-                      dashboards for streamlined management and user interaction.</li>
-                  </ul>
-                  </p>
-                </div>
-              </div>
-
-
-              <div class="col-md-6 align-items-stretch">
-                <div class="resume-wrap ftco-animate">
-                  <img class="card-img-top" src="images/Projects/pf.png" alt="">
-                  <h3 style="color: black;">Smart Card Payphone System</h3>
-                  <p class="text-justify font-weight-light" style="width: 100%;font-size: smaller;">
-                    This system integrates RFID card technology with 4G GSM connectivity to create a smart payphone
-                    system. Users can make calls and access data logs securely, while remote recharge functionality adds
-                    convenience. With a networked infrastructure involving dealers and multiple users, real-time
-                    operating
-                    systems (RTOS) ensure seamless operation and efficient management.
-                  <ul style="font-size: smaller;">
-                    <li>Utilizes RFID cards for secure authentication and access control, enhancing user privacy and
-                      security.</li>
-                    <li>Integrates 4G GSM connectivity for making calls and accessing data logs, ensuring reliable
-                      communication and data retrieval.</li>
-                    <li>Remote recharge functionality allows users to add credit to their accounts from anywhere,
-                      providing convenience and flexibility.</li>
-                    <li>Implements a networked system involving dealers and multiple users, managed efficiently with
-                      real-time operating systems (RTOS), ensuring smooth operation and effective administration.</li>
-                  </ul>
-                  </p>
-                </div>
-              </div>
-
-
-            </div>
-
-          </div>
-          <div class="carousel-item">
-
-            <div class="row">
-              <div class="col-md-6 d-flex align-items-stretch">
-                <div class="resume-wrap ftco-animate">
-                  <img class="card-img-top" src="images/Projects/diya.jpeg" alt="">
-                  <h3 style="color: black;">FlameSmart: Remote-Controlled Diya</h3>
-                  <p class="text-justify font-weight-light" style="width: 100%;font-size: smaller;">
-                    FlameReplica is a professionally designed compact diya, controllable via remote,
-                    offering adjustable brightness and extended battery life. It replicates the exact flame,
-                    providing a traditional yet convenient lighting solution.
-                    Successfully coordinated with a 3D printing team,
-                    the product embodies efficiency, elegance, and ease of use.
-                  <ul style="font-size: smaller;">
-                    <li>Compact Flex PCB: A professionally designed flexible PCB serves as the backbone of this
-                      remote-controlled diya, ensuring efficient performance in a small form factor.</li>
-                    <li>Exact Flame Replication: The circuit is meticulously crafted to replicate the exact flame,
-                      providing
-                      an authentic and aesthetic experience for users.</li>
-                    <li>Adjustable Brightness: Users have the flexibility to adjust the brightness of the diya to suit
-                      their
-                      preferences, enhancing the ambiance of any space.</li>
-                    <li>Long Battery Life: With a focus on energy efficiency, the diya boasts a long battery life,
-                      allowing
-                      users to enjoy extended periods of illumination without frequent recharging.</li>
-                  </ul>
-                  </p>
-                </div>
-              </div>
-
-              <div class="col-md-6 d-flex align-items-stretch">
-                <div class="resume-wrap ftco-animate">
-                  <img class="card-img-top" src="images/Projects/pc.jpeg" alt="">
-                  <h3 style="color: black;">Advanced Position Counter with SD Card Data Logging</h3>
-                  <p class="text-justify font-weight-light" style="width: 100%;font-size: smaller;">
-
-                    This high-quality position counter system integrates precision position tracking, efficient SD
-                    card-supported data logging, real-time status updates via a display unit, and seamless external
-                    system
-                    integration. With over 1500 operational devices, it ensures precise position counting and
-                    streamlined
-                    data
-                    management for enhanced automation.
-
-                  <ul style="font-size: smaller;">
-                    <li>Precision Position Counting: Utilizes metal sensors and a microcontroller to achieve precise
-                      position
-                      tracking, ensuring accurate data collection and analysis.</li>
-                    <li>Efficient Data Logging: Integrated SD card support enables efficient data logging, allowing for
-                      seamless storage and retrieval of position data for analysis and archival purposes.</li>
-                    <li>Real-time Status Updates: A dedicated display unit provides real-time status updates, offering
-                      users
-                      immediate visibility into system operations and performance.</li>
-                    <li>Seamless Integration: Facilitates seamless integration with external systems such as
-                      Programmable
-                      Logic Controllers (PLCs), enabling enhanced automation and control capabilities for optimized
-                      operational efficiency.
-                    </li>
-                  </ul>
-                  </p>
-                </div>
-              </div>
-
-            </div>
-
-          </div>
-          <div class="carousel-item">
-
-            <div class="row">
-              <div class="col-md-6 d-flex align-items-stretch">
-                <div class="resume-wrap ftco-animate">
-                  <img class="card-img-top" src="images/Projects/rpi.jpeg" alt="">
-                  <h3 style="color: black;">Advanced Facial Recognition Attendance Management System</h3>
-                  <p class="text-justify font-weight-light" style="width: 100%;font-size: smaller;">
-
-                    A comprehensive solution has been developed, leveraging Raspberry Pi hardware and Linux operating
-                    system, for efficient attendance management. The system incorporates face recognition technology for
-                    attendance marking, ensuring accuracy and security. Additionally,
-                    it features power backup support for uninterrupted operation. Automation has been implemented for
-                    alerts via email, and the system also sends notifications regarding holidays and important dates.
-                    Furthermore,
-                    it offers both admin and user dashboards for streamlined management and accessibility.
-                  <ul style="font-size: smaller;">
-                    <li>Face recognition technology is utilized for accurate attendance marking, enhancing security and
-                      efficiency.</li>
-                    <li>The system is equipped with power backup support to ensure continuous operation, minimizing
-                      disruptions.</li>
-                    <li>Automation features enable the system to send alerts via email, ensuring timely notifications
-                      for
-                      various events and updates.</li>
-                    <li>Admin and user dashboards are provided for easy management and accessibility, allowing for
-                      efficient monitoring and interaction with the system.</li>
-                  </ul>
-                  </p>
-                </div>
-              </div>
-
-
-              <div class="col-md-6 d-flex align-items-stretch">
-                <div class="resume-wrap ftco-animate">
-                  <img class="card-img-top" src="images/Projects/esp.jpeg" alt="">
-                  <h3 style="color: black;">Efficient Lighting Control System with BLE and USB-C Power Management</h3>
-                  <p class="text-justify font-weight-light" style="width: 100%;font-size: smaller;">
-
-                    A sophisticated smart lighting control system has been developed, featuring an ESP32-based hardware
-                    setup and a mobile application for BLE-enabled light adjustments. The system incorporates a USB-C
-                    power controller for efficient power management,
-                    enhancing energy savings. Through a meticulously designed PCB, the entire product is compact and
-                    tailored to professional standards. Additionally, a host and node network has been established to
-                    seamlessly control multiple devices,
-                    ensuring comprehensive ambient light management within indoor environments.
-                  <ul style="font-size: smaller;">
-                    <li>Developed a compact and professional-grade PCB integrating ESP32 hardware for BLE-based ambient
-                      light control indoors.</li>
-                    <li>Designed a user-friendly mobile application enabling users to adjust lighting settings
-                      conveniently via BLE connectivity.</li>
-                    <li>Implemented USB-C power delivery (PD) technology for efficient power management, optimizing
-                      energy
-                      consumption and enhancing cost-effectiveness.</li>
-                    <li>Established a robust host and node network architecture to facilitate centralized control of
-                      multiple devices, ensuring seamless ambient light management across indoor spaces.
-                    </li>
-                  </ul>
-                  </p>
-                </div>
-              </div>
-
-
-
-            </div>
-
-          </div>
-
-
-          <div class="carousel-item">
-
-            <div class="row">
-              <div class="col-md-6 d-flex align-items-stretch">
-                <div class="resume-wrap ftco-animate">
-                  <img class="card-img-top" src="images/Projects/hs.jpeg" alt="">
-                  <h3 style="color: black;">Hand Sanitizer Dispenser: Efficient, Portable, and Powerful</h3>
-                  <p class="text-justify font-weight-light" style="width: 100%;font-size: smaller;">
-
-                    A cutting-edge solution for efficient hand sanitization, this battery-powered dispenser boasts a
-                    compact PCB design and extended battery life. Activated by sensors, it delivers a touchless
-                    experience
-                    while effectively eliminating viruses. Ideal for various settings, this dispenser ensures reliable
-                    hygiene practices with minimal maintenance.
-
-
-                  <ul style="font-size: smaller;">
-                    <li> Operates on batteries for portability and flexibility, enabling usage in various settings
-                      without
-                      the need for electrical outlets.</li>
-                    <li>Equipped with efficient power management to prolong battery life, ensuring extended usage
-                      without
-                      frequent recharging.</li>
-                    <li>Compact PCB design optimizes space, making it suitable for both small and large-scale
-                      environments.</li>
-                    <li>Equipped with sensor activation, it provides a touchless experience, promoting hygiene and
-                      reducing the risk of cross-contamination.</li>
-                  </ul>
-                  </p>
-                </div>
-              </div>
-
-
-              <div class="col-md-6 d-flex align-items-stretch">
-                <div class="resume-wrap ftco-animate">
-                  <img class="card-img-top" src="images/Projects/ha.jpeg" alt="">
-                  <h3 style="color: black;">SmartHome Connect</h3>
-                  <p class="text-justify font-weight-light" style="width: 100%;font-size: smaller;">
-
-                    Transform your home into a smart oasis with SmartHome Connect, a comprehensive home automation
-                    solution. Control your devices effortlessly through a mobile app, while ensuring connectivity via a
-                    central hub with internet access. Our system utilizes RF communication to establish a robust network
-                    of devices locally, providing seamless automation and enhancing convenience in your daily life.
-
-
-                  <ul style="font-size: smaller;">
-                    <li>Mobile Control: With our intuitive mobile app, users can conveniently manage and control various
-                      home devices from anywhere, providing unparalleled flexibility and convenience.</li>
-                    <li>Central Hub Connectivity: Our system integrates a central hub with internet connectivity,
-                      ensuring
-                      reliable communication between the mobile app and home devices, even when users are away from
-                      home.
-                    </li>
-                    <li>Local RF Communication: Utilizing RF communication technology, our system establishes a network
-                      of
-                      devices within the home, enabling efficient data transmission and seamless automation without
-                      relying solely on internet connectivity.</li>
-                    <li>Enhanced Convenience: SmartHome Connect simplifies daily routines by automating tasks such as
-                      lighting, temperature control, and security, offering users greater convenience and peace of mind.
-                    </li>
-                  </ul>
-                  </p>
-                </div>
-              </div>
-
-
-            </div>
-
-          </div>
-
-          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-          </a>
-
-        </div>
-
-
-        <!-- <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a> -->
+      <div class="home-social">
+        <a href="https://linkedin.com/in/mandaji-saikumar-453b001b9" target="_blank" class="home-social-icon"><i
+            class="bx bxl-linkedin"></i></a>
+        <a href="https://github.com/saikumar-mandaji" target="_blank" class="home-social-icon"><i
+            class="bx bxl-github"></i></a>
       </div>
 
+      <!-- <div class="home-img">
+        <img src="assets/img/Scrollimg.png" alt="myzulfiqarIMG" class="myimage" />
+      </div>
+       -->
+    </section>
 
-    </div>
+    <!--===== ABOUT =====-->
+    <section class="about section" id="about">
+      <h2 class="section-title">About</h2>
 
-
-  </section>
-
-  <!-- <section class="ftco-section" id="project-section"> <div class="container"> <div class="row justify-content-center mb-5 pb-5"> <div class="col-md-7 heading-section text-center ftco-animate"> <h1 class="big big-2">Projects</h1> <h2 class="mb-4">Projects</h2> <p>Below are the sample Data Analytics projects on SQL, Python, Power BI & ML.</p> </div> </div> <div class="row d-flex"> <div class="col-md-4 d-flex ftco-animate"> <div class="blog-entry justify-content-end"> <a href="https://github.com/rishabhnmishra/SQL_Music_Store_Analysis/blob/main/Music_Store_Query.sql" class="block-20 zoom-effect" style="background-image: url('images/proj_1.jpg');"></a> <div class="text mt-3 float-right d-block"> <h3 class="heading"> <a href="https://github.com/rishabhnmishra/SQL_Music_Store_Analysis/blob/main/Music_Store_Query.sql">Digital Music Store Data Analysis using SQL</a> </h3> <p>Analyzed music store data using advanced SQL queires to identify gaps and increase the business growth.</p> </div> </div> </div> <div class="col-md-4 d-flex ftco-animate"> <div class="blog-entry justify-content-end"> <a href="https://github.com/rishabhnmishra/Python_Diwali_Sales_Analysis/blob/main/Diwali_Sales_Analysis.ipynb" class="block-20 zoom-effect" style="background-image: url('images/proj_2.jpg');"></a> <div class="text mt-3 float-right d-block"> <h3 class="heading"> <a href="https://github.com/rishabhnmishra/Python_Diwali_Sales_Analysis/blob/main/Diwali_Sales_Analysis.ipynb">Data Analysis using Python Project for Beginners</a> </h3> <p>Performed exploratory data analysis on diwali sales data using Python to improve the customer experience.</p> </div> </div> </div> <div class="col-md-4 d-flex ftco-animate"> <div class="blog-entry"> <a href="https://github.com/rishabhnmishra/Madhav_Store_Analysis_PowerBI/blob/main/Madhav%20Store%20dashboard.jpg" class="block-20 zoom-effect" style="background-image: url('images/proj_3.jpg');"></a> <div class="text mt-3 float-right d-block"> <h3 class="heading"> <a href="https://github.com/rishabhnmishra/Madhav_Store_Analysis_PowerBI/blob/main/Madhav%20Store%20dashboard.jpg">Power BI Sales dashboard Project for Beginners</a> </h3> <p>Designed a power bi dashboard for Madhav Store to track and analyze the online sales data acorss India.</p> </div> </div> </div> </div> <br> <div class="row d-flex justify-content-center"> <div class="col-md-4 d-flex ftco-animate"> <div class="blog-entry justify-content-end"> <a href="https://github.com/rishabhnmishra/sales_forecasting/tree/main" class="block-20 zoom-effect" style="background-image: url('images/proj_4.jpg');"></a> <div class="text mt-3 float-right d-block"> <h3 class="heading"> <a href="https://github.com/rishabhnmishra/sales_forecasting/tree/main">Sales Forecast- Time Series Forecasting</a> </h3> <p>Used multiple machine learning models to forecast sales (retail store) and performed time series analysis.</p> </div> </div> </div> <div class="col-md-4 d-flex ftco-animate"> <div class="blog-entry justify-content-end"> <a href="https://github.com/rishabhnmishra/customer_segmentation/blob/main/Customer_Segmentation-final.ipynb" class="block-20 zoom-effect" style="background-image: url('images/proj_5.jpg');"></a> <div class="text mt-3 float-right d-block"> <h3 class="heading"> <a href="https://github.com/rishabhnmishra/customer_segmentation/blob/main/Customer_Segmentation-final.ipynb">Customer Segmentation using clustering model</a> </h3> <p>Developed a ML model to give various recommendations of financial products &amp; services on target customer groups.</p> </div> </div> </div> </div> </div> </section> -->
-
-  <section class="ftco-section ftco-no-pt ftco-no-pb ftco-counter img" id="section-counter">
-    <div class="hid" style="visibility:hidden">
-      <div class="container">
-        <div class="row d-md-flex align-items-center">
-          <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-            <!-- <div class="block-18">
-              <div class="text">
-                <strong class="number" data-number="20">0+</strong>
-                <span>Projects</span>
-              </div>
-            </div> -->
-
-            <div class="block-18">
-              <div class="text">
-                <h2 style="color: #ccc;">Total Experience</h2>
-                <strong class="number" id="exp">0</strong>
-                <strong class="number" id="Tim">0</strong>
-                <!-- <span>Total Experience</span> -->
-              </div>
-              <script>
-                function getTimeDuration(pastDate) {
-                  // Convert the past date string to a Date object
-                  const pastDateTime = new Date(pastDate);
-
-                  // Get the current date and time
-                  const currentTime = new Date();
-
-                  // Calculate the time difference in milliseconds
-                  const timeDifference = currentTime - pastDateTime;
-
-                  // Calculate years
-                  const years = Math.floor(timeDifference / (1000 * 60 * 60 * 24 * 365.25));
-
-                  // Calculate months
-                  const months = Math.floor((timeDifference % (1000 * 60 * 60 * 24 * 365.25)) / (1000 * 60 * 60 * 24 * (365.25 / 12)));
-
-                  // Calculate days
-                  const days = Math.floor((timeDifference % (1000 * 60 * 60 * 24 * (365.25 / 12))) / (1000 * 60 * 60 * 24));
-
-                  // Calculate hours
-                  const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-
-                  // Calculate minutes
-                  const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
-
-                  // Calculate seconds
-                  const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
-
-                  // Construct the duration string
-                  // const duration = `${years} years ${months} months ${days} days ${hours} hours ${minutes} minutes ${seconds} seconds`;
-                  const duration = `${years} years ${months} months ${days} days`;
-                  const Time_ = `${hours}:${minutes}:${seconds}`;
-                  return [duration, Time_];
-                }
-
-                // Example usage:
-
-                setInterval(() => {
-                  var pastDate = "2020-03-01";
-                  var data = getTimeDuration(pastDate);
-                  document.getElementById("exp").innerHTML = data[0];
-                  document.getElementById("Tim").innerHTML = data[1];
-                  // console.log("Total time duration:", duration);
-                }, 1000)
-
-              </script>
-            </div>
-
-          </div>
-          <!-- <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-            <div class="block-18">
-              <div class="text">
-                <strong class="number" data-number="50">0</strong>
-                <span></span>
-              </div>
-            </div>
+      <div class="about-container bd-grid">
+        <!-- <div class="about-img">
+            <img src="assets/img/Profile1.png" alt="" />
           </div> -->
-          <!-- <div class="col-md d-flex justify-content-center counter-wrap ftco-animate"> <div class="block-18"> <div class="text"> <strong class="number" data-number="1000">0</strong> <span>Mentored Students</span> </div> </div> </div> <div class="col-md d-flex justify-content-center counter-wrap ftco-animate"> <div class="block-18"> <div class="text"> <strong class="number" data-number="500">0</strong> <span>Cups of coffee</span> </div> </div> </div> -->
-        </div>
-      </div>
-    </div>
 
+        <div style="text-align: center">
+          <h2 class="about-subtitle"></h2>
+          <p class="about-text">
+            I'm a hardware engineer with extensive experience in PCB design and
+            leading teams. I excel at understanding customer needs, ensuring
+            project compliance, and troubleshooting. My expertise lies in
+            microcontroller systems, device interfacing, motor control circuits, and
+            communication interfaces. I have a proven track record of successful
+            project leadership and mentorship.
 
-    <!-- <div class="row justify-content-center mt-5">
-      <div class="col-md-6 text-center ftco-animate">
-        <p>
-          <a href="#" class="btn btn-primary py-4 px-5">Download CV</a>
-        </p>
-      </div>
-    </div> -->
-
-    <!-- <div class="ftco-section ftco-hireme img margin-top" style="background-image: url(images/bg_1.jpg)">
-      <div class="row justify-content-center">
-        <div class="col-md-7 ftco-animate text-center">
-          <h2>Here's my<span>
-              <button id="gitbtn" class="btn btn-primary py-3 px-5" onclick="gitClick()">GitHub</button>
-            </span>
-          </h2>
-          <div class="heading">
-            <h4>
-              I love to code &amp; create awesome Circuits.
-            </h4>
-            <br>
-          </div>
-        </div>
-      </div>
-    </div> -->
-
-  </section>
-  <!-- Gallery -->
-  <section class="ftco-section Gallery ftco-no-pb" id="Gallery">
-
-    <div class="container">
-      <div class="row justify-content-center mb-5 pb-3">
-        <div class="col-md-16 heading-section text-center ftco-animate">
-          <h1 class="big big-2">Gallery</h1>
-          <h2 style="color: #ccc;" class="mb-4">Gallery</h2>
-          <div id="img_gallery" class="row"></div>
-        </div>
-      </div>
-    </div>
-
-    <script>
-      var dv = document.getElementById("img_gallery");
-      for (var i = 1; i < 24; i++) {
-        var img = document.createElement("img");
-        img.src = "images/gallery/" + i + ".png";
-        img.setAttribute("class", "col-md-3 mb-2");
-        dv.appendChild(img);
-      }
-    </script>
-
-
-
-  </section>
-
-  <section class="ftco-section contact-section ftco-no-pb" id="contact-section">
-    <div class="container">
-      <div class="row justify-content-center mb-5 pb-3">
-        <div class="col-md-7 heading-section text-center ftco-animate">
-          <h1 class="big big-2">Contact</h1>
-          <h2 class="mb-4" style="color: #ccc;">Contact Me</h2>
-          <!-- <p>Below are the details to reach out to me!</p> -->
-        </div>
-      </div>
-
-      <div class="row d-flex contact-info mb-5">
-        <div class="col-md-6 col-lg-3 d-flex ftco-animate">
-          <div class="align-self-stretch box p-4 text-center">
-            <div class="icon d-flex align-items-center justify-content-center">
-
-              <a href="#">
-                <span class="icon-map-signs"></span>
-                Hyderabad
-              </a>
-            </div>
-            <h3 class="mb-4">Address</h3>
-
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-3 d-flex ftco-animate">
-          <div class="align-self-stretch box p-4 text-center">
-            <div class="icon d-flex align-items-center justify-content-center">
-              <a href="tel://7095797212">
-                <span class="icon-phone2"></span>
-                7095797212
-              </a>
-
-            </div>
-            <h3 class="mb-4">Contact Number</h3>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-3 d-flex ftco-animate">
-          <div class="align-self-stretch box p-4 text-center">
-            <div class="icon d-flex align-items-center justify-content-center">
-              <a href="mailto:mandajisaikumar@gmail.com">
-                <span class="icon-paper-plane"></span>
-                mandajisaikumar@gmail.com
-              </a>
-            </div>
-            <h3 class="mb-4">Email Address</h3>
-          </div>
-        </div>
-
-        <div class="col-md-6 col-lg-3 d-flex ftco-animate">
-          <div class="align-self-stretch box p-4 text-center">
-            <div class="icon d-flex align-items-center justify-content-center">
-              <a href="images/res.pdf">
-                <span class="icon-globe"></span>
-                Download</a>
-            </div>
-            <h3 class="mb-4">Download Resume</h3>
-          </div>
-
-        </div>
-
-        <div class="container">
-          <br>
-          <br>
-
-          <br>
-
-          <!-- <ul class="ftco-footer-social list-unstyled d-flex justify-content-center align-items-center mb-0">
-            <li class="ftco-animate normal-txt">Find me on
-            </li>
-            <li class="ftco-animate"> <a href="https://www.youtube.com/@RishabhMishraOfficial"> <span class="icon-youtube"></span></a> </li>
-            <li class="ftco-animate">
-              <a href="#">
-                <span class="icon-linkedin"></span></a>
-            </li>
-            <li class="ftco-animate">
-              <a href="#">
-                <span class="icon-twitter"></span></a>
-            </li>
-            <li class="ftco-animate"> <a href="https://twitter.com/rishabhnmishra"> <span class="icon-facebook"></span></a> </li>
-            <li class="ftco-animate">
-              <a href="#">
-                <span class="icon-instagram"></span></a>
-            </li>
-          </ul> -->
-
-
-          <br>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <footer class="ftco-footer ftco-section">
-    <!-- <div class="container">
-      <div class="row">
-        <div class="col-md-12 text-center">
-
-          <p style="display: none;">
-
-            Copyright &copy;
-            <script>
-              document.write(new Date().getFullYear());
-            </script>
-            All rights reserved | This template is made with
-            <i class="icon-heart color-danger" aria-hidden="true"></i>
-            by
-            <a href="https://colorlib.com" target="_blank">Colorlib</a>
-
+          </p>
+          <br />
+          <p>
+            Drop a mail @ mandajisaikumar@gmail.com
+            <i style="color: #4070f4; font-size: 1.2rem; cursor: pointer" class="bx bx-copy" id="copy"></i>
           </p>
         </div>
       </div>
-    </div> -->
+
+      <div class="skills-container bd-grid">
+        <div>
+          <h2 class="skills-subtitle">Education</h2>
+          <div class="skills-data" style="display:inline-flex;">
+            <span >
+              2016-2019
+              <br><br>
+              B.Tech
+              <br>
+              <br>
+              Guru Nanak college of engineering
+              <br><br>
+              ELECTRONICS AND COMMUNICATION ENGINEERING
+              <br>
+              Grade: First class.
+              <br>
+            </span>
+            <br>
+          </div>
+        </div>
+
+        <div>
+          <h2 class="skills-subtitle"> `</h2>
+          <div class="skills-data" style="display:inline-flex;">
+            <span >
+              2013-2016
+              <br><br>
+              Diploma
+              <br>
+              <br>
+              Jyothishmathi Institute Of Technology
+              <br><br>
+              ELECTRONICS AND COMMUNICATION ENGINEERING
+              <br>
+              Grade: First class distinction.
+              <br>
+            </span>
+            <br>
+          </div>
+        </div>
+
+
+      </div>
+
+
+
+    </section>
+
+    <!--===== SKILLS =====-->
+    <section class="skills section" id="skills">
+      <h2 class="section-title">Skills</h2>
+
+      <div class="skills-container bd-grid">
+        <div>
+          <h2 class="skills-subtitle">Programming</h2>
+          <div class="skills-data">
+            <div class="skills-names">
+              <!-- <i class="bx bxl-html5 skills-icon"></i> -->
+              <span class="skills-name">C , C++</span>
+            </div>
+          </div>
+          <div class="skills-data">
+            <div class="skills-names">
+              <span class="skills-name">Python , MicroPython</span>
+            </div>
+          </div>
+          <div class="skills-data">
+            <div class="skills-names">
+              <span class="skills-name">HTML , CSS and JavaScript </span>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h2 class="skills-subtitle">Protocols</h2>
+          <div class="skills-data">
+            <div class="skills-names">
+              <!-- <i class="bx bxl-html5 skills-icon"></i> -->
+              <span class="skills-name">UART, CAN, SPI, I2C,</span>
+            </div>
+          </div>
+          <div class="skills-data">
+            <div class="skills-names">
+              <span class="skills-name"> LoRa, Xbee, Bluetooth, Wi-Fi, MQTT and HTTP</span>
+            </div>
+          </div>
+
+        </div>
+
+
+        <div>
+          <h2 class="skills-subtitle">PCB Design</h2>
+          <div class="skills-data">
+            <div class="skills-names">
+              <!-- <i class="bx bxl-html5 skills-icon"></i> -->
+              <span class="skills-name">Orcad, KiCad, Altium and EasyEDA</span>
+            </div>
+          </div>
+        </div>
+
+
+
+        <div>
+          <h2 class="skills-subtitle">Hardware Tools</h2>
+          <div class="skills-data">
+            <div class="skills-names">
+              <!-- <i class="bx bxl-html5 skills-icon"></i> -->
+              <span class="skills-name">oscilloscopes, multimeters, and signal generators.</span>
+            </div>
+          </div>
+
+        </div>
+
+
+
+
+        <div>
+          <h2 class="skills-subtitle">Other Tools</h2>
+          <div class="skills-data">
+            <div class="skills-names">
+              <!-- <i class="bx bxl-html5 skills-icon"></i> -->
+              <span class="skills-name">LTspice, EasyEDA and PuTTY.</span>
+            </div>
+          </div>
+        </div>
+
+
+
+        <!-- <div>
+            <img src="assets/img/project3.jpg" alt="" class="skills-img" />
+          </div> -->
+      </div>
+    </section>
+
+    <!--===== Projects =====-->
+    <section class="projects section" id="projects">
+      <h2 class="section-title">Projects</h2>
+
+      <div class="project-container">
+        <div class="project-img">
+          <img src="assets/img/Projects/lora.png" alt="lora" />
+          <p class="project-title">Smart Beetle Grove Management System</p>
+          <p class="project-subtitle">
+            BeetleGuard is a cutting-edge solution that seamlessly merges IoT and LoRa technologies to monitor and
+            optimize beetle grove environments. With a primary focus on tracking temperature and humidity levels for
+            intelligent beetle door control, BeetleGuard has achieved significant milestones. It has successfully
+            integrated IoT and LoRa, enabling real-time monitoring of beetle grove conditions. The system has
+            established a network of over 100 slave devices within a 2 km radius, ensuring thorough data collection.
+            Moreover, BeetleGuard boasts an impressive 50-day battery life per slave device, reducing maintenance
+            requirements. Additionally, it has spearheaded the development of a streamlined data visualization platform
+            for efficient data analysis, enhancing decision-making processes. <br />
+            <!-- <br />
+              A collaborative project, built in 5 days by a team of 4 developers
+              and 2 UI/UX designers. <br /> -->
+          </p>
+          <div class="project-btns">
+            <p class="project-title">IoT | LoRa | Data Visualization | Python | C++ | JavaScript | HTML | CSS</p>
+          </div>
+        </div>
+
+        <div class="project-img">
+          <img src="assets/img/Projects/pf.png" alt="lora" />
+          <p class="project-title">Smart Card Payphone System</p>
+          <p class="project-subtitle">
+            SecureConnect not only redefines payphone functionality with RFID and 4G GSM integration but also introduces
+            an IoT website for device monitoring. Users benefit from secure calls, data access, and remote recharge,
+            while the IoT platform ensures real-time device monitoring and management. With a networked infrastructure
+            and user-friendly interface, SecureConnect promises enhanced efficiency and convenience in payphone
+            management.
+            <br />
+          </p>
+          <div class="project-btns">
+            <p class="project-title">RFID | 4G GSM | IoT | Web Development | Python | C++ </p>
+          </div>
+        </div>
+
+
+        <div class="project-img">
+          <img src="assets/img/Projects/diya.jpeg" alt="lora" />
+          <p class="project-title">FlameReplica: Modern Diya with Traditional Charm</p>
+          <p class="project-subtitle">
+            FlameSmart introduces a remote-controlled diya, FlameReplica, offering a harmonious blend of tradition and
+            technology. This compact yet elegantly designed diya faithfully replicates the gentle flicker of a flame,
+            enhancing any space with its adjustable brightness feature. Collaborating seamlessly with a 3D printing
+            team, FlameSmart achieves efficiency, elegance, and user-friendly operation. The heart of FlameReplica lies
+            in its compact flex PCB, ensuring optimal performance in a small package. Crafted with precision, the
+            circuit faithfully reproduces the charm of a traditional flame, bringing an authentic ambiance to any
+            setting. Notably, FlameReplica prioritizes energy efficiency, boasting an extended battery life for
+            uninterrupted illumination. Embrace tradition with a modern twist, as FlameSmart's remote-controlled diya
+            illuminates homes and hearts alike.
+
+            <br />
+          </p>
+          <div class="project-btns">
+            <p class="project-title">Remote Control Systems | 3D Printing | Flex PCB Design | Circuit Design</p>
+          </div>
+        </div>
+
+
+        <div class="project-img">
+          <img src="assets/img/Projects/pc.jpeg" alt="lora" />
+          <p class="project-title">Advanced Position Counter with SD Card Data Logging</p>
+          <p class="project-subtitle">
+            Our advanced position counter system integrates precision position tracking, efficient SD card-supported
+            data logging, real-time status updates via a display unit, and seamless external system integration. With
+            over 1500 operational devices, it ensures precise position counting and streamlined data management for
+            enhanced automation. Utilizing metal sensors and a microcontroller, it achieves precise position tracking,
+            while integrated SD card support enables efficient data logging. Real-time status updates are provided
+            through a dedicated display unit, offering immediate visibility into system operations. Furthermore,
+            seamless integration with external systems like PLCs enhances automation and control capabilities for
+            optimized operational efficiency.
+
+            <br />
+          </p>
+          <div class="project-btns">
+            <p class="project-title">Metal Sensors | Microcontroller | SD Card | Display Unit</p>
+          </div>
+        </div>
+
+
+
+        <div class="project-img">
+          <img src="assets/img/Projects/rpi.jpeg" alt="lora" />
+          <p class="project-title">Advanced Facial Recognition Attendance Management System</p>
+          <p class="project-subtitle">
+            Our advanced facial recognition attendance management system, developed using Raspberry Pi hardware and the
+            Linux operating system, revolutionizes attendance tracking. With its emphasis on accuracy and security, the
+            system seamlessly integrates face recognition technology for attendance marking. Featuring power backup
+            support, it ensures uninterrupted operation, while automation enables timely email alerts and notifications
+            for holidays and important dates. Admin and user dashboards enhance management and accessibility,
+            facilitating efficient monitoring and interaction.
+            <br />
+          </p>
+          <br />
+          <div class="project-btns">
+            <p class="project-title">Raspberry Pi | Linux | Face Recognition Technology | Email Automation | Admin
+              Dashboard | User Dashboard</p>
+          </div>
+        </div>
+
+        <div class="project-img">
+          <img src="assets/img/Projects/esp.jpeg" alt="lora" />
+          <p class="project-title">Smart Lighting Control System with BLE and USB-C Power Management</p>
+          <p class="project-subtitle">A cutting-edge smart lighting control system has been developed, integrating ESP32
+            hardware for BLE-based ambient light control indoors. With a user-friendly mobile application, users can
+            conveniently adjust lighting settings via BLE connectivity. The system incorporates USB-C power delivery
+            (PD) technology for efficient power management, optimizing energy consumption and cost-effectiveness.
+            Utilizing a meticulously designed PCB, the product is compact and meets professional standards.
+            Additionally, a robust host and node network architecture ensures centralized control of multiple devices,
+            facilitating seamless ambient light management across indoor spaces.
+            <br />
+          </p>
+          <div class="project-btns">
+            <p class="project-title">ESP32 | BLE | USB-C | PCB Design | Mobile Application Development</p>
+          </div>
+        </div>
+
+        <div class="project-img">
+          <img src="assets/img/Projects/hs.jpeg" alt="lora" />
+          <p class="project-title">HygieneMaster: Advanced Hand Sanitizer Dispenser for Any Setting</p>
+          <p class="project-subtitle">
+            HygieneMaster offers a cutting-edge solution for efficient hand sanitization. Powered by batteries, it
+            ensures portability and flexibility, eliminating the need for electrical outlets. With efficient power
+            management, the dispenser boasts extended battery life, reducing the hassle of frequent recharging. Its
+            compact PCB design optimizes space, suitable for various environments. Equipped with sensor activation, it
+            provides a touchless experience, enhancing hygiene and minimizing cross-contamination risks. Ideal for
+            diverse settings, HygieneMaster guarantees reliable hygiene practices with minimal maintenance.
+            <br />
+          </p>
+          <div class="project-btns">
+            <p class="project-title">Batteries | Power Management | PCB Design | Sensor Activation</p>
+          </div>
+        </div>
+
+        <div class="project-img">
+          <img src="assets/img/Projects/ha.jpeg" alt="lora" />
+          <p class="project-title">HygieneMaster: Advanced Hand Sanitizer Dispenser for Any Setting</p>
+          <p class="project-subtitle">
+            Transform your home into a smart oasis with SmartHome Connect, a comprehensive home automation solution
+            designed to enhance convenience and peace of mind. With our intuitive mobile app, users can effortlessly
+            control various devices from anywhere, while a central hub ensures connectivity and reliable communication.
+            Utilizing RF communication technology, our system establishes a robust network of devices locally, enabling
+            seamless automation without solely relying on internet connectivity. SmartHome Connect simplifies daily
+            routines by automating tasks such as lighting, temperature control, and security, offering unparalleled
+            flexibility and convenience.
+            <br />
+          </p>
+          <div class="project-btns">
+            <p class="project-title">RF Communication | Mobile App Development | Internet Connectivity | Automation |
+              Home Devices</p>
+          </div>
+        </div>
+
+
+
+
+      </div>
+    </section>
+
+    <!--===== CONTACT =====-->
+    <!-- <section class="contact section" id="contact">
+        <h2 class="section-title">Contact</h2>
+
+        <div class="contact-container bd-grid">
+          <form action="" class="contact-form">
+            <input type="text" placeholder="Name" class="contact-input" />
+            <input type="mail" placeholder="Email" class="contact-input" />
+            <textarea
+              name=""
+              id=""
+              cols="0"
+              rows="10"
+              class="contact-input"
+            ></textarea>
+            <input
+              type="button"
+              value="Contact"
+              class="contact-button button"
+            />
+          </form>
+        </div>
+      </section> -->
+  </main>
+
+  <!--===== FOOTER + CONTACT=====-->
+  <footer class="footer section" id="contact">
+    <h2 class="section-title">Get in touch</h2>
+    <p class="footer-title"></p>
+    <div class="footer-social">
+      <a href="https://linkedin.com/in/mandaji-saikumar-453b001b9/" target="_blank" class="footer-icon"><i
+          class="bx bxl-linkedin">
+          <br />
+          LinkedIn</i></a>
+
+      <a href="https://www.instagram.com/iot_ronics/" target="_blank" class="footer-icon"><i class="bx bxl-instagram">
+          <br />
+          Instagram</i></a>
+      <a href="mailto:mandajisaikumar@gmail.com" target="_blank" class="footer-icon"><i class="bx bx-mail-send">
+          <br />
+          E-mail</i></a>
+      <a href="tel:+91 7095797212" target="_blank" class="footer-icon"><i class="bx bx-phone">
+          <br />
+          Phone</i></a>
+    </div>
+    <!-- <p>&#169; 2020 copyright all right reserved</p> -->
   </footer>
 
-  <!-- loader -->
-  <div id="ftco-loader" class="show fullscreen">
-    <svg class="circular" width="48px" height="48px">
-      <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
-      <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
-        stroke="#F96D00" />
-    </svg>
-  </div>
-  <!-- <script src="https://smtpjs.com/v3/smtp.js"></script> -->
-  <script src="js/my.js"></script>
-  <script src="js/jquery.min.js"></script>
-  <script src="js/jquery-migrate-3.0.1.min.js"></script>
-  <script src="js/popper.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/jquery.easing.1.3.js"></script>
-  <script src="js/jquery.waypoints.min.js"></script>
-  <script src="js/jquery.stellar.min.js"></script>
-  <script src="js/owl.carousel.min.js"></script>
-  <script src="js/jquery.magnific-popup.min.js"></script>
-  <script src="js/aos.js"></script>
-  <script src="js/jquery.animateNumber.min.js"></script>
-  <script src="js/scrollax.min.js"></script>
-
-  <script src="js/main.js"></script>
-  <script>
-    function gitClick() {
-      window.location.href = 'https://github.com/saikumar-mandaji';
-    }
-  </script>
-
+  <!--===== MAIN JS =====-->
+  <script src="assets/js/main.js"></script>
 </body>
 
 </html>
