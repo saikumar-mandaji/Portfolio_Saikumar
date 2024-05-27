@@ -157,16 +157,21 @@ const getCurrentTheme = () =>
 const getCurrentIcon = () =>
   themeButton.classList.contains(iconTheme) ? "uil-moon" : "uil-sun";
 
+document.body.classList.toggle(darkTheme);
+themeButton.classList.toggle(iconTheme);
+
+localStorage.setItem("selected-theme", "dark");
+localStorage.setItem("selected-icon", "uil-moon");
 // We validate if the user previously chose a topic
-if (selectedTheme) {
-  // If the validation is fulfilled, we ask what the issue was to know if we activated or deactivated the dark
-  document.body.classList[selectedTheme === "dark" ? "add" : "remove"](
-    darkTheme,
-  );
-  themeButton.classList[selectedIcon === "uil-moon" ? "add" : "remove"](
-    iconTheme,
-  );
-}
+// if (selectedTheme) {
+//   // If the validation is fulfilled, we ask what the issue was to know if we activated or deactivated the dark
+//   document.body.classList[selectedTheme === "dark" ? "add" : "remove"](
+//     darkTheme,
+//   );
+//   themeButton.classList[selectedIcon === "uil-moon" ? "add" : "remove"](
+//     iconTheme,
+//   );
+// }
 
 // Activate / deactivate the theme manually with the button
 themeButton.addEventListener("click", () => {
