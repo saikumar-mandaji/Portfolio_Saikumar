@@ -445,15 +445,18 @@ img {
 
 .skills__header {
   display: flex;
-  align-items: center;
-  margin-bottom: var(--mb-2-5);
-  cursor: pointer;
+  /* align-items: center; */
+  margin-bottom: 4px;
+  /* cursor:all-scroll; */
 }
 
 .skills__icon,
 .skills__arrow {
   font-size: 1.25rem;
   color: var(--first-color);
+}
+.skills__content{
+  width: 100%;
 }
 
 .skills__icon {
@@ -982,7 +985,7 @@ img {
   .project__container,
   .contact__container,
   .footer__container {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
   }
 
   .qualification__section {
