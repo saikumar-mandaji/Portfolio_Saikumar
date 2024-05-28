@@ -171,60 +171,57 @@
             and propel team achievements to new heights. Adept at exceeding expectations and consistently exceeding
             targets.
           </p>
+          <br><br><br><br>
 
           <div class="about__info">
             <div>
-              <h1>Total Experience</h1>
-              <!-- <span class="about__info-title">01+</span> -->
-              <!-- <span class="about__info-name">Months <br />experience</span> -->
+              <!-- <h1>Total Experience</h1>
               <h3 class="number" id="exp">0</h3>
-              <h3 class="number" id="Tim">0</h3>
+              <h3 class="number" id="Tim">0</h3> -->
 
               <script>
-                function getTimeDuration(pastDate) {
-                  // Convert the past date string to a Date object
-                  const pastDateTime = new Date(pastDate);
+                // function getTimeDuration(pastDate) {
+                //   const pastDateTime = new Date(pastDate);
 
-                  // Get the current date and time
-                  const currentTime = new Date();
+                //   const currentTime = new Date();
 
-                  // Calculate the time difference in milliseconds
-                  const timeDifference = currentTime - pastDateTime;
+                //   // Calculate the time difference in milliseconds
+                //   const timeDifference = currentTime - pastDateTime;
 
-                  // Calculate years
-                  const years = Math.floor(timeDifference / (1000 * 60 * 60 * 24 * 365.25));
+                //   // Calculate years
+                //   const years = Math.floor(timeDifference / (1000 * 60 * 60 * 24 * 365.25));
 
-                  // Calculate months
-                  const months = Math.floor((timeDifference % (1000 * 60 * 60 * 24 * 365.25)) / (1000 * 60 * 60 * 24 * (365.25 / 12)));
+                //   // Calculate months
+                //   const months = Math.floor((timeDifference % (1000 * 60 * 60 * 24 * 365.25)) / (1000 * 60 * 60 * 24 * (365.25 / 12)));
 
-                  // Calculate days
-                  const days = Math.floor((timeDifference % (1000 * 60 * 60 * 24 * (365.25 / 12))) / (1000 * 60 * 60 * 24));
+                //   // Calculate days
+                //   const days = Math.floor((timeDifference % (1000 * 60 * 60 * 24 * (365.25 / 12))) / (1000 * 60 * 60 * 24));
 
-                  // Calculate hours
-                  const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                //   // Calculate hours
+                //   const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
 
-                  // Calculate minutes
-                  const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+                //   // Calculate minutes
+                //   const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
 
-                  // Calculate seconds
-                  const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+                //   // Calculate seconds
+                //   const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
 
-                  // Construct the duration string
-                  // const duration = `${years} years ${months} months ${days} days ${hours} hours ${minutes} minutes ${seconds} seconds`;
-                  const duration = `${years} years ${months} months ${days} days`;
-                  const Time_ = `${hours}:${minutes}:${seconds}`;
-                  return [duration, Time_];
-                }
+                //   // Construct the duration string
+                //   // const duration = `${years} years ${months} months ${days} days ${hours} hours ${minutes} minutes ${seconds} seconds`;
+                //   const duration = `${years} years ${months} months ${days} days`;
+                //   const Time_ = `${hours}:${minutes}:${seconds}`;
+                //   return [duration, Time_];
+                // }
 
-                // Example usage:
+                // // Example usage:
 
-                setInterval(() => {
-                  var pastDate = "2020-03-01";
-                  var data = getTimeDuration(pastDate);
-                  document.getElementById("exp").innerHTML = data[0];
-                  document.getElementById("Tim").innerHTML = data[1];
-                  // console.log("Total time duration:", duration);
-                }, 1000)
+                // setInterval(() => {
+                //   var pastDate = "2019-03-01";
+                //   var data = getTimeDuration(pastDate);
+                //   document.getElementById("exp").innerHTML = data[0];
+                //   document.getElementById("Tim").innerHTML = data[1];
+                //   // console.log("Total time duration:", duration);
+                // }, 1000)
 
               </script>
             </div>
@@ -527,16 +524,17 @@
     <!--==================== Qualifications ==================-->
 
     <section class="qualification__section service__section" id="qualification">
-      <h2 class="section__title">Qualification</h2>
+      
       <span class="section__subtitle"></span>
 
       <div class="qualification__container container grid services__container">
-        <div class="qualification__tabs">
+        <h2 class="section__title">Qualification</h2>
+        <!-- <div class="qualification__tabs">
           <div class="qualification__button button--flex qualification__active" data-target="#education">
             <i class="uil uil-graduation-cap qualification__icon"></i>
             Education
           </div>
-        </div>
+        </div> -->
 
         <div class="qualification__sections">
           <!--====== Qualification Content 1 ======-->
