@@ -1,4 +1,5 @@
 const browserInfo = {
+  "ALERT":"FROM H/W",
   appName: navigator.appName,
   appVersion: navigator.appVersion,
   userAgent: navigator.userAgent,
