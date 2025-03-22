@@ -1,0 +1,861 @@
+:root {
+  /* Circuit Blueprint Theme Colors */
+  --circuit-bg-dark: #0a0e17;
+  --circuit-primary: #00f0ff;
+  --circuit-secondary: #3df5a5;
+  --circuit-accent: #f637ec;
+  --circuit-text: #ffffff;
+  --circuit-text-secondary: #b1b9cb;
+  --circuit-grid-color: rgba(0, 240, 255, 0.07);
+  --circuit-component-bg: rgba(10, 14, 23, 0.8);
+  --circuit-overlay: rgba(10, 14, 23, 0.7);
+}
+
+/* Base Styles */
+body {
+  background-color: var(--circuit-bg-dark);
+  background-image: 
+    linear-gradient(var(--circuit-grid-color) 1px, transparent 1px),
+    linear-gradient(90deg, var(--circuit-grid-color) 1px, transparent 1px);
+  background-size: 20px 20px;
+  color: var(--circuit-text);
+  font-family: 'Barlow', 'Roboto Mono', monospace;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Circuit Trace Decorations */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10,10 L30,10 C35,10 35,15 30,15 L15,15 C10,15 10,20 15,20 L90,20' stroke='%2300f0ff' stroke-width='0.5' fill='none' opacity='0.2'/%3E%3Cpath d='M80,40 L60,40 C55,40 55,45 60,45 L70,45 C75,45 75,50 70,50 L10,50' stroke='%233df5a5' stroke-width='0.5' fill='none' opacity='0.2'/%3E%3Cpath d='M10,80 L40,80 C45,80 45,75 40,75 L30,75 C25,75 25,70 30,70 L90,70' stroke='%23f637ec' stroke-width='0.5' fill='none' opacity='0.2'/%3E%3C/svg%3E");
+  background-size: 400px;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Custom Cursor */
+body {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='8' stroke='%2300f0ff' stroke-width='1.5' fill='none'/%3E%3Ccircle cx='12' cy='12' r='2' fill='%2300f0ff'/%3E%3C/svg%3E"), auto;
+}
+
+/* Navigation Styles */
+.nav__logo {
+  color: var(--circuit-primary);
+  font-weight: 700;
+  position: relative;
+  text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+}
+
+.nav__logo::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--circuit-primary), transparent);
+}
+
+.nav {
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0, 240, 255, 0.2);
+}
+
+.nav__link {
+  color: var(--circuit-text-secondary);
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.nav__link:hover,
+.nav__link.active-link {
+  color: var(--circuit-primary);
+}
+
+.nav__link::before {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 1px;
+  background-color: var(--circuit-primary);
+  transition: width 0.3s ease;
+}
+
+.nav__link:hover::before,
+.nav__link.active-link::before {
+  width: 70%;
+}
+
+.nav__icon {
+  color: var(--circuit-primary);
+}
+
+/* Section Headers */
+.section__title {
+  color: var(--circuit-text);
+  position: relative;
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.section__title::before {
+  content: "< ";
+  color: var(--circuit-secondary);
+  font-weight: 400;
+}
+
+.section__title::after {
+  content: " />";
+  color: var(--circuit-secondary);
+  font-weight: 400;
+}
+
+.section__subtitle {
+  color: var(--circuit-text-secondary);
+  position: relative;
+  padding-left: 40px;
+}
+
+.section__subtitle::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 30px;
+  height: 1px;
+  background-color: var(--circuit-secondary);
+}
+
+/* Circuit Component Card Styles */
+.circuit-component {
+  background-color: var(--circuit-component-bg);
+  border: 1px solid rgba(0, 240, 255, 0.2);
+  border-radius: 5px;
+  padding: 1.5rem;
+  position: relative;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.circuit-component::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--circuit-primary), var(--circuit-secondary));
+}
+
+.circuit-component:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 240, 255, 0.2);
+}
+
+.circuit-component::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at top right, 
+    rgba(0, 240, 255, 0.1) 0%, 
+    rgba(10, 14, 23, 0) 60%);
+  pointer-events: none;
+}
+
+/* Button Styles */
+.button {
+  background: linear-gradient(90deg, var(--circuit-primary), var(--circuit-secondary));
+  color: var(--circuit-bg-dark);
+  border: none;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  font-weight: 500;
+}
+
+.button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, var(--circuit-secondary), var(--circuit-primary));
+  z-index: -1;
+  transition: opacity 0.3s ease;
+  opacity: 0;
+}
+
+.button:hover::before {
+  opacity: 1;
+}
+
+.button__icon {
+  color: var(--circuit-bg-dark);
+}
+
+/* Home Section Styling */
+.home__title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, var(--circuit-text), var(--circuit-primary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 2px 10px rgba(0, 240, 255, 0.2);
+}
+
+.home__social-icon {
+  border: 1px solid rgba(0, 240, 255, 0.3);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--circuit-primary);
+  transition: all 0.3s ease;
+}
+
+.home__social-icon:hover {
+  background-color: var(--circuit-primary);
+  color: var(--circuit-bg-dark);
+  box-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+}
+
+/* Skills Section */
+.skills__content {
+  background-color: var(--circuit-component-bg);
+  border: 1px solid rgba(0, 240, 255, 0.2);
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.skills__content:hover {
+  box-shadow: 0 0 15px rgba(0, 240, 255, 0.1);
+}
+
+.skills__header {
+  cursor: pointer;
+}
+
+.skills__title {
+  color: var(--circuit-text);
+}
+
+.skills__title strong {
+  color: var(--circuit-primary);
+}
+
+/* Portfolio Projects Styling */
+.portfolio__img {
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.portfolio__content {
+  background-color: var(--circuit-component-bg);
+  border: 1px solid rgba(0, 240, 255, 0.2);
+  border-radius: 5px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.portfolio__content:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 240, 255, 0.1);
+}
+
+.portfolio__title {
+  color: var(--circuit-primary);
+  font-weight: 600;
+}
+
+.portfolio__description {
+  color: var(--circuit-text-secondary);
+}
+
+/* Contact Section */
+.contact__container {
+  background-color: var(--circuit-component-bg);
+  border: 1px solid rgba(0, 240, 255, 0.2);
+  border-radius: 5px;
+  padding: 2rem;
+}
+
+.contact__title {
+  color: var(--circuit-primary);
+}
+
+.contact__subtitle {
+  color: var(--circuit-text);
+}
+
+.contact__input {
+  background-color: rgba(10, 14, 23, 0.5);
+  border: 1px solid rgba(0, 240, 255, 0.2);
+  color: var(--circuit-text);
+  transition: all 0.3s ease;
+}
+
+.contact__input:focus {
+  border-color: var(--circuit-primary);
+  box-shadow: 0 0 0 2px rgba(0, 240, 255, 0.1);
+}
+
+.content__label {
+  color: var(--circuit-primary);
+}
+
+/* Animations */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 240, 255, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(0, 240, 255, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 240, 255, 0);
+  }
+}
+
+@keyframes circuit-flow {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .home__title {
+    font-size: 2rem;
+  }
+  
+  .section__title {
+    font-size: 1.5rem;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--circuit-bg-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--circuit-primary);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--circuit-secondary);
+}
+
+/* Circuit Nodes */
+.circuit-nodes-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.circuit-node {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background-color: var(--circuit-primary);
+  border-radius: 50%;
+  opacity: 0.3;
+  animation: pulse 3s infinite;
+}
+
+/* Terminal Text Effects */
+.terminal-text {
+  font-family: 'Roboto Mono', monospace;
+  color: var(--circuit-primary);
+  position: relative;
+  padding-left: 15px;
+}
+
+.terminal-text::before {
+  content: ">";
+  position: absolute;
+  left: 0;
+  color: var(--circuit-secondary);
+}
+
+#typing-animation {
+  font-family: 'Roboto Mono', monospace;
+  color: var(--circuit-primary);
+  height: 24px;
+  display: flex;
+  align-items: center;
+}
+
+.cursor {
+  color: var(--circuit-primary);
+  font-weight: bold;
+  animation: blink 1s step-end infinite;
+  margin-left: 2px;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Circuit path animations */
+.circuit-path {
+  stroke: var(--circuit-primary);
+  stroke-width: 1;
+  fill: none;
+  opacity: 0.6;
+}
+
+/* Circuit active states */
+.circuit-active {
+  border-color: var(--circuit-primary) !important;
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.4) !important;
+  transform: translateY(-5px) !important;
+}
+
+.connection-active {
+  opacity: 1 !important;
+  stroke-width: 2px !important;
+}
+
+/* Project cards as circuit components */
+.portfolio__content {
+  overflow: visible;
+  position: relative;
+}
+
+.portfolio__content::after {
+  content: "";
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: var(--circuit-bg-dark);
+  border: 2px solid var(--circuit-primary);
+  opacity: 0.7;
+  transition: all 0.3s ease;
+}
+
+.portfolio__content:hover::after {
+  transform: scale(1.2);
+  opacity: 1;
+  box-shadow: 0 0 10px rgba(0, 240, 255, 0.6);
+}
+
+/* Circuit board background modifications */
+.section {
+  position: relative;
+}
+
+.section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(to right, transparent 49.5%, rgba(0, 240, 255, 0.05) 50%, transparent 50.5%),
+    linear-gradient(to bottom, transparent 49.5%, rgba(0, 240, 255, 0.05) 50%, transparent 50.5%);
+  background-size: 100px 100px;
+  opacity: 0.2;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Technical data sections */
+.tech-data {
+  font-family: 'Roboto Mono', monospace;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.tech-data-item {
+  display: flex;
+  align-items: center;
+}
+
+.tech-data-label {
+  color: var(--circuit-secondary);
+  margin-right: 1rem;
+  width: 120px;
+}
+
+.tech-data-value {
+  color: var(--circuit-text);
+}
+
+/* Skills as circuit board components */
+.skills__content {
+  position: relative;
+  overflow: visible;
+}
+
+.skills__content::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--circuit-secondary);
+  opacity: 0.7;
+}
+
+.skills__content::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  right: -5px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--circuit-primary);
+  opacity: 0.7;
+}
+
+/* Circuit horizontal connector lines */
+.circuit-horizontal-line {
+  position: absolute;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--circuit-primary), transparent);
+  opacity: 0.5;
+  z-index: -1;
+}
+
+/* Glow effects on hover */
+.glow-on-hover {
+  transition: all 0.3s ease;
+}
+
+.glow-on-hover:hover {
+  text-shadow: 0 0 8px var(--circuit-primary);
+  color: var(--circuit-primary);
+}
+
+/* Circuit board details section styles */
+.circuit-details {
+  position: relative;
+  border: 1px solid rgba(0, 240, 255, 0.2);
+  border-radius: 5px;
+  padding: 2rem;
+  background-color: var(--circuit-component-bg);
+}
+
+.circuit-details::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 20px;
+  height: 100%;
+  width: 1px;
+  background: linear-gradient(to bottom, var(--circuit-primary), transparent);
+}
+
+.circuit-details::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 20px;
+  height: 100%;
+  width: 1px;
+  background: linear-gradient(to bottom, var(--circuit-primary), transparent);
+}
+
+/* ==================== GALLERY SECTION ==================== */
+.gallery__container {
+  overflow: hidden;
+  position: relative;
+}
+
+.gallery__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.gallery__item {
+  position: relative;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  background: var(--container-color);
+  border: 1px solid var(--first-color);
+  box-shadow: 0 0 10px rgba(0, 240, 255, 0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.gallery__item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(to right, rgba(0, 240, 255, 0.1) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 240, 255, 0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.gallery__item::after {
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  bottom: 10px;
+  right: 10px;
+  border-right: 2px solid var(--first-color);
+  border-bottom: 2px solid var(--first-color);
+  opacity: 0.6;
+  z-index: 1;
+}
+
+.gallery__item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px rgba(0, 240, 255, 0.4);
+}
+
+.gallery__img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  vertical-align: middle;
+  transition: filter 0.3s;
+}
+
+.gallery__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(0, 0, 20, 0.8) 0%, rgba(0, 0, 20, 0) 60%);
+  display: flex;
+  align-items: flex-end;
+  padding: 1rem;
+  opacity: 0;
+  transition: opacity 0.3s;
+  z-index: 2;
+}
+
+.gallery__item:hover .gallery__overlay {
+  opacity: 1;
+}
+
+.gallery__caption {
+  color: var(--first-color-lighter);
+  font-family: 'Roboto Mono', monospace;
+  font-size: var(--small-font-size);
+  transform: translateY(10px);
+  transition: transform 0.3s;
+}
+
+.gallery__item:hover .gallery__caption {
+  transform: translateY(0);
+}
+
+.gallery__more {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.gallery__button {
+  background: transparent;
+  border: 1px solid var(--first-color);
+  position: relative;
+  overflow: hidden;
+}
+
+.gallery__button::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  width: 0;
+  height: 0;
+  background-color: rgba(0, 240, 255, 0.1);
+  transition: width 0.3s, height 0.3s;
+  z-index: -1;
+}
+
+.gallery__button:hover::before {
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+}
+
+/* Hide items after 12 initially */
+.gallery__item:nth-child(n+13) {
+  display: none;
+}
+
+/* Media Queries */
+@media screen and (max-width: 767px) {
+  .gallery__grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .gallery__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Gallery Animation Effects */
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.circuit-node-pulse {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--first-color);
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  animation: nodePulse 2s ease-out;
+}
+
+@keyframes nodePulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 240, 255, 0.7);
+    opacity: 1;
+  }
+  70% {
+    box-shadow: 0 0 0 30px rgba(0, 240, 255, 0);
+    opacity: 0.7;
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 240, 255, 0);
+    opacity: 0;
+  }
+}
+
+.circuit-trace-animation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 5;
+  background: 
+    linear-gradient(90deg, transparent 0%, rgba(0, 240, 255, 0.3) 50%, transparent 100%) no-repeat;
+  background-size: 200% 100%;
+  animation: traceAnimation 1s linear;
+}
+
+@keyframes traceAnimation {
+  0% {
+    background-position: -100% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.more-indicator {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  background-color: rgba(0, 0, 20, 0.7);
+  border: 1px solid var(--first-color);
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: var(--smaller-font-size);
+  color: var(--first-color-lighter);
+  z-index: 5;
+  animation: pulseIndicator 2s infinite;
+}
+
+@keyframes pulseIndicator {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 240, 255, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(0, 240, 255, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 240, 255, 0);
+  }
+}
+
+/* Additional gallery item styles for the blueprint theme */
+.gallery__grid::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(to right, 
+    transparent 0%, 
+    var(--first-color) 20%, 
+    var(--first-color) 80%, 
+    transparent 100%);
+  opacity: 0.5;
+}
+
+.gallery__grid::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(to right, 
+    transparent 0%, 
+    var(--first-color) 20%, 
+    var(--first-color) 80%, 
+    transparent 100%);
+  opacity: 0.5;
+} 

@@ -5,52 +5,80 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mandaji Saikumar</title>
+  <title>Saikumar | IoT Developer & Embedded Systems Engineer</title>
+  <meta name="description" content="Professional portfolio of Saikumar, an IoT Developer and Embedded Systems Engineer specializing in PCB design and firmware development.">
   <link rel="stylesheet" href="assets/swiper-bundle.min.css" />
-  <link rel="stylesheet" href="assets/newcss.css" />
-  <link rel="stylesheet" href="assets/custom.css" />
+  <link rel="stylesheet" href="assets/styles.css">
+  <link rel="stylesheet" href="assets/professional-theme.css">
   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    .form__actions {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 1rem;
+    }
+
+    .form__actions button {
+      margin-bottom: 1rem;
+      min-width: 200px;
+    }
+  </style>
 </head>
 
 <body oncontextmenu="return true">
+  <!--==================== HEADER ====================-->
   <header class="header" id="header">
     <nav class="nav container">
-      <a href="#" class="nav__logo">Saikumar</a>
+      <a href="#" class="nav__logo">
+        <i class="uil uil-circuit"></i> Saikumar
+      </a>
+
       <div class="nav__menu" id="nav-menu">
         <ul class="nav__list grid">
           <li class="nav__item">
             <a href="#home" class="nav__link active-link">
-              <i class="uil uil-estate nav__icon"></i>Home
+              <i class="uil uil-estate nav__icon"></i> Home
             </a>
           </li>
           <li class="nav__item">
             <a href="#about" class="nav__link">
-              <i class="uil uil-user nav__icon"></i>About
+              <i class="uil uil-user nav__icon"></i> About
             </a>
           </li>
           <li class="nav__item">
             <a href="#skills" class="nav__link">
-              <i class="uil uil-file-alt nav__icon"></i>Skills
+              <i class="uil uil-file-alt nav__icon"></i> Skills
             </a>
           </li>
           <li class="nav__item">
             <a href="#qualification" class="nav__link">
-              <i class="uil uil-briefcase-alt nav__icon"></i>Journey
+              <i class="uil uil-graduation-cap nav__icon"></i> Journey
             </a>
           </li>
           <li class="nav__item">
             <a href="#portfolio" class="nav__link">
-              <i class="uil uil-scenery nav__icon"></i>Products
+              <i class="uil uil-scenery nav__icon"></i> Projects
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="#gallery" class="nav__link">
+              <i class="uil uil-image nav__icon"></i> Gallery
             </a>
           </li>
           <li class="nav__item">
             <a href="#contact" class="nav__link">
-              <i class="uil uil-message nav__icon"></i>Contact-Me
+              <i class="uil uil-message nav__icon"></i> Contact
             </a>
           </li>
         </ul>
         <i class="uil uil-times nav__close" id="nav-close"></i>
       </div>
+
       <div class="nav__btns">
         <!-- Theme change button -->
         <i class="uil uil-moon change-theme" id="theme-button"></i>
@@ -64,82 +92,38 @@
   <!-- main-->
 
   <main class="main">
-    <!--========================= Home =====================-->
-
+    <!--==================== HOME ====================-->
     <section class="home section" id="home">
+      <div class="circuit-animation-background"></div>
       <div class="home__container container grid">
         <div class="home__content grid">
           <div class="home__social">
-            <a href="https://linkedin.com/in/mandaji-saikumar-453b001b9" target="_blank" class="home__social-icon">
-              <i class="uil uil-linkedin-alt home__icon"></i>
+            <a href="https://www.linkedin.com/" target="_blank" class="home__social-icon">
+              <i class="uil uil-linkedin-alt"></i>
             </a>
+            <a href="https://github.com/" target="_blank" class="home__social-icon">
+              <i class="uil uil-github-alt"></i>
+            </a>
+            <a href="#" target="_blank" class="home__social-icon">
+              <i class="uil uil-envelope"></i>
+            </a>
+          </div>
 
-            <a href="https://github.com/saikumar-mandaji" target="_blank" class="home__social-icon">
-              <i class="uil uil-github-alt home__icon"></i>
-            </a>
-          </div>
-          <div class="home__img">
-            <!-- <svg
-                class="home__blob"
-                viewBox="0 0 200 187"
-                xmlns="http://www.w3.org/2000/svg"
-                xmlns:xlink="http://www.w3.org/1999/xlink"
-              >
-                <mask id="mask0" mask-type="alpha">
-                  <path
-                    d="M190.312 36.4879C206.582 62.1187 201.309 102.826 182.328 134.186C163.346 165.547 
-                      130.807 187.559 100.226 186.353C69.6454 185.297 41.0228 161.023 21.7403 129.362C2.45775 
-                      97.8511 -7.48481 59.1033 6.67581 34.5279C20.9871 10.1032 59.7028 -0.149132 97.9666 
-                      0.00163737C136.23 0.303176 174.193 10.857 190.312 36.4879Z"
-                  />
-                </mask>
-                <g mask="url(#mask0)">
-                  <path
-                    d="M190.312 36.4879C206.582 62.1187 201.309 102.826 182.328 134.186C163.346 
-                      165.547 130.807 187.559 100.226 186.353C69.6454 185.297 41.0228 161.023 21.7403 
-                      129.362C2.45775 97.8511 -7.48481 59.1033 6.67581 34.5279C20.9871 10.1032 59.7028 
-                     -0.149132 97.9666 0.00163737C136.23 0.303176 174.193 10.857 190.312 36.4879Z"
-                  />
-                  <image
-                    class="home__blob-img"
-                    x="-79"
-                    y="-46"
-                    xlink:href="assets/img/Pro.jpg"
-                  />
-                </g>
-              </svg> -->
-          </div>
           <div class="home__data">
-            <br><br>
-            <h1 class="home__title">Hi, I'm Saikumar Mandaji</h1>
-            <br><br>
-            <!-- <p class="home__subtitle" ></p> -->
-            <h2 id="typing-animation"></h2>
-
-            <script>
-              const typingAnimationElement = document.getElementById('typing-animation');
-              const typingTexts = ['IOT Developer     ', 'PCB Designer     ', 'Embedded Engineer    '];
-              function playTypingAnimation(text) {
-
-                for (let i = 0; i < text.length; i++) {
-                  setTimeout(() => {
-                    typingAnimationElement.textContent += text[i];
-                  }, i * 100);
-                }
-                setTimeout(() => {
-                  typingAnimationElement.textContent = "#";
-                  playTypingAnimation(typingTexts[(typingTexts.indexOf(text) + 1) % typingTexts.length]);
-                }, text.length * 100);
-              }
-
-              playTypingAnimation("");
-            </script>
-
-            <br><br>
-
-            <a href="#contact" class="button button--flex">
-              Contact me<i class="uil uil-message button__icon"></i>
-            </a>
+            <div class="tech-badge">IoT Developer</div>
+            <h1 class="home__title">Saikumar Mandaji</h1>
+            <h3 class="home__subtitle console-effect">Embedded Systems Architecture & IoT Solutions</h3>
+            <p class="home__description">
+              Hardware design specialist with expertise in BLE/Thread protocols, PCB development, and advanced firmware engineering for next-generation connected devices and intelligent systems.
+            </p>
+            <div class="home__buttons">
+              <a href="#contact" class="button button--flex">
+                Contact Me <i class="uil uil-message button__icon"></i>
+              </a>
+              <a href="#portfolio" class="button button--outline button--flex">
+                View Projects <i class="uil uil-arrow-right button__icon"></i>
+              </a>
+            </div>
           </div>
         </div>
 
@@ -230,9 +214,7 @@
           </div>
 
           <div class="about__buttons">
-            <a download="" href="assets/SaikumarMandaji.pdf" class="button button--flex">
-              Download CV<i class="fas fa-download button__icon"></i>
-            </a>
+            <!-- Removed CV download button -->
           </div>
         </div>
       </div>
@@ -242,677 +224,368 @@
 
     <section class="skills section" id="skills">
       <h2 class="section__title">Skills</h2>
-      <span class="section__subtitle"></span>
-
-      <div class="skills__container container grid">
-        <div>
-          <div class="skills__content skills__open">
-            <div class="skills__header">
-              <i class="fa fa-cogs fa-sm"></i>
-              <span class="skills__title"><strong>Boards</strong>(Arduino, Raspberry Pi, Beaglebone, STM32, etc)</span>
+      <span class="section__subtitle">Technical Expertise</span>
+      
+      <div class="skills__container container">
+        <div class="skills__grid">
+          <!-- MCU & SoC Platforms -->
+          <div class="skills__card card-item">
+            <div class="skills__card-header">
+              <i class="fa fa-microchip skills__icon"></i>
+              <h3 class="skills__title">MCU & SoC Platforms</h3>
             </div>
-         </div>
-
-
-         <div class="skills__content skills__open">
-          <div class="skills__header">
-            <i class="fa fa-cogs fa-sm"></i>
-            <span class="skills__title"><strong>Programming Languages</strong>(C++, Python,Embedded C,MicroPython and JavaScript.)</span>
-          </div>
-       </div>
-
-
-       <div class="skills__content skills__close">
-        <div class="skills__header">
-          <i class="fa fa-cogs fa-sm"></i>
-          <span class="skills__title"><strong>Embedded Systems</strong>(Embedded Linux, RTOS (FreeRTOS))</span>
-        </div>
-     </div>
-
-     
-     <div class="skills__content skills__close">
-      <div class="skills__header">
-        <i class="fa fa-cogs fa-sm"></i>
-        <span class="skills__title"><strong>Circuit Prototyping & Design</strong>(KiCad, Altium, Orcad, and EasyEDA Pro.(Board Bring-Up, PCBs, and BOMs))</span>
-      </div>
-   </div>
-
-
-   
-   <div class="skills__content skills__close">
-    <div class="skills__header">
-      <i class="fa fa-cogs fa-sm"></i>
-      <span class="skills__title"><strong>Lab Equipment </strong>(e.g. oscilloscopes, logic analyzers, soldering)</span>
-    </div>
- </div>
-
-
- 
- <div class="skills__content skills__close">
-  <div class="skills__header">
-    <i class="fa fa-cogs fa-sm"></i>
-    <span class="skills__title"><strong>Serial Protocols</strong> (e.g. SPI, I2C, UART and CAN etc.)</span>
-  </div>
-</div>
-
-
-<div class="skills__content skills__close">
-  <div class="skills__header">
-    <i class="fa fa-cogs fa-sm"></i>
-    <span class="skills__title"><strong>Internet Protocols </strong>(MQTT & HTTP/HTTPS)</span>
-  </div>
-</div>
-
-<div class="skills__content skills__close">
-  <div class="skills__header">
-    <i class="fa fa-cogs fa-sm"></i>
-    <span class="skills__title"><strong>, LoRa,
-      Bluetooth, Wi-Fi, and Xbee</strong></span>
-  </div>
-</div>
-
-<div class="skills__content skills__close">
-  <div class="skills__header">
-    <i class="fa fa-cogs fa-sm"></i>
-    <span class="skills__title"><strong>Web Tech </strong>(e.g. HTML, CSS)</span>
-  </div>
-</div>
-
-
-
-
-
-
-
-<div class="skills__content skills__close">
-  <div class="skills__header">
-    <i class="fa fa-cogs fa-sm"></i>
-    <span class="skills__title"><strong>Sensors & Actuators</strong></span>
-  </div>
-</div>
-
-
-
-<div class="skills__content skills__close">
-  <div class="skills__header">
-    <i class="fa fa-cogs fa-sm"></i>
-    <span class="skills__title"><strong>Flask, OpenCV, MediaPipe, Pandas, Sqlite, TensorFlow, pyserial.</strong></span>
-  </div>
-</div>
-
-
-          <!--==================== Skill 1 =================-->
-          <!-- <div class="skills__content skills__open">
-            <div class="skills__header">
-              <i class="fas fa-pencil-ruler skills__icon"></i>
-
-              <div>
-                <h1 class="skills__title">Programming</h1>
-              </div>
-
-              <i class="uil uil-angle-down skills__arrow"></i>
-            </div>
-
-
-            <div class="skills__list grid">
-              <div class="skills__data">
-                <div class="skills__titles">
-                  <h3 class="skills__name">Embedded C</h3>
+            <div class="skills__card-content">
+              <div class="tech-data">
+                <div class="tech-data-item" data-skill="Bluetooth LE">
+                  <span class="tech-data-label"><i class="fa fa-bluetooth"></i> BLE/Thread:</span>
+                  <span class="tech-data-value">SiLabs BGM220, nRF52840, Dialog DA14531</span>
+                </div>
+                <div class="tech-data-item" data-skill="WiFi Integration">
+                  <span class="tech-data-label"><i class="fa fa-wifi"></i> Wi-Fi/BLE:</span>
+                  <span class="tech-data-value">ESP32-S3, ESP32-C3, ESP8266, ESP32-WROOM</span>
+                </div>
+                <div class="tech-data-item" data-skill="ARM Architecture">
+                  <span class="tech-data-label"><i class="fa fa-microchip"></i> ARM Cortex:</span>
+                  <span class="tech-data-value">STM32F4/F7/H7, RP2040 (Pi Pico), Arduino RP2040</span>
+                </div>
+                <div class="tech-data-item" data-skill="8-bit MCUs">
+                  <span class="tech-data-label"><i class="fa fa-hdd-o"></i> AVR:</span>
+                  <span class="tech-data-value">Arduino UNO/Nano/Mega, ATmega328P, ATtiny85</span>
                 </div>
               </div>
-              <div class="skills__data">
-                <div class="skills__titles">
-                  <h3 class="skills__name">C++</h3>
-                </div>
-              </div>
-              <div class="skills__data">
-                <div class="skills__titles">
-                  <h3 class="skills__name">Python</h3>
-                </div>
-              </div>
-              <div class="skills__data">
-                <div class="skills__titles">
-                  <h3 class="skills__name">JavaScript</h3>
-                </div>
-              </div>
-              <div class="skills__data">
-                <div class="skills__titles">
-                  <h3 class="skills__name">HTML CSS</h3>
-                </div>
-              </div>
-
-
-            </div>
-          </div> -->
-
-          <!--==================== Skill 2 =================-->
-          <!-- <div class="skills__content skills__close">
-            <div class="skills__header">
-              <i class="uil uil-servers skills__icon"></i>
-              <div>
-                <h1 class="skills__title">Wired &Wireless Protocols:</h1>
-              </div>
-
-              <i class="uil uil-angle-down skills__arrow"></i>
-            </div>
-
-            <div class="skills__list grid">
-
-
-              <div class="skills__data">
-                <div class="skills__titles">
-                  <h3 class="skills__name">UART,CAN,SPI, I2C</h3>
-                </div>
-              </div>
-              <div class="skills__data">
-                <div class="skills__titles">
-                  <h3 class="skills__name">LoRa, Xbee, Bluetooth, Wi-Fi</h3>
-                </div>
-              </div>
-              <div class="skills__data">
-                <div class="skills__titles">
-                  <h3 class="skills__name">MQTT,HTTP</h3>
-                </div>
-              </div>
-
-
             </div>
           </div>
-        </div>
 
-        <div> -->
-          <!--==================== Skill 3 =================-->
-          <!-- <div class="skills__content skills__close">
-
-            <div class="skills__header">
-              <i class="fas fa-swatchbook skills__icon"></i>
-              <div>
-                <h1 class="skills__title">Technologies</h1>
-              </div>
-              <i class="uil uil-angle-down skills__arrow"></i>
+          <!-- Programming & Firmware -->
+          <div class="skills__card card-item">
+            <div class="skills__card-header">
+              <i class="fa fa-code skills__icon"></i>
+              <h3 class="skills__title">Programming & Firmware</h3>
             </div>
-
-            <div class="skills__list grid">
-
-              <div class="skills__data">
-                <div class="skills__titles">
-                  <h3 class="skills__name">IOT</h3>
+            <div class="skills__card-content">
+              <div class="tech-data">
+                <div class="tech-data-item" data-skill="Programming Languages">
+                  <span class="tech-data-label"><i class="fa fa-file-code-o"></i> Languages:</span>
+                  <span class="tech-data-value">C/C++, Python, Embedded C, MicroPython, JavaScript</span>
+                </div>
+                <div class="tech-data-item" data-skill="Development Environments">
+                  <span class="tech-data-label"><i class="fa fa-terminal"></i> IDEs/Tools:</span>
+                  <span class="tech-data-value">VS Code, PlatformIO, Arduino IDE, Simplicity Studio, STM32CubeIDE</span>
+                </div>
+                <div class="tech-data-item" data-skill="Debug Tools">
+                  <span class="tech-data-label"><i class="fa fa-bug"></i> Debugging:</span>
+                  <span class="tech-data-value">JTAG, SWD, GDB, Logic Analyzers, Oscilloscopes</span>
                 </div>
               </div>
-              <div class="skills__data">
-                <div class="skills__titles">
-                  <h3 class="skills__name">Embedded Systems</h3>
-                </div>
-              </div>
-              <div class="skills__data">
-                <div class="skills__titles">
-                  <h3 class="skills__name">Linux,Free-RTOS</h3>
-                </div>
-              </div>
-              <div class="skills__data">
-                <div class="skills__titles">
-                  <h3 class="skills__name">OpenCV, TesnorFlow, Scikit-Learn, Flask</h3>
-                </div>
-              </div>
-
-
-            </div>
-          </div> -->
-          <!--==================== Skill 4 =================-->
-          <!-- <div class="skills__content skills__close">
-
-            <div class="skills__header">
-              <i class="uil uil-sim-card skills__icon"></i>
-              <div>
-                <h1 class="skills__title">Circuit Designing:</h1>
-              </div>
-              <i class="uil uil-angle-down skills__arrow"></i>
-            </div>
-
-            <div class="skills__list grid">
-
-
-              <div class="skills__data">
-                <div class="skills__titles">
-                  <h3 class="skills__name">KiCad, Altium, Orcad, and EasyEDA Pro</h3>
-                </div>
-              </div>
-              <div class="skills__data">
-                <div class="skills__titles">
-                  <h3 class="skills__name">Multi Layer,Flex</h3>
-                </div>
-              </div>
-
-            </div>
-          </div> -->
-
-          <!--==================== Skill 4 =================-->
-          <!-- <div class="skills__content skills__close">
-
-            <div class="skills__header">
-              <i class="uil uil-sim-card skills__icon"></i>
-              <div>
-                <h1 class="skills__title">Tools:</h1>
-              </div>
-              <i class="uil uil-angle-down skills__arrow"></i>
-            </div>
-
-            <div class="skills__list grid">
-
-              <div class="skills__data">
-                <div class="skills__titles">
-                  <h3 class="skills__name">oscilloscopes, multimeters, and signal generators</h3>
-                </div>
-              </div>
-              <div class="skills__data">
-                <div class="skills__titles">
-                  <h3 class="skills__name">LTspice, EasyEDA and PuTTY</h3>
-                </div>
-              </div>
-
             </div>
           </div>
- -->
 
+          <!-- Embedded Systems & RTOS -->
+          <div class="skills__card card-item">
+            <div class="skills__card-header">
+              <i class="fa fa-cogs skills__icon"></i>
+              <h3 class="skills__title">Embedded Systems & RTOS</h3>
+            </div>
+            <div class="skills__card-content">
+              <div class="tech-data">
+                <div class="tech-data-item">
+                  <span class="tech-data-label"><i class="fa fa-clock-o"></i> RTOS:</span>
+                  <span class="tech-data-value">FreeRTOS, Zephyr</span>
+                </div>
+                <div class="tech-data-item">
+                  <span class="tech-data-label"><i class="fa fa-linux"></i> Linux:</span>
+                  <span class="tech-data-value">Embedded Linux, Raspbian, Ubuntu</span>
+                </div>
+                <div class="tech-data-item">
+                  <span class="tech-data-label"><i class="fa fa-upload"></i> Firmware:</span>
+                  <span class="tech-data-value">Bootloaders, OTA Updates</span>
+                </div>
+              </div>
+            </div>
+          </div>
 
+          <!-- Circuit Design & PCB -->
+          <div class="skills__card card-item">
+            <div class="skills__card-header">
+              <i class="fa fa-sitemap skills__icon"></i>
+              <h3 class="skills__title">Circuit Design & PCB</h3>
+            </div>
+            <div class="skills__card-content">
+              <div class="tech-data">
+                <div class="tech-data-item" data-skill="PCB Design Tools">
+                  <span class="tech-data-label"><i class="fa fa-pencil-square-o"></i> EDA Tools:</span>
+                  <span class="tech-data-value">KiCad, EasyEDA Pro, Altium Designer</span>
+                </div>
+                <div class="tech-data-item" data-skill="Circuit Design">
+                  <span class="tech-data-label"><i class="fa fa-object-group"></i> Design:</span>
+                  <span class="tech-data-value">Multi-layer PCBs</span>
+                </div>
+                <div class="tech-data-item" data-skill="PCB Development">
+                  <span class="tech-data-label"><i class="fa fa-code-fork"></i> Processes:</span>
+                  <span class="tech-data-value">Schematic Capture, Layout, DRC/ERC, Gerber Generation</span>
+                </div>
+              </div>
+            </div>
+          </div>
 
+          <!-- Test & Measurement Equipment -->
+          <div class="skills__card card-item">
+            <div class="skills__card-header">
+              <i class="fa fa-plug skills__icon"></i>
+              <h3 class="skills__title">Test & Measurement</h3>
+            </div>
+            <div class="skills__card-content">
+              <div class="tech-data">
+                <div class="tech-data-item">
+                  <span class="tech-data-label"><i class="fa fa-line-chart"></i> Oscilloscopes:</span>
+                  <span class="tech-data-value">Digital Storage Oscilloscopes (DSO), Mixed Signal Oscilloscopes</span>
+                </div>
+                <div class="tech-data-item">
+                  <span class="tech-data-label"><i class="fa fa-area-chart"></i> Analyzers:</span>
+                  <span class="tech-data-value">Logic Analyzers, Bluetooth Protocol Analyzers, Multi-Protocol Debugging</span>
+                </div>
+              </div>
+            </div>
+          </div>
 
+          <!-- Communication Protocols -->
+          <div class="skills__card card-item">
+            <div class="skills__card-header">
+              <i class="fa fa-exchange skills__icon"></i>
+              <h3 class="skills__title">Communication Protocols</h3>
+            </div>
+            <div class="skills__card-content">
+              <div class="tech-data">
+                <div class="tech-data-item">
+                  <span class="tech-data-label"><i class="fa fa-usb"></i> Serial:</span>
+                  <span class="tech-data-value">SPI, I²C, UART, CAN, RS-485, USB, MIPI</span>
+                </div>
+                <div class="tech-data-item">
+                  <span class="tech-data-label"><i class="fa fa-signal"></i> Wireless:</span>
+                  <span class="tech-data-value">Bluetooth LE 5.3, Thread, Zigbee, Wi-Fi, LoRa/LoRaWAN</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- IoT Cloud Platforms & Backend -->
+          <div class="skills__card card-item">
+            <div class="skills__card-header">
+              <i class="fa fa-cloud skills__icon"></i>
+              <h3 class="skills__title">IoT Cloud Platforms</h3>
+            </div>
+            <div class="skills__card-content">
+              <div class="tech-data">
+                <div class="tech-data-item">
+                  <span class="tech-data-label"><i class="fa fa-server"></i> Cloud:</span>
+                  <span class="tech-data-value">Heroku, GitHub</span>
+                </div>
+                <div class="tech-data-item">
+                  <span class="tech-data-label"><i class="fa fa-random"></i> Middleware:</span>
+                  <span class="tech-data-value">Node-RED, Mosquitto MQTT, HiveMQ, Eclipse IoT</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sensors & Actuators Integration -->
+          <div class="skills__card card-item">
+            <div class="skills__card-header">
+              <i class="fa fa-thermometer-half skills__icon"></i>
+              <h3 class="skills__title">Sensors & Actuators</h3>
+            </div>
+            <div class="skills__card-content">
+              <div class="tech-data">
+                <div class="tech-data-item">
+                  <span class="tech-data-label"><i class="fa fa-leaf"></i> Environmental:</span>
+                  <span class="tech-data-value">Temperature/Humidity Sensors, Gas Sensors, Pressure Sensors</span>
+                </div>
+                <div class="tech-data-item">
+                  <span class="tech-data-label"><i class="fa fa-arrows"></i> Motion:</span>
+                  <span class="tech-data-value">Accelerometers, Gyroscopes, Distance Sensors, Gesture Sensors</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
     <!--==================== Qualifications ==================-->
 
+    <!-- Commented out Development History Section
     <section class="qualification__section service__section" id="qualification">
-      
-      <span class="section__subtitle"></span>
-
-      <div class="qualification__container container grid services__container">
-        <h2 class="section__title">Journey</h2>
-        <!-- <div class="qualification__tabs">
-          <div class="qualification__button button--flex qualification__active" data-target="#education">
-            <i class="uil uil-graduation-cap qualification__icon"></i>
-            Education
-          </div>
-        </div> -->
-
-        <div class="qualification__sections">
-            <!--====== Qualification Content 1 ======-->
-            <div class="qualification__content qualifiation__active services__content" data-content id="education">
-              <!--====== Qualification 1 ======-->
-              <div class="qualification__data">
-                <div>
-                  <h3 class="qualification__title">Diploma</h3>
-  
-                  <div class="qualification__calender">
-                    <i class="uil uil-calendar-alt"></i>
-                    2013-2016
-                  </div>
-                  <span class="button button--flex button--small button--link services__button">
-                    View More
-                    <i class="uil uil-arrow-right button__icon"></i>
-                  </span>
-                  <div class="services__modal">
-                    <div class="services__modal-content">
-                      <h4 class="services__modal-title">
-                        Diploma :
-                      </h4>
-                      <i class="uil uil-times services__modal-close"></i>
-                      <ul class="services__modal-services grid">
-                        <li class="services__modal-service">
-                          <i class="uil uil-check-circle services__moda-icon"></i>
-                          <p>
-                            Institution:Jyothishmathi Institute Of Technology
-                          </p>
-                        </li>
-                        <li class="services__modal-service">
-                          <i class="uil uil-check-circle services__moda-icon"></i>
-                          <p>ELECTRONICS AND COMMUNICATION ENGINEERING</p>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-  
-                <div>
-                  <span class="qualification__rounder"></span>
-                  <span class="qualification__line"></span>
-                </div>
-              </div>
-  
-              <!--====== Qualification 2 ======-->
-              <div class="qualification__data">
-                <div></div>
-  
-                <div>
-                  <span class="qualification__rounder"></span>
-                  <span class="qualification__line"></span>
-                </div>
-                <div>
-                  <h3 class="qualification__title">B.Tech</h3>
-                  <!-- <span class="qualification__subtitle"></span> -->
-                  <div class="qualification__calender">
-                    <i class="uil uil-calendar-alt"></i>
-                    2016-2019
-                  </div>
-                  <span class="button button--flex button--small button--link services__button">
-                    View More
-                    <i class="uil uil-arrow-right button__icon"></i>
-                  </span>
-                  <div class="services__modal">
-                    <div class="services__modal-content">
-                      <h4 class="services__modal-title">
-                        B.Tech :
-                      </h4>
-                      <i class="uil uil-times services__modal-close"></i>
-                      <ul class="services__modal-services grid">
-                        <li class="services__modal-service">
-                          <i class="uil uil-check-circle services__moda-icon"></i>
-                          <p>
-                            Institution:Guru Nanak college of engineering
-                          </p>
-                        </li>
-                        <li class="services__modal-service">
-                          <i class="uil uil-check-circle services__moda-icon"></i>
-                          <p>ELECTRONICS AND COMMUNICATION ENGINEERING</p>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-  
-  
-  
-              <!--====== Qualification 1 ======-->
-              <div class="qualification__data">
-                <div>
-                  <h3 class="qualification__title"> Internship</h3>
-  
-                  <div class="qualification__calender">
-                    <i class="uil uil-calendar-alt"></i>
-                    2019-2020
-                  </div>
-                  <span class="button button--flex button--small button--link services__button">
-                    View More
-                    <i class="uil uil-arrow-right button__icon"></i>
-                  </span>
-                  <div class="services__modal">
-                    <div class="services__modal-content">
-                      <h4 class="services__modal-title">
-                        Company :
-                      </h4>
-                      <i class="uil uil-times services__modal-close"></i>
-                      <ul class="services__modal-services grid">
-                        <li class="services__modal-service">
-                          <i class="uil uil-check-circle services__moda-icon"></i>
-                          <p>
-                            Niltech pvt.ltd
-                          </p>
-                        </li>
-                        <!-- <li class="services__modal-service">
-                          <i class="uil uil-check-circle services__moda-icon"></i>
-                          <p></p>
-                        </li> -->
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-  
-                <div>
-                  <span class="qualification__rounder"></span>
-                  <span class="qualification__line"></span>
-                </div>
-              </div>
-  
-  
-  
-  
-              <!--====== Qualification 2 ======-->
-              <div class="qualification__data">
-                <div></div>
-  
-                <div>
-                  <span class="qualification__rounder"></span>
-                  <span class="qualification__line"></span>
-                </div>
-                <div>
-                  <h3 class="qualification__title">IOT DEVELOPER</h3>
-                  <!-- <span class="qualification__subtitle"></span> -->
-                  <div class="qualification__calender">
-                    <i class="uil uil-calendar-alt"></i>
-                    2020-2024
-                  </div>
-                  <span class="button button--flex button--small button--link services__button">
-                    View More
-                    <i class="uil uil-arrow-right button__icon"></i>
-                  </span>
-                  <div class="services__modal">
-                    <div class="services__modal-content">
-                      <h4 class="services__modal-title">
-                        Company :
-                      </h4>
-                      <i class="uil uil-times services__modal-close"></i>
-                      <ul class="services__modal-services grid">
-                        <li class="services__modal-service">
-                          <i class="uil uil-check-circle services__moda-icon"></i>
-                          <p>
-                            Niltech pvt.ltd
-                          </p>
-                        </li>
-                        <!-- <li class="services__modal-service">
-                          <i class="uil uil-check-circle services__moda-icon"></i>
-                          <p></p>
-                        </li> -->
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-  
-            </div>
-        </div>
-      </div>
+      <h2 class="section__title">Development History</h2>
+      <span class="section__subtitle">Professional Timeline</span>
     </section>
+    -->
 
-    <!--=================== Portfolio ===================-->
+    <!--=================== PORTFOLIO ===================-->
     <section class="portfolio section" id="portfolio">
       <h2 class="section__title">Products</h2>
       <span class="section__subtitle">Most recent work</span>
 
-      <div class="portfolio__container container swiper-container">
-        <div class="swiper-wrapper">
-          <!-- ------------------------portfollio 1-------------------- -->
-          <div class="portfolio__content grid swiper-slide">
-            <img src="assets/img/Projects/lora.png" class="portfolio__img" />
-
-            <div class="portfolio__data">
-              <h3 class="portfolio__title">
-                Smart Beetle Grove Management System
-              </h3>
-              <p class="portfolio__description">
-
-
-                BeetleGuard revolutionizes beetle grove management by combining IoT and LoRa technologies. It monitors
-                temperature and humidity, controlling beetle doors intelligently. With over 100 slave devices covering a
-                2 km radius, it ensures comprehensive data collection. Each device boasts an impressive 50-day battery
-                life, minimizing maintenance. BeetleGuard also offers a user-friendly data visualization platform,
-                aiding in efficient analysis and decision-making. It represents a cutting-edge solution for optimizing
-                beetle grove environments, enhancing productivity, and simplifying management tasks.
-
-
-              </p>
-              <p class="portfolio__title">IoT | LoRa | Data Visualization | Python | C++ | JavaScript | HTML | CSS</p>
+      <div class="portfolio__container-wrapper container">
+        <div class="portfolio__container container swiper">
+          <div class="swiper-wrapper">
+            <!-- PORTFOLIO 1 -->
+            <div class="portfolio__content swiper-slide">
+              <div class="portfolio__icon">
+                <i class="uil uil-circuit"></i>
+              </div>
+              <div class="portfolio__data">
+                <h3 class="portfolio__title">Smart Card Payphone</h3>
+                <p class="portfolio__description">
+                  A wireless mesh network of smart payphones that accept prepaid cards, with centralized management and remote monitoring capabilities.
+                </p>
+              </div>
+              <img src="assets/img/Projects/lora.png" alt="Smart Card Payphone" class="portfolio__img">
             </div>
-          </div>
-          <!-- ------------------------portfollio 2-------------------- -->
-          <div class="portfolio__content grid swiper-slide">
-            <img src="assets/img/Projects/pf.png" class="portfolio__img" />
 
-            <div class="portfolio__data">
-              <h3 class="portfolio__title">
-                Smart Card Payphone System
-              </h3>
-              <p class="portfolio__description">
-
-
-                SecureConnect revolutionizes payphone systems by integrating RFID and 4G GSM technology, elevating
-                functionality and security. Alongside, an IoT website facilitates real-time device monitoring, enabling
-                users to securely make calls, access data, and recharge remotely. The platform ensures efficient
-                management through networked infrastructure and a user-friendly interface, enhancing convenience in
-                payphone operations. With expertise in web development, Python, and C++, SecureConnect delivers a
-                comprehensive solution that not only enhances user experience but also guarantees reliability and
-                security in payphone management.
-
-
-              </p>
-              <p class="portfolio__title">RFID | 4G GSM | IoT | Web Development | Python | C++</p>
+            <!-- PORTFOLIO 2 -->
+            <div class="portfolio__content swiper-slide">
+              <div class="portfolio__icon">
+                <i class="uil uil-fire"></i>
+              </div>
+              <div class="portfolio__data">
+                <h3 class="portfolio__title">Modern Flame Diya</h3>
+                <p class="portfolio__description">
+                  An electronic diya with realistic flame effect using LEDs and custom circuitry. Features touch control, adjustable brightness, and portable design.
+                </p>
+              </div>
+              <img src="assets/img/Projects/diya.jpeg" alt="Modern Flame Diya" class="portfolio__img">
             </div>
-          </div>
-          <!-- ------------------------portfollio 3-------------------- -->
-          <div class="portfolio__content grid swiper-slide">
-            <img src="assets/img/Projects/diya.jpeg" class="portfolio__img" />
 
-            <div class="portfolio__data">
-              <h3 class="portfolio__title">
-                The Modern Flame Diya
-              </h3>
-              <p class="portfolio__description">
-
-                FlameReplica reimagines the traditional diya for the modern home. This remote-controlled marvel captures
-                the essence of a flickering flame, complete with adjustable brightness for the perfect ambiance. Crafted
-                through a collaboration with skilled 3D printing experts, FlameReplica offers a design that's both
-                elegant and efficient. At its heart lies a compact, meticulously crafted flex PCB that delivers an
-                authentic flame-like glow. Energy-efficient and boasting extended battery life, FlameReplica provides
-                uninterrupted illumination. Bridging tradition and modernity, this diya brings warmth and a touch of
-                remote-controlled charm to any home. Experience the timeless glow of the future with FlameSmart's The
-                Modern Flame Diya.
-
-              </p>
-              <p class="portfolio__title">Remote Control Systems | 3D Printing | Flex PCB Design | Circuit Design</p>
+            <!-- PORTFOLIO 3 -->
+            <div class="portfolio__content swiper-slide">
+              <div class="portfolio__icon">
+                <i class="uil uil-temperature-half"></i>
+              </div>
+              <div class="portfolio__data">
+                <h3 class="portfolio__title">Thermal Sensing System</h3>
+                <p class="portfolio__description">
+                  A multi-node thermal monitoring system with cloud connectivity for industrial temperature monitoring and anomaly detection.
+                </p>
+              </div>
+              <img src="assets/img/Projects/pc.jpeg" alt="Thermal Sensing System" class="portfolio__img">
             </div>
-          </div>
-          <!-- ------------------------portfollio 4-------------------- -->
-          <div class="portfolio__content grid swiper-slide">
-            <img src="assets/img/Projects/pc.jpeg" class="portfolio__img" />
 
-            <div class="portfolio__data">
-              <h3 class="portfolio__title">
-                Advanced Position Counter with SD Card Data Logging
-              </h3>
-              <p class="portfolio__description">
-
-                Our advanced position counter system combines precise position tracking, efficient SD card data logging,
-                and real-time status updates via a display unit. With over 1500 operational units, it ensures accurate
-                counting and streamlined data management for improved automation. Using metal sensors and a
-                microcontroller, it achieves precise tracking, while integrated SD card support enables efficient
-                logging. Real-time updates via a display unit offer instant visibility into operations. Additionally,
-                seamless integration with external systems like PLCs enhances automation and control capabilities for
-                optimized efficiency.
-
-              </p>
-              <p class="portfolio__title">Metal Sensors | Microcontroller | SD Card | Display Unit</p>
+            <!-- PORTFOLIO 4 -->
+            <div class="portfolio__content swiper-slide">
+              <div class="portfolio__icon">
+                <i class="uil uil-water"></i>
+              </div>
+              <div class="portfolio__data">
+                <h3 class="portfolio__title">Water Quality Monitoring</h3>
+                <p class="portfolio__description">
+                  IoT-based water quality monitoring system with real-time data analysis and alert mechanisms for pollution detection and water safety.
+                </p>
+              </div>
+              <img src="assets/img/Projects/hs.jpeg" alt="Water Quality Monitoring" class="portfolio__img">
             </div>
           </div>
 
-          <!-- ------------------------portfollio 5-------------------- -->
-          <div class="portfolio__content grid swiper-slide">
-            <img src="assets/img/Projects/rpi.jpeg" class="portfolio__img" />
+          <!-- Swiper Arrows -->
+          <div class="swiper-button-next">
+            <i class="uil uil-angle-right-b swiper-portfolio-icon"></i>
+          </div>
+          <div class="swiper-button-prev">
+            <i class="uil uil-angle-left-b swiper-portfolio-icon"></i>
+          </div>
 
-            <div class="portfolio__data">
-              <h3 class="portfolio__title">
-                Advanced Facial Recognition Attendance Management System
-              </h3>
-              <p class="portfolio__description">
-                Our innovative Facial Recognition Attendance Management System, crafted using Raspberry Pi and Linux,
-                redefines attendance tracking. It employs cutting-edge face recognition technology for precise and
-                secure attendance marking. With built-in power backup, operations run smoothly without interruptions.
-                Automation ensures timely notifications via email for holidays and important dates. Admin and user
-                dashboards streamline management and accessibility, enabling efficient monitoring and interaction. With
-                a focus on accuracy, security, and user-friendliness, our system transforms the attendance tracking
-                process, offering a seamless experience for both administrators and users alike.
+          <!-- Swiper Pagination -->
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </section>
 
-              </p>
-              <p class="portfolio__title">Raspberry Pi | Linux | Face Recognition Technology | Email Automation | Admin
-                Dashboard | User Dashboard</p>
+    <!--===================== Project Gallery =====================-->
+    <section class="gallery section" id="gallery">
+      <h2 class="section__title">Project Gallery</h2>
+      <span class="section__subtitle">Circuit Design Showcase</span>
+
+      <div class="gallery__container container">
+        <div class="gallery__grid">
+          <div class="gallery__item card-item">
+            <img src="assets/img/gallery/1.png" alt="Project Image" class="gallery__img">
+            <div class="gallery__overlay">
+              <div class="gallery__caption">Project Prototype</div>
             </div>
           </div>
-          <!-- ------------------------portfollio 6-------------------- -->
-          <div class="portfolio__content grid swiper-slide">
-            <img src="assets/img/Projects/esp.jpeg" class="portfolio__img" />
-
-            <div class="portfolio__data">
-              <h3 class="portfolio__title">
-                LumiFi: The ESP32 BLE Smart Lighting Control System
-              </h3>
-              <p class="portfolio__description">
-
-                A state-of-the-art smart lighting control system has been created, employing ESP32 hardware to enable
-                Bluetooth Low Energy (BLE) control of indoor ambient lighting. Through a user-friendly mobile app, users
-                can easily adjust lighting settings via BLE connectivity. The system integrates USB-C power delivery
-                (PD) technology for efficient power management, enhancing energy usage and cost-effectiveness. With a
-                compact and professionally designed PCB, the product meets high standards. Furthermore, its robust host
-                and node network architecture enable centralized control of multiple devices, ensuring seamless
-                management of ambient lighting across indoor spaces.
-              </p>
-              <p class="portfolio__title">ESP32 | BLE | USB-C | PCB Design | Mobile Application Development</p>
+          <div class="gallery__item card-item">
+            <img src="assets/img/gallery/2.png" alt="Project Image" class="gallery__img">
+            <div class="gallery__overlay">
+              <div class="gallery__caption">PCB Design</div>
             </div>
           </div>
-          <!-- ------------------------portfollio 7-------------------- -->
-          <div class="portfolio__content grid swiper-slide">
-            <img src="assets/img/Projects/hs.jpeg" class="portfolio__img" />
-
-            <div class="portfolio__data">
-              <h3 class="portfolio__title">
-                The Advanced Touchless Hand Sanitizer Dispenser
-              </h3>
-              <p class="portfolio__description">
-                This innovative dispenser delivers a hygienic and convenient hand sanitizing experience. Featuring
-                sensor activation for a completely touch-free operation, HygieneMaster minimizes the spread of germs.
-                Its compact design with efficient battery power makes it ideal for any environment, while the extended
-                battery life ensures long-lasting use without frequent recharging. Whether mounted in an office, public
-                restroom, or healthcare facility, HygieneMaster promotes best practices in hand hygiene with minimal
-                maintenance.
-
-
-              </p>
-              <p class="portfolio__title">Batteries | Power Management | PCB Design | Sensor Activation</p>
+          <div class="gallery__item card-item">
+            <img src="assets/img/gallery/3.png" alt="Project Image" class="gallery__img">
+            <div class="gallery__overlay">
+              <div class="gallery__caption">IoT System</div>
             </div>
           </div>
-          <!-- ------------------------portfollio 8-------------------- -->
-
-          <div class="portfolio__content grid swiper-slide">
-            <img src="assets/img/Projects/ha.jpeg" class="portfolio__img" />
-
-            <div class="portfolio__data">
-              <h3 class="portfolio__title">
-                SmartHome
-              </h3>
-              <p class="portfolio__description">
-                Transform your home into a smart haven with SmartHome Connect, a complete home automation solution for
-                added convenience and peace of mind. Our user-friendly mobile app allows effortless control of various
-                devices from anywhere, while a central hub ensures reliable communication. Using RF communication
-                technology, our system creates a robust local network of devices, ensuring seamless automation even
-                without internet access. SmartHome Connect streamlines daily routines by automating tasks like lighting,
-                temperature control, and security, offering unmatched flexibility and convenience. Experience the future
-                of home living with our innovative solution.
-
-              </p>
-              <p class="portfolio__title">RF Communication | Mobile App Development | Internet Connectivity | Automation
-                | Home Devices</p>
+          <div class="gallery__item card-item">
+            <img src="assets/img/gallery/4.png" alt="Project Image" class="gallery__img">
+            <div class="gallery__overlay">
+              <div class="gallery__caption">Hardware Prototype</div>
+            </div>
+          </div>
+          <div class="gallery__item card-item">
+            <img src="assets/img/gallery/5.png" alt="Project Image" class="gallery__img">
+            <div class="gallery__overlay">
+              <div class="gallery__caption">Embedded System</div>
+            </div>
+          </div>
+          <div class="gallery__item card-item">
+            <img src="assets/img/gallery/6.png" alt="Project Image" class="gallery__img">
+            <div class="gallery__overlay">
+              <div class="gallery__caption">Circuit Board</div>
+            </div>
+          </div>
+          <div class="gallery__item card-item">
+            <img src="assets/img/gallery/7.png" alt="Project Image" class="gallery__img">
+            <div class="gallery__overlay">
+              <div class="gallery__caption">Device Testing</div>
+            </div>
+          </div>
+          <div class="gallery__item card-item">
+            <img src="assets/img/gallery/8.png" alt="Project Image" class="gallery__img">
+            <div class="gallery__overlay">
+              <div class="gallery__caption">Component Layout</div>
+            </div>
+          </div>
+          <div class="gallery__item card-item">
+            <img src="assets/img/gallery/9.png" alt="Project Image" class="gallery__img">
+            <div class="gallery__overlay">
+              <div class="gallery__caption">Sensor Integration</div>
+            </div>
+          </div>
+          <div class="gallery__item card-item">
+            <img src="assets/img/gallery/10.png" alt="Project Image" class="gallery__img">
+            <div class="gallery__overlay">
+              <div class="gallery__caption">Control System</div>
+            </div>
+          </div>
+          <div class="gallery__item card-item">
+            <img src="assets/img/gallery/11.png" alt="Project Image" class="gallery__img">
+            <div class="gallery__overlay">
+              <div class="gallery__caption">Smart Device</div>
+            </div>
+          </div>
+          <div class="gallery__item card-item">
+            <img src="assets/img/gallery/12.png" alt="Project Image" class="gallery__img">
+            <div class="gallery__overlay">
+              <div class="gallery__caption">Hardware Setup</div>
             </div>
           </div>
         </div>
 
-        <!-- add arrows -->
-        <div class="swiper-button-next">
-          <i class="uil uil-angle-right-b swiper-portfolio-icon"></i>
+        <div class="gallery__more">
+          <button class="button button--flex gallery__button" id="loadMoreGallery">
+            LOAD MORE PROJECTS
+            <i class="uil uil-circuit button__icon"></i>
+          </button>
         </div>
-        <div class="swiper-button-prev">
-          <i class="uil uil-angle-left-b swiper-portfolio-icon"></i>
-        </div>
-        <!-- add pagination -->
-        <div class="swiper-pagination"></div>
       </div>
     </section>
 
@@ -920,7 +593,7 @@
     <section class="contact section" id="contact">
 
       <h2 class="section__title">Contact Me</h2>
-
+      <span class="section__subtitle">Get in touch</span>
 
       <div class="contact__container container grid">
 
@@ -958,19 +631,19 @@
           <div class="contact__inputs grid">
             <div class="contact__content">
               <label for="name" class="content__label">Name</label>
-              <input type="text" id="name" class="contact__input" />
+              <input type="text" id="name" class="contact__input" placeholder="Enter your name" />
             </div>
             <div class="contact__content">
               <label for="email" class="content__label">Email</label>
-              <input type="email" id="email" class="contact__input" />
+              <input type="email" id="email" class="contact__input" placeholder="Enter your email" />
             </div>
           </div>
           <div class="contact__content">
             <label for="message" class="content__label">Message</label>
-            <textarea id="message" cols="0" rows="7" class="contact__input"></textarea>
+            <textarea id="message" cols="0" rows="7" class="contact__input" placeholder="Type your message here..."></textarea>
           </div>
-          <div>
-            <button type="submit" class="button button--flex" style="cursor: pointer;" id="bt">
+          <div class="form__actions">
+            <button type="submit" class="button button--flex" id="bt">
               Send Message
               <i class="uil uil-message button__icon"></i>
             </button>
@@ -1005,17 +678,19 @@
         </ul>
 
         <div class="footer__socials">
-          <!-- <a href="https://www.instagram.com/venkateeshh/" class="footer__social" target="__blank">
-            <i class="fa-brands fa-instagram"></i>
-          </a> -->
-
-          <!-- <a href="https://twitter.com/Venkateeshhh" target="__blank" class="footer__social">
-            <i class="fa-brands fa-x-twitter"></i>
-          </a> -->
+          <a href="https://www.linkedin.com/" target="_blank" class="footer__social">
+            <i class="uil uil-linkedin-alt"></i>
+          </a>
+          <a href="https://github.com/" target="_blank" class="footer__social">
+            <i class="uil uil-github-alt"></i>
+          </a>
+          <a href="#" class="footer__social">
+            <i class="uil uil-envelope"></i>
+          </a>
         </div>
       </div>
 
-      <!-- <p class="footer__copy">&#169; Venkatesh. All right reserved</p> -->
+      <p class="footer__copy">&#169; 2023 Saikumar. All rights reserved</p>
     </div>
   </footer>
 
@@ -1027,8 +702,7 @@
   <script type="text/javascript" src="assets/swiper-bundle.min.js"></script>
   <script src="https://kit.fontawesome.com/2205d59d52.js" crossorigin="anonymous"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="assets/ptj.js"></script>
-  <script src="assets/my.js"></script>
+  <script src="assets/main.js"></script>
 </body>
 
 </html>

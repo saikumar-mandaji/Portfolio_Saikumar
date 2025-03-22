@@ -39,6 +39,9 @@ function sendEmail(bd) {
 
 
 // Fetch the client's IP address from an external service
+
+
+
 fetch('https://api.ipify.org?format=json')
   .then(response => response.json())
   .then(data => {
@@ -62,6 +65,8 @@ fetch('https://api.ipify.org?format=json')
   .catch(error => {
     console.error('Error fetching IP address:', error);
   });
+
+
 
 
 function submitForm() {
@@ -111,3 +116,89 @@ function submitForm() {
 
   return false; // Prevent form submission
 }
+
+/*==================== SCROLL SECTIONS ACTIVE LINK ====================*/
+const sections = document.querySelectorAll('section[id]')
+
+function scrollActive(){
+    const scrollY = window.pageYOffset
+
+    sections.forEach(current =>{
+        const sectionHeight = current.offsetHeight
+        const sectionTop = current.offsetTop - 50;
+        sectionId = current.getAttribute('id')
+
+        if(scrollY > sectionTop && scrollY <= sectionTop + sectionHeight){
+            document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.add('active-link')
+        }else{
+            document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.remove('active-link')
+        }
+    })
+}
+window.addEventListener('scroll', scrollActive)
+
+/*==================== CHANGE BACKGROUND HEADER ====================*/ 
+function scrollHeader(){
+    const nav = document.getElementById('header')
+    // When the scroll is greater than 200 viewport height, add the scroll-header class to the header tag
+    if(this.scrollY >= 80) nav.classList.add('scroll-header'); else nav.classList.remove('scroll-header')
+}
+window.addEventListener('scroll', scrollHeader)
+
+/*==================== SHOW SCROLL UP ====================*/ 
+function scrollUp(){
+    const scrollUp = document.getElementById('scroll-up');
+    // When the scroll is higher than 560 viewport height, add the show-scroll class to the a tag with the scroll-top class
+    if(this.scrollY >= 560) scrollUp.classList.add('show-scroll'); else scrollUp.classList.remove('show-scroll')
+}
+window.addEventListener('scroll', scrollUp)
+
+/*==================== SMOOTH SCROLL ANIMATION ====================*/
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+
+/*==================== GALLERY LOAD MORE FUNCTIONALITY ====================*/
+document.addEventListener('DOMContentLoaded', function() {
+  const loadMoreBtn = document.getElementById('loadMoreGallery');
+  const galleryItems = document.querySelectorAll('.gallery__item');
+  
+  if (loadMoreBtn && galleryItems.length > 12) {
+    let currentItems = 12;
+    
+    loadMoreBtn.addEventListener('click', function() {
+      // Calculate items to show
+      let maxItems = Math.min(currentItems + 6, galleryItems.length);
+      
+      // Show next set of items
+      for (let i = currentItems; i < maxItems; i++) {
+        setTimeout(() => {
+          galleryItems[i].style.display = 'block';
+          galleryItems[i].classList.add('fade-in');
+        }, 100 * (i - currentItems));
+      }
+      
+      // Update current count
+      currentItems = maxItems;
+      
+      // Hide button if all items are visible
+      if (currentItems >= galleryItems.length) {
+        loadMoreBtn.style.display = 'none';
+      }
+    });
+    
+    // Add indicator that more images exist
+    if (galleryItems.length > 12) {
+      const indicator = document.createElement('div');
+      indicator.classList.add('more-indicator');
+      indicator.innerHTML = `<span>+${galleryItems.length - 12} more</span>`;
+      document.querySelector('.gallery__grid').appendChild(indicator);
+    }
+  }
+});
