@@ -481,7 +481,7 @@ button {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('img/circuit-pattern.svg');
+  background-image: url('./img/circuit-pattern.svg');
   background-size: 100%;
   opacity: 0.02;
   z-index: -1;
@@ -500,13 +500,14 @@ button {
   content: '';
   position: absolute;
   top: 0;
-  right: 0;
-  width: 50px;
-  height: 50px;
-  background: radial-gradient(circle at top right, rgba(33, 150, 243, 0.2), transparent 70%);
-  border-radius: 0 0 0 100%;
-  opacity: 0;
-  transition: opacity 0.4s ease;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('./img/circuit-pattern.svg');
+  background-size: 100%;
+  opacity: 0.03;
+  z-index: 0;
+  pointer-events: none;
 }
 
 .skills__content:hover::before {
@@ -882,7 +883,7 @@ button {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('img/circuit-pattern.svg');
+  background-image: url('./img/circuit-pattern.svg');
   background-size: 100%;
   opacity: 0.03;
   z-index: 0;
@@ -1063,7 +1064,7 @@ button {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('img/circuit-pattern.svg');
+  background-image: url('./img/circuit-pattern.svg');
   background-size: 100%;
   opacity: 0.03;
   z-index: 0;
@@ -1944,7 +1945,7 @@ textarea.contact__input {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('img/circuit-pattern.svg');
+  background-image: url('./img/circuit-pattern.svg');
   background-size: 100%;
   opacity: 0.03;
   z-index: 0;
@@ -2147,7 +2148,7 @@ textarea.contact__input {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('img/circuit-pattern.svg');
+  background-image: url('./img/circuit-pattern.svg');
   background-size: 100%;
   opacity: 0.03;
   z-index: 0;

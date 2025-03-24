@@ -388,28 +388,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
 /*==================== ENHANCED ANIMATIONS ====================*/
 document.addEventListener('DOMContentLoaded', function() {
-  // Create circuit pattern SVG if it doesn't exist
-  if (!document.querySelector('img/circuit-pattern.svg')) {
-    createCircuitPatternSVG();
-  }
+  // Initialize portfolio functionality
+  initializePortfolio();
   
-  // Add particle background to home section
-  const homeSection = document.querySelector('.home');
-  if (homeSection) {
-    addParticleBackground(homeSection);
-  }
+  // Initialize other components
+  initializeSkills();
+  initializeQualifications();
   
-  // Add scroll animations
-  addScrollRevealAnimations();
-  
-  // Add console effect to subtitle
-  const consoleElement = document.querySelector('.console-effect');
-  if (consoleElement) {
-    typeWriterEffect(consoleElement.textContent, consoleElement);
-  }
-  
-  // Add skill meter animations
-  animateSkillMeters();
+  // Add scroll behavior
+  initializeScrollBehavior();
 });
 
 function typeWriterEffect(text, element) {
@@ -1242,4 +1229,112 @@ function submitForm() {
   }, 1500);
   
   return false; // Prevent form from submitting
+}
+
+function initializePortfolio() {
+  // Portfolio swiper initialization
+  let portfolioSwiper = new Swiper(".portfolio__container", {
+    cssMode: true,
+    loop: true,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    breakpoints: {
+      568: {
+        slidesPerView: 1,
+      },
+      768: {
+        slidesPerView: 2,
+        spaceBetween: 48,
+      },
+      1024: {
+        slidesPerView: 3,
+        spaceBetween: 50,
+      },
+    }
+  });
+}
+
+function initializeSkills() {
+  const skillsContent = document.getElementsByClassName('skills__content');
+  const skillsHeader = document.querySelectorAll('.skills__header');
+
+  function toggleSkills() {
+    let itemClass = this.parentNode.className;
+    for(let i = 0; i < skillsContent.length; i++) {
+      skillsContent[i].className = 'skills__content skills__close card-item';
+    }
+    if(itemClass === 'skills__content skills__close card-item') {
+      this.parentNode.className = 'skills__content skills__open card-item';
+    }
+  }
+
+  skillsHeader.forEach((el) => {
+    el.addEventListener('click', toggleSkills);
+  });
+}
+
+function initializeQualifications() {
+  const tabs = document.querySelectorAll('[data-target]');
+  const tabContents = document.querySelectorAll('[data-content]');
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const target = document.querySelector(tab.dataset.target);
+
+      tabContents.forEach(tabContent => {
+        tabContent.classList.remove('qualification__active');
+      });
+      target.classList.add('qualification__active');
+
+      tabs.forEach(tab => {
+        tab.classList.remove('qualification__active');
+      });
+      tab.classList.add('qualification__active');
+    });
+  });
+}
+
+function initializeScrollBehavior() {
+  // Scroll sections active link
+  const sections = document.querySelectorAll('section[id]');
+
+  function scrollActive() {
+    const scrollY = window.pageYOffset;
+
+    sections.forEach(current => {
+      const sectionHeight = current.offsetHeight;
+      const sectionTop = current.offsetTop - 50;
+      const sectionId = current.getAttribute('id');
+
+      if(scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+        document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.add('active-link');
+      } else {
+        document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.remove('active-link');
+      }
+    });
+  }
+
+  window.addEventListener('scroll', scrollActive);
+
+  // Change background header
+  function scrollHeader() {
+    const nav = document.getElementById('header');
+    if(this.scrollY >= 80) nav.classList.add('scroll-header');
+    else nav.classList.remove('scroll-header');
+  }
+  window.addEventListener('scroll', scrollHeader);
+
+  // Show scroll up button
+  function scrollUp() {
+    const scrollUp = document.getElementById('scroll-up');
+    if(this.scrollY >= 560) scrollUp.classList.add('show-scroll');
+    else scrollUp.classList.remove('show-scroll');
+  }
+  window.addEventListener('scroll', scrollUp);
 } 

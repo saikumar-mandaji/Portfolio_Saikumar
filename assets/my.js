@@ -8,33 +8,26 @@ const browserInfo = {
 // gmfg mdzv qcwh hnxe
 // smartconnectpro6@gmail.com
 function sendEmail(bd) {
-  // Email.send({
-  //     Host: "smtp.gmail.com",
-  //     Username: "smartconnectpro6@gmail.com",
-  //     Password: "gmfg mdzv qcwh hnxe",
-  //     To: 'mandajisaikumar@gmail.com',
-  //     From: "smartconnectpro6@gmail.com",
-  //     Subject: "Portfolio",
-  //     Body: bd,
-  // }).then(
-  //     message => alert("Email sent successfully")
-  // );http://127.0.0.1:5000
-
-  try {
-    const response = fetch('https://myweb-lzw3.onrender.com/send-email', {
-      method: 'POST',
-      body: bd
-    });
-
-    if (response.ok) {
-      // alert('Email sent successfully!');
-    } else {
-      // alert('Failed to send email.');
+  fetch('https://myweb-lzw3.onrender.com/send-email', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: bd
+  })
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
     }
-  } catch (error) {
+    return response.json();
+  })
+  .then(data => {
+    console.log('Email sent successfully:', data);
+  })
+  .catch(error => {
     console.error('Error sending email:', error);
-    alert('An error occurred while sending the email.');
-  }
+    alert('An error occurred while sending the email. Please try again later.');
+  });
 }
 
 
@@ -118,12 +111,12 @@ function submitForm() {
 }
 
 /*==================== SCROLL SECTIONS ACTIVE LINK ====================*/
-const sections = document.querySelectorAll('section[id]')
+const navSections = document.querySelectorAll('section[id]')
 
 function scrollActive(){
     const scrollY = window.pageYOffset
 
-    sections.forEach(current =>{
+    navSections.forEach(current =>{
         const sectionHeight = current.offsetHeight
         const sectionTop = current.offsetTop - 50;
         sectionId = current.getAttribute('id')
