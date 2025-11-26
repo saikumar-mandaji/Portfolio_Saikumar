@@ -52,11 +52,13 @@ fetch('https://api.ipify.org?format=json')
 
       })
       .catch(error => {
-        console.error('Error fetching location data:', error);
+        // console.error('Error fetching location data:', error);
+        ;
       });
   })
   .catch(error => {
-    console.error('Error fetching IP address:', error);
+    // console.error('Error fetching IP address:', error);
+    ;
   });
 
 
