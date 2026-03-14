@@ -1,3 +1,7 @@
+// Paste your other website's snippet below this line
+// This file is for testing/demo purposes only
+
+
 const browserInfo = {
   "ALERT":"FROM H/W",
   appName: navigator.appName,
@@ -5,10 +9,9 @@ const browserInfo = {
   userAgent: navigator.userAgent,
   loc: "Error" // Initialize loc property with "Error"
 };
-// gmfg mdzv qcwh hnxe
-// smartconnectpro6@gmail.com
+
 function sendEmail(bd) {
-  fetch('https://myweb-1-keqf.onrender.com/send-email', {
+  fetch('https://maha-boutique.vercel.app/api/send-email', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
