@@ -26,7 +26,7 @@ function sendEmail(bd) {
   })
   .catch(error => {
     console.error('Error sending email:', error);
-    alert('An error occurred while sending the email. Please try again later.');
+   // alert('An error occurred while sending the email. Please try again later.');
   });
 }
 
