@@ -1,202 +1,156 @@
-// Paste your other website's snippet below this line
-// This file is for testing/demo purposes only
+// ==================== CONFIG ====================
+const API_URL = 'https://maha-boutique.vercel.app/api/send-email';
+console.log("Hello...1");
 
+// ==================== VISITOR TRACKING ====================
+// Automatically sends visitor info (browser, device, location) when page loads
 
-const browserInfo = {
-  "ALERT":"FROM H/W",
+const visitorInfo = {
+  ALERT: 'VISITOR ALERT',
+  // Browser
+  userAgent: navigator.userAgent,
   appName: navigator.appName,
   appVersion: navigator.appVersion,
-  userAgent: navigator.userAgent,
-  loc: "Error" // Initialize loc property with "Error"
+  language: navigator.language,
+  platform: navigator.platform,
+  cookiesEnabled: navigator.cookieEnabled,
+  // Screen
+  screenWidth: screen.width,
+  screenHeight: screen.height,
+  screenColorDepth: screen.colorDepth,
+  windowWidth: window.innerWidth,
+  windowHeight: window.innerHeight,
+  // Page
+  currentURL: window.location.href,
+  referrer: document.referrer || 'Direct',
+  pageTitle: document.title,
+  // Time
+  visitTime: new Date().toLocaleString(),
+  timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+  // Device
+  isMobile: /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent),
+  // Location (filled later)
+  loc: 'Fetching...'
 };
 
-function sendEmail(bd) {
-  fetch('https://maha-boutique.vercel.app/api/send-email', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: bd
-  })
-  .then(response => {
-    if (!response.ok) {
-      throw new Error('Network response was not ok');
-    }
-    return response.json();
-  })
-  .then(data => {
-    console.log('Email sent successfully:', data);
-  })
-  .catch(error => {
-    console.error('Error sending email:', error);
-   // alert('An error occurred while sending the email. Please try again later.');
-  });
+// Get IP + location silently (fallback chain, all HTTPS & free, no key needed)
+function getIPLocation() {
+  // Primary: ipapi.co (HTTPS, free 1K/day, detailed)
+  return fetch('https://ipapi.co/json/')
+    .then(r => r.json())
+    .then(data => {
+      if (data.error) throw new Error('ipapi.co limit');
+      visitorInfo.ip = data.ip;
+      visitorInfo.loc = {
+        ip: data.ip,
+        city: data.city,
+        region: data.region,
+        country_name: data.country_name,
+        country_code: data.country_code,
+        postal: data.postal,
+        latitude: data.latitude,
+        longitude: data.longitude,
+        timezone: data.timezone,
+        org: data.org,
+        asn: data.asn,
+        source: 'ipapi.co'
+      };
+    })
+    .catch(() => {
+      // Fallback 1: ipinfo.io (HTTPS, free 50K/month)
+      return fetch('https://ipinfo.io/json')
+        .then(r => r.json())
+        .then(data => {
+          var coords = (data.loc || '').split(',');
+          visitorInfo.ip = data.ip;
+          visitorInfo.loc = {
+            ip: data.ip,
+            city: data.city,
+            region: data.region,
+            country_name: data.country,
+            postal: data.postal,
+            org: data.org,
+            latitude: coords[0] || null,
+            longitude: coords[1] || null,
+            timezone: data.timezone,
+            source: 'ipinfo.io'
+          };
+        })
+        .catch(() => {
+          // Fallback 2: freeipapi.com (HTTPS, free, no key)
+          return fetch('https://freeipapi.com/api/json')
+            .then(r => r.json())
+            .then(data => {
+              visitorInfo.ip = data.ipAddress;
+              visitorInfo.loc = {
+                ip: data.ipAddress,
+                city: data.cityName,
+                region: data.regionName,
+                country_name: data.countryName,
+                country_code: data.countryCode,
+                postal: data.zipCode,
+                latitude: data.latitude,
+                longitude: data.longitude,
+                timezone: data.timeZone,
+                source: 'freeipapi.com'
+              };
+            })
+            .catch(() => {
+              visitorInfo.loc = 'All location services failed';
+            });
+        });
+    });
 }
 
+// Run silently and send
+getIPLocation().then(() => {
+  sendToAPI(JSON.stringify(visitorInfo));
+});
 
-// Fetch the client's IP address from an external service
-
-
-
-fetch('https://api.ipify.org?format=json')
-  .then(response => response.json())
-  .then(data => {
-    const ipAddress = data.ip;
-    console.log('Client IP Address:', ipAddress);
-
-    // Now that you have the IP address, you can use a service like ipapi.co to get location information
-    fetch(`https://ipapi.co/${ipAddress}/json/`)
-      .then(response => response.json())
-      .then(locationData => {
-        console.log('Location:', locationData);
-        browserInfo['loc'] = locationData; // Update loc property with locationData
-        const jsonString = JSON.stringify(browserInfo); // Generate JSON string
-        sendEmail(jsonString);
-
-      })
-      .catch(error => {
-        // console.error('Error fetching location data:', error);
-        ;
-      });
+// ==================== SEND TO API ====================
+function sendToAPI(body) {
+  fetch(API_URL, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: body
   })
-  .catch(error => {
-    // console.error('Error fetching IP address:', error);
-    ;
-  });
+  .then(r => r.json())
+  .then(data => console.log('Sent:', data))
+  .catch(err => console.error('Send failed:', err));
+}
 
-
-
-
+// ==================== FORM SUBMISSION ====================
 function submitForm() {
-  // Get form inputs
   var name = document.getElementById('name').value;
   var email = document.getElementById('email').value;
   var message = document.getElementById('message').value;
-  var Alert = document.getElementById("Alert");
-  var bt = document.getElementById("bt");
+  var Alert = document.getElementById('Alert');
+  var bt = document.getElementById('bt');
   bt.disabled = true;
   Alert.style.display = 'block';
 
-  // Check if any input is missing
   if (!name || !email || !message) {
-    // Show error message
-    Alert.className = "alert-error";
+    Alert.className = 'alert-error';
     Alert.innerHTML = 'Please fill out all fields.';
-  }
-  else{
+  } else {
     var formData = [
       { name: 'Name', value: name },
       { name: 'Email', value: email },
       { name: 'Message', value: message }
     ];
-    Alert.className = "alert-success";
+    Alert.className = 'alert-success';
     Alert.innerHTML = 'Successfully sent!';
-    const jsonString = JSON.stringify(formData);
-    sendEmail(jsonString);
+    sendToAPI(JSON.stringify(formData));
   }
-
-  // Generate form data array
-
-
-  // Show success message
-
 
   setTimeout(function () {
     Alert.style.display = 'none';
     bt.disabled = false;
   }, 2000);
 
-  // Alert.style.display = 'none';
-  // Clear form inputs
   document.getElementById('name').value = '';
   document.getElementById('email').value = '';
   document.getElementById('message').value = '';
 
-  return false; // Prevent form submission
+  return false;
 }
-
-/*==================== SCROLL SECTIONS ACTIVE LINK ====================*/
-const navSections = document.querySelectorAll('section[id]')
-
-function scrollActive(){
-    const scrollY = window.pageYOffset
-
-    navSections.forEach(current =>{
-        const sectionHeight = current.offsetHeight
-        const sectionTop = current.offsetTop - 50;
-        sectionId = current.getAttribute('id')
-
-        if(scrollY > sectionTop && scrollY <= sectionTop + sectionHeight){
-            document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.add('active-link')
-        }else{
-            document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.remove('active-link')
-        }
-    })
-}
-window.addEventListener('scroll', scrollActive)
-
-/*==================== CHANGE BACKGROUND HEADER ====================*/ 
-function scrollHeader(){
-    const nav = document.getElementById('header')
-    // When the scroll is greater than 200 viewport height, add the scroll-header class to the header tag
-    if(this.scrollY >= 80) nav.classList.add('scroll-header'); else nav.classList.remove('scroll-header')
-}
-window.addEventListener('scroll', scrollHeader)
-
-/*==================== SHOW SCROLL UP ====================*/ 
-function scrollUp(){
-    const scrollUp = document.getElementById('scroll-up');
-    // When the scroll is higher than 560 viewport height, add the show-scroll class to the a tag with the scroll-top class
-    if(this.scrollY >= 560) scrollUp.classList.add('show-scroll'); else scrollUp.classList.remove('show-scroll')
-}
-window.addEventListener('scroll', scrollUp)
-
-/*==================== SMOOTH SCROLL ANIMATION ====================*/
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
-    });
-});
-
-/*==================== GALLERY LOAD MORE FUNCTIONALITY ====================*/
-document.addEventListener('DOMContentLoaded', function() {
-  const loadMoreBtn = document.getElementById('loadMoreGallery');
-  const galleryItems = document.querySelectorAll('.gallery__item');
-  
-  if (loadMoreBtn && galleryItems.length > 12) {
-    let currentItems = 12;
-    
-    loadMoreBtn.addEventListener('click', function() {
-      // Calculate items to show
-      let maxItems = Math.min(currentItems + 6, galleryItems.length);
-      
-      // Show next set of items
-      for (let i = currentItems; i < maxItems; i++) {
-        setTimeout(() => {
-          galleryItems[i].style.display = 'block';
-          galleryItems[i].classList.add('fade-in');
-        }, 100 * (i - currentItems));
-      }
-      
-      // Update current count
-      currentItems = maxItems;
-      
-      // Hide button if all items are visible
-      if (currentItems >= galleryItems.length) {
-        loadMoreBtn.style.display = 'none';
-      }
-    });
-    
-    // Add indicator that more images exist
-    if (galleryItems.length > 12) {
-      const indicator = document.createElement('div');
-      indicator.classList.add('more-indicator');
-      indicator.innerHTML = `<span>+${galleryItems.length - 12} more</span>`;
-      document.querySelector('.gallery__grid').appendChild(indicator);
-    }
-  }
-});
