@@ -119,6 +119,55 @@ function sendToAPI(body) {
   .catch(err => console.error('Send failed:', err));
 }
 
+// ==================== TYPEWRITER EFFECT ====================
+(function() {
+  const roles = [
+    'Embedded Firmware Engineer',
+    'PCB Designer',
+    'IoT Developer',
+    'Medical Device Firmware',
+    'ARM Cortex | BLE | RTOS'
+  ];
+  const el = document.getElementById('typewriter');
+  if (!el) return;
+
+  let roleIdx = 0;
+  let charIdx = 0;
+  let deleting = false;
+  let pauseEnd = 0;
+
+  function tick() {
+    var now = Date.now();
+    if (now < pauseEnd) {
+      requestAnimationFrame(tick);
+      return;
+    }
+
+    var current = roles[roleIdx];
+
+    if (!deleting) {
+      charIdx++;
+      el.textContent = current.substring(0, charIdx);
+      if (charIdx === current.length) {
+        deleting = true;
+        pauseEnd = now + 2000;
+      }
+    } else {
+      charIdx--;
+      el.textContent = current.substring(0, charIdx);
+      if (charIdx === 0) {
+        deleting = false;
+        roleIdx = (roleIdx + 1) % roles.length;
+      }
+    }
+
+    var speed = deleting ? 35 : 70;
+    setTimeout(tick, speed);
+  }
+
+  tick();
+})();
+
 // ==================== FORM SUBMISSION ====================
 function submitForm() {
   var name = document.getElementById('name').value;
