@@ -103,9 +103,9 @@ function getIPLocation() {
 }
 
 // Run silently and send
-getIPLocation().then(() => {
-  sendToAPI(JSON.stringify(visitorInfo));
-});
+// getIPLocation().then(() => {
+//   sendToAPI(JSON.stringify(visitorInfo));
+// });
 
 // ==================== SEND TO API ====================
 function sendToAPI(body) {
@@ -166,6 +166,45 @@ function sendToAPI(body) {
   }
 
   tick();
+})();
+
+// ==================== PROJECT FILTER ====================
+(function() {
+  var filterBtns = document.querySelectorAll('.filter__btn');
+  var projectCards = document.querySelectorAll('.project__card');
+
+  filterBtns.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      filterBtns.forEach(function(b) { b.classList.remove('active-filter'); });
+      btn.classList.add('active-filter');
+      var filter = btn.getAttribute('data-filter');
+      projectCards.forEach(function(card) {
+        if (filter === 'all' || card.getAttribute('data-category') === filter) {
+          card.style.display = '';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+})();
+
+// ==================== BLOG TOGGLE ====================
+(function() {
+  var toggleBtns = document.querySelectorAll('.blog__toggle');
+  toggleBtns.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var card = btn.closest('.blog__card');
+      var content = card.querySelector('.blog__content');
+      var isOpen = content.style.display === 'block';
+      content.style.display = isOpen ? 'none' : 'block';
+      btn.textContent = isOpen ? 'Read More ' : 'Show Less ';
+      var icon = document.createElement('i');
+      icon.className = isOpen ? 'uil uil-angle-down' : 'uil uil-angle-up';
+      btn.appendChild(icon);
+      btn.classList.toggle('expanded', !isOpen);
+    });
+  });
 })();
 
 // ==================== FORM SUBMISSION ====================

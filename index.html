@@ -53,8 +53,8 @@
             </a>
           </li>
           <li class="nav__item">
-            <a href="#gallery" class="nav__link">
-              <i class="uil uil-image nav__icon"></i> Gallery
+            <a href="#blog" class="nav__link">
+              <i class="uil uil-file-edit-alt nav__icon"></i> Blog
             </a>
           </li>
           <li class="nav__item">
@@ -446,226 +446,378 @@
       </div>
     </section>
 
-    <!--=================== PORTFOLIO ===================-->
+    <!--=================== PROJECTS ===================-->
     <section class="portfolio section" id="portfolio">
-      <h2 class="section__title">Products</h2>
-      <span class="section__subtitle">Most recent work</span>
+      <h2 class="section__title">Projects</h2>
+      <span class="section__subtitle">13 Products · Medical · IoT · Industrial · Wearable</span>
 
-      <div class="portfolio__container-wrapper container">
-        <div class="portfolio__container container swiper">
-          <div class="swiper-wrapper">
-            <!-- PORTFOLIO 1 - BeetleGuard -->
-            <div class="portfolio__content swiper-slide">
-              <img src="assets/img/Projects/beetleguard.svg" alt="BeetleGuard" class="portfolio__img">
-              <div class="portfolio__data">
-                <h3 class="portfolio__title">BeetleGuard</h3>
-                <p class="portfolio__description">
-                  IoT + LoRa environmental monitoring system for beetle groves. Network of 100+ slave devices within 2 km radius with 50-day battery life per node, real-time temperature/humidity tracking, and a data visualization platform.
-                </p>
-              </div>
-            </div>
+      <div class="projects__filter container">
+        <button class="filter__btn active-filter" data-filter="all">All <span class="filter__count">13</span></button>
+        <button class="filter__btn" data-filter="medical">Medical <span class="filter__count">5</span></button>
+        <button class="filter__btn" data-filter="iot">IoT <span class="filter__count">4</span></button>
+        <button class="filter__btn" data-filter="industrial">Industrial <span class="filter__count">2</span></button>
+        <button class="filter__btn" data-filter="wearable">Wearable <span class="filter__count">2</span></button>
+        <button class="filter__btn" data-filter="personal">Personal <span class="filter__count">1</span></button>
+        <button class="filter__btn" data-filter="rl">R&L <span class="filter__count">1</span></button>
+      </div>
 
-            <!-- PORTFOLIO 2 - Smart Card Payphone -->
-            <div class="portfolio__content swiper-slide">
-              <img src="assets/img/Projects/payphone.svg" alt="Smart Card Payphone" class="portfolio__img">
-              <div class="portfolio__data">
-                <h3 class="portfolio__title">Smart Card Payphone</h3>
-                <p class="portfolio__description">
-                  Firmware for 2500+ deployed smart payphones accepting prepaid cards, featuring wireless mesh networking, centralized management, and remote monitoring capabilities.
-                </p>
-              </div>
-            </div>
+      <div class="projects__grid container">
 
-            <!-- PORTFOLIO 3 - Modern Flame Diya -->
-            <div class="portfolio__content swiper-slide">
-              <img src="assets/img/Projects/diya-svg.svg" alt="Modern Flame Diya" class="portfolio__img">
-              <div class="portfolio__data">
-                <h3 class="portfolio__title">Modern Flame Diya</h3>
-                <p class="portfolio__description">
-                  An electronic diya with realistic flame effect using LEDs and custom circuitry. Features touch control, adjustable brightness, and portable design.
-                </p>
-              </div>
-            </div>
-
-            <!-- PORTFOLIO 4 - Industrial PLC Controller -->
-            <div class="portfolio__content swiper-slide">
-              <img src="assets/img/Projects/plc.svg" alt="Industrial PLC Controller" class="portfolio__img">
-              <div class="portfolio__data">
-                <h3 class="portfolio__title">Industrial PLC Controller</h3>
-                <p class="portfolio__description">
-                  Temperature sensor-based industrial control system that sends digital signals to a PLC, which controls relay outputs based on real-time thermal readings for automated process control.
-                </p>
-              </div>
-            </div>
-
-            <!-- PORTFOLIO 5 - ECG Monitor -->
-            <div class="portfolio__content swiper-slide">
-              <img src="assets/img/Projects/ecg.svg" alt="ECG Monitoring System" class="portfolio__img">
-              <div class="portfolio__data">
-                <h3 class="portfolio__title">ECG Monitoring System</h3>
-                <p class="portfolio__description">
-                  Embedded system for real-time heart monitoring using Raspberry Pi with MAX30100 pulse sensor, AD8232 ECG sensor, and DS18B20 temperature sensor for physiological signal acquisition and processing.
-                </p>
-              </div>
-            </div>
-
-            <!-- PORTFOLIO 6 - NO Gas Monitor -->
-            <div class="portfolio__content swiper-slide">
-              <img src="assets/img/Projects/nogas.svg" alt="Nitric Oxide Gas Monitor" class="portfolio__img">
-              <div class="portfolio__data">
-                <h3 class="portfolio__title">Nitric Oxide Gas Monitor</h3>
-                <p class="portfolio__description">
-                  High-precision gas concentration measurement system using SGX-7NO-100 sensor with ADS1115 ADC, MCP1525 voltage reference, and transimpedance amplifier for analog signal conditioning and digital acquisition.
-                </p>
-              </div>
-            </div>
-
-            <!-- PORTFOLIO 7 - Airflow -->
-            <div class="portfolio__content swiper-slide">
-              <img src="assets/img/Projects/airflow.svg" alt="Airflow Measurement System" class="portfolio__img">
-              <div class="portfolio__data">
-                <h3 class="portfolio__title">Airflow Measurement System</h3>
-                <p class="portfolio__description">
-                  Industrial airflow sensing system using AWM3300V sensor with ADS1115 ADC and voltage divider scaling for high-resolution analog airflow measurement and data acquisition.
-                </p>
-              </div>
-            </div>
-
-            <!-- PORTFOLIO 8 - BLE Node -->
-            <div class="portfolio__content swiper-slide">
-              <img src="assets/img/Projects/ble-node.svg" alt="BLE Sensor Node" class="portfolio__img">
-              <div class="portfolio__data">
-                <h3 class="portfolio__title">BLE Sensor Node</h3>
-                <p class="portfolio__description">
-                  Low-power wireless sensor node built on nRF52840 for BLE data transmission, sensor integration, and real-time wireless monitoring of connected devices.
-                </p>
-              </div>
-            </div>
-
-            <!-- PORTFOLIO 9 - SPI Flash -->
-            <div class="portfolio__content swiper-slide">
-              <img src="assets/img/Projects/spi-flash.svg" alt="Zephyr RTOS SPI Flash Driver" class="portfolio__img">
-              <div class="portfolio__data">
-                <h3 class="portfolio__title">Zephyr RTOS SPI Flash Driver</h3>
-                <p class="portfolio__description">
-                  Firmware driver for W25Q16 SPI flash memory on nRF52832 with Zephyr RTOS, implementing SPI communication with flash read, write, and erase operations.
-                </p>
-              </div>
-            </div>
-
-            <!-- PORTFOLIO 10 - ESP32 MQTT -->
-            <div class="portfolio__content swiper-slide">
-              <img src="assets/img/Projects/esp32-mqtt.svg" alt="ESP32 BLE & MQTT Data System" class="portfolio__img">
-              <div class="portfolio__data">
-                <h3 class="portfolio__title">ESP32 BLE & MQTT Data System</h3>
-                <p class="portfolio__description">
-                  IoT firmware system on ESP32 combining BLE communication with MQTT data streaming for cloud connectivity and real-time wireless data transmission.
-                </p>
-              </div>
-            </div>
+        <!-- 1. BeetleGuard -->
+        <div class="project__card card-item" data-category="iot">
+          <div class="project__header">
+            <span class="project__badge badge--iot">IoT</span>
+            <i class="uil uil-trees project__icon"></i>
           </div>
-
-          <!-- Swiper Arrows -->
-          <div class="swiper-button-next">
-            <i class="uil uil-angle-right-b swiper-portfolio-icon"></i>
+          <h3 class="project__title">BeetleGuard</h3>
+          <p class="project__desc">Scalable LoRa monitoring system handling 250 devices/hub for real-time environment tracking. Built IoT cloud platform with 5 hubs currently active in production.</p>
+          <div class="project__tags">
+            <span>STM32</span><span>LoRa SX1278</span><span>FreeRTOS</span>
+            <span>SPI</span><span>UART</span><span>AWS IoT</span><span>Cloud Dashboard</span>
           </div>
-          <div class="swiper-button-prev">
-            <i class="uil uil-angle-left-b swiper-portfolio-icon"></i>
-          </div>
-
-          <!-- Swiper Pagination -->
-          <div class="swiper-pagination"></div>
         </div>
+
+        <!-- 2. IoT Payphone -->
+        <div class="project__card card-item" data-category="iot">
+          <div class="project__header">
+            <span class="project__badge badge--iot">IoT</span>
+            <i class="uil uil-circuit project__icon"></i>
+          </div>
+          <h3 class="project__title">IoT Payphone System</h3>
+          <p class="project__desc">RFID-authenticated payphone system for student calling over GSM. Remote cloud interface for parents and admins to monitor usage and manage access.</p>
+          <div class="project__tags">
+            <span>STM32</span><span>RC522 RFID</span><span>SIM800L GSM</span>
+            <span>I2C</span><span>UART</span><span>REST API</span><span>Cloud Dashboard</span>
+          </div>
+        </div>
+
+        <!-- 3. Oxygen Therapy -->
+        <div class="project__card card-item" data-category="medical">
+          <div class="project__header">
+            <span class="project__badge badge--medical">Medical</span>
+            <i class="uil uil-heart-medical project__icon"></i>
+          </div>
+          <h3 class="project__title">Oxygen Therapy System</h3>
+          <p class="project__desc">Critical oxygen delivery system dynamically adjusting flow based on SpO₂ readings. Implemented medical-grade alarms and safety mechanisms for patient monitoring.</p>
+          <div class="project__tags">
+            <span>STM32</span><span>MAX30102 SpO₂</span><span>Flow Control Valve</span>
+            <span>ADC</span><span>Medical Alarms</span><span>Watchdog</span><span>IEC 62304</span>
+          </div>
+        </div>
+
+        <!-- 4. Urine Monitoring -->
+        <div class="project__card card-item" data-category="medical">
+          <div class="project__header">
+            <span class="project__badge badge--medical">Medical</span>
+            <i class="uil uil-flask project__icon"></i>
+          </div>
+          <h3 class="project__title">Urine Monitoring System</h3>
+          <p class="project__desc">Standalone urine analysis system generating diagnostic reports to assist doctors in identifying urinary and metabolic conditions. Automated report generation.</p>
+          <div class="project__tags">
+            <span>STM32</span><span>Optical Sensors</span><span>ADC</span>
+            <span>UART</span><span>Standalone UI</span><span>Report Generation</span>
+          </div>
+        </div>
+
+        <!-- 5. Patient Vitals BLE -->
+        <div class="project__card card-item" data-category="medical">
+          <div class="project__header">
+            <span class="project__badge badge--medical">Medical</span>
+            <i class="uil uil-heart-rate project__icon"></i>
+          </div>
+          <h3 class="project__title">Patient Vitals Monitor (BLE)</h3>
+          <p class="project__desc">Ultra-low-power BLE device for continuous patient vital signs and body temperature monitoring, integrated with mobile app for real-time data visualization and alerts.</p>
+          <div class="project__tags">
+            <span>nRF52840</span><span>BLE 5.0</span><span>MAX30102</span>
+            <span>NTC Thermistor</span><span>Zephyr RTOS</span><span>GATT</span><span>Mobile App</span>
+          </div>
+        </div>
+
+        <!-- 6. ULP BLE Temp Logger -->
+        <div class="project__card card-item" data-category="iot">
+          <div class="project__header">
+            <span class="project__badge badge--iot">IoT</span>
+            <i class="uil uil-temperature project__icon"></i>
+          </div>
+          <h3 class="project__title">ULP BLE Temperature Logger</h3>
+          <p class="project__desc">BLE temperature logging system optimized for energy harvesting environments, ensuring long-term operation with minimal power consumption and reliable data transmission.</p>
+          <div class="project__tags">
+            <span>nRF52840</span><span>BLE 5.0</span><span>Energy Harvesting</span>
+            <span>Zephyr RTOS</span><span>Low Power Modes</span><span>SPI</span>
+          </div>
+        </div>
+
+        <!-- 7. Food Sanitization -->
+        <div class="project__card card-item" data-category="industrial">
+          <div class="project__header">
+            <span class="project__badge badge--industrial">Industrial</span>
+            <i class="uil uil-shield-check project__icon"></i>
+          </div>
+          <h3 class="project__title">Food Sanitization Machine</h3>
+          <p class="project__desc">Standalone food sanitization system ensuring hygiene and safety using controlled processing. Focused on automation, reliability, and user-friendly operation.</p>
+          <div class="project__tags">
+            <span>STM32</span><span>Relay Control</span><span>Timer Logic</span>
+            <span>HMI</span><span>Automation</span><span>Safety Interlocks</span>
+          </div>
+        </div>
+
+        <!-- 8. Industrial PLC Interface -->
+        <div class="project__card card-item" data-category="industrial">
+          <div class="project__header">
+            <span class="project__badge badge--industrial">Industrial</span>
+            <i class="uil uil-processor project__icon"></i>
+          </div>
+          <h3 class="project__title">Industrial IoT PLC Interface</h3>
+          <p class="project__desc">IoT interface reading signals from PLC systems and sending digital control signals back, enabling integration between legacy industrial systems and modern IoT platforms.</p>
+          <div class="project__tags">
+            <span>STM32</span><span>RS485 / Modbus</span><span>Digital I/O</span>
+            <span>MQTT</span><span>PLC Signals</span><span>Cloud Integration</span>
+          </div>
+        </div>
+
+        <!-- 9. Industrial Data Logger -->
+        <div class="project__card card-item" data-category="industrial">
+          <div class="project__header">
+            <span class="project__badge badge--industrial">Industrial</span>
+            <i class="uil uil-chart-line project__icon"></i>
+          </div>
+          <h3 class="project__title">Industrial IoT Data Logger</h3>
+          <p class="project__desc">Versatile data logger supporting RS485, 4–20mA, and 0–10V signal inputs with real-time cloud synchronization for monitoring and analytics.</p>
+          <div class="project__tags">
+            <span>STM32</span><span>RS485</span><span>4–20mA</span>
+            <span>0–10V ADC</span><span>ADS1115</span><span>MQTT</span><span>Cloud Sync</span>
+          </div>
+        </div>
+
+        <!-- 10. Nitric Therapy -->
+        <div class="project__card card-item" data-category="medical">
+          <div class="project__header">
+            <span class="project__badge badge--medical">Medical</span>
+            <i class="uil uil-cloud-wind project__icon"></i>
+          </div>
+          <h3 class="project__title">Nitric Therapy Monitor</h3>
+          <p class="project__desc">Standalone nitric oxide therapy monitoring system for clinical applications with accurate measurement, safety controls, and reliable operation.</p>
+          <div class="project__tags">
+            <span>STM32</span><span>SGX-7NO Sensor</span><span>ADS1115</span>
+            <span>MCP1525</span><span>Trans-impedance Amp</span><span>Medical Alarms</span>
+          </div>
+        </div>
+
+        <!-- 11. Women Safety Device -->
+        <div class="project__card card-item" data-category="wearable">
+          <div class="project__header">
+            <span class="project__badge badge--wearable">Wearable</span>
+            <i class="uil uil-shield project__icon"></i>
+          </div>
+          <h3 class="project__title">ULP Women Safety Device</h3>
+          <p class="project__desc">Ultra-low-power wearable with BLE for real-time emergency alerts and status transmission. Optimized for long battery life with low-power firmware and mobile app integration.</p>
+          <div class="project__tags">
+            <span>nRF52840</span><span>BLE 5.0</span><span>Accelerometer</span>
+            <span>Ultra Low Power</span><span>Emergency Alerts</span><span>Mobile App</span>
+          </div>
+        </div>
+
+        <!-- 12. Smart Wrist Wearable -->
+        <div class="project__card card-item" data-category="wearable">
+          <div class="project__header">
+            <span class="project__badge badge--wearable">Wearable</span>
+            <i class="uil uil-watch project__icon"></i>
+          </div>
+          <h3 class="project__title">Smart Wrist Wearable</h3>
+          <p class="project__desc">Smart wearable monitoring vital parameters and ambient air quality. Sensor fusion, BLE communication, and mobile app for continuous health and environmental insights.</p>
+          <div class="project__tags">
+            <span>nRF52840</span><span>BLE 5.0</span><span>MAX30102</span>
+            <span>CCS811 Air Quality</span><span>Sensor Fusion</span><span>Zephyr RTOS</span><span>Mobile App</span>
+          </div>
+        </div>
+
+        <!-- 13. Modern Flame Diya -->
+        <div class="project__card card-item" data-category="personal">
+          <div class="project__header">
+            <span class="project__badge badge--personal">Personal</span>
+            <i class="uil uil-fire project__icon"></i>
+          </div>
+          <h3 class="project__title">Modern Flame Diya</h3>
+          <p class="project__desc">Electronic diya with realistic LED flame effect using custom PCB and circuitry. Features touch control, adjustable brightness, and portable battery design.</p>
+          <div class="project__tags">
+            <span>Custom PCB</span><span>ATtiny</span><span>PWM</span>
+            <span>Touch Sensing</span><span>WS2812 LEDs</span><span>KiCad</span>
+          </div>
+        </div>
+
+        <!-- 14. Zephyr SPI Flash (R&L) -->
+        <div class="project__card card-item" data-category="rl">
+          <div class="project__header">
+            <span class="project__badge badge--rl">R&amp;L</span>
+            <i class="uil uil-database project__icon"></i>
+          </div>
+          <h3 class="project__title">Zephyr RTOS SPI Flash Driver</h3>
+          <p class="project__desc">Research and learning project implementing a SPI flash memory driver on nRF52832 using Zephyr RTOS with full read, write, and erase operations.</p>
+          <div class="project__tags">
+            <span>nRF52832</span><span>Zephyr RTOS</span><span>W25Q16</span>
+            <span>SPI</span><span>Device Tree</span><span>Embedded C</span>
+          </div>
+        </div>
+
       </div>
     </section>
 
-    <!--===================== Project Gallery =====================-->
-    <section class="gallery section" id="gallery">
-      <h2 class="section__title">Project Gallery</h2>
-      <span class="section__subtitle">Circuit Design Showcase</span>
+    <!--===================== Blog =====================-->
+    <section class="blog section" id="blog">
+      <h2 class="section__title">Tech Blog</h2>
+      <span class="section__subtitle">Insights from the field</span>
 
-      <div class="gallery__container container">
-        <div class="gallery__grid">
-          <div class="gallery__item card-item">
-            <img src="assets/img/gallery/1.png" alt="Project Image" class="gallery__img">
-            <div class="gallery__overlay">
-              <div class="gallery__caption">Project Prototype</div>
-            </div>
-          </div>
-          <div class="gallery__item card-item">
-            <img src="assets/img/gallery/2.png" alt="Project Image" class="gallery__img">
-            <div class="gallery__overlay">
-              <div class="gallery__caption">PCB Design</div>
-            </div>
-          </div>
-          <div class="gallery__item card-item">
-            <img src="assets/img/gallery/3.png" alt="Project Image" class="gallery__img">
-            <div class="gallery__overlay">
-              <div class="gallery__caption">IoT System</div>
-            </div>
-          </div>
-          <div class="gallery__item card-item">
-            <img src="assets/img/gallery/4.png" alt="Project Image" class="gallery__img">
-            <div class="gallery__overlay">
-              <div class="gallery__caption">Hardware Prototype</div>
-            </div>
-          </div>
-          <div class="gallery__item card-item">
-            <img src="assets/img/gallery/5.png" alt="Project Image" class="gallery__img">
-            <div class="gallery__overlay">
-              <div class="gallery__caption">Embedded System</div>
-            </div>
-          </div>
-          <div class="gallery__item card-item">
-            <img src="assets/img/gallery/6.png" alt="Project Image" class="gallery__img">
-            <div class="gallery__overlay">
-              <div class="gallery__caption">Circuit Board</div>
-            </div>
-          </div>
-          <div class="gallery__item card-item">
-            <img src="assets/img/gallery/7.png" alt="Project Image" class="gallery__img">
-            <div class="gallery__overlay">
-              <div class="gallery__caption">Device Testing</div>
-            </div>
-          </div>
-          <div class="gallery__item card-item">
-            <img src="assets/img/gallery/8.png" alt="Project Image" class="gallery__img">
-            <div class="gallery__overlay">
-              <div class="gallery__caption">Component Layout</div>
-            </div>
-          </div>
-          <div class="gallery__item card-item">
-            <img src="assets/img/gallery/9.png" alt="Project Image" class="gallery__img">
-            <div class="gallery__overlay">
-              <div class="gallery__caption">Sensor Integration</div>
-            </div>
-          </div>
-          <div class="gallery__item card-item">
-            <img src="assets/img/gallery/10.png" alt="Project Image" class="gallery__img">
-            <div class="gallery__overlay">
-              <div class="gallery__caption">Control System</div>
-            </div>
-          </div>
-          <div class="gallery__item card-item">
-            <img src="assets/img/gallery/11.png" alt="Project Image" class="gallery__img">
-            <div class="gallery__overlay">
-              <div class="gallery__caption">Smart Device</div>
-            </div>
-          </div>
-          <div class="gallery__item card-item">
-            <img src="assets/img/gallery/12.png" alt="Project Image" class="gallery__img">
-            <div class="gallery__overlay">
-              <div class="gallery__caption">Hardware Setup</div>
-            </div>
-          </div>
-        </div>
+      <div class="blog__grid container">
 
-        <div class="gallery__more">
-          <button class="button button--flex gallery__button" id="loadMoreGallery">
-            LOAD MORE PROJECTS
-            <i class="uil uil-circuit button__icon"></i>
-          </button>
-        </div>
+        <!-- Blog 1 -->
+        <article class="blog__card card-item">
+          <div class="blog__header">
+            <span class="blog__tag tag--rtos">RTOS</span>
+            <span class="blog__read-time"><i class="uil uil-clock"></i> 5 min read</span>
+          </div>
+          <h3 class="blog__title">Writing a SPI Flash Driver in Zephyr RTOS</h3>
+          <p class="blog__excerpt">Zephyr's device model and SPI API are quite different from bare-metal approaches. Here's how I structured the W25Q16 driver on nRF52832 using Device Tree overlays and the Zephyr SPI transceive API.</p>
+          <div class="blog__content">
+            <p>When moving from bare-metal STM32 to Zephyr RTOS on nRF52832, one of the first challenges is adapting to Zephyr's device model. Instead of directly configuring SPI registers, everything goes through the Device Tree and Zephyr's HAL.</p>
+            <p><strong>Key concepts:</strong></p>
+            <ul>
+              <li><strong>Device Tree overlay</strong> — define the SPI bus, chip select GPIO, and flash node in <code>.overlay</code> file rather than in C code.</li>
+              <li><strong>spi_transceive()</strong> — Zephyr's SPI API bundles TX and RX into one call with <code>spi_buf_set</code> structs, unlike HAL's separate send/receive.</li>
+              <li><strong>Chip Select control</strong> — Zephyr manages CS automatically if defined in DT, or you can control it manually via GPIO API for timing-sensitive flash operations.</li>
+              <li><strong>W25Q16 commands</strong> — WRITE ENABLE (0x06) must precede every page program or sector erase. Status register polling after erase is essential — the chip holds the SPI bus busy otherwise.</li>
+            </ul>
+            <p><strong>Lesson learned:</strong> Sector erase on W25Q16 takes up to 400ms. Without polling the BUSY bit in the status register, subsequent read/write operations silently fail. Always implement a timeout-based busy-wait loop.</p>
+          </div>
+          <button class="blog__toggle">Read More <i class="uil uil-angle-down"></i></button>
+        </article>
+
+        <!-- Blog 2 -->
+        <article class="blog__card card-item">
+          <div class="blog__header">
+            <span class="blog__tag tag--ble">BLE</span>
+            <span class="blog__read-time"><i class="uil uil-clock"></i> 6 min read</span>
+          </div>
+          <h3 class="blog__title">Ultra Low Power BLE — nRF52840 Power Optimization</h3>
+          <p class="blog__excerpt">Getting from 3mA average to 8µA average current on nRF52840 required understanding every layer of the BLE stack's power behaviour, from advertising intervals to DCDCs and RAM retention.</p>
+          <div class="blog__content">
+            <p>On battery-powered BLE devices, power is everything. The nRF52840 can run at &lt;10µA average in optimized configurations, but the default settings are far from optimal.</p>
+            <p><strong>Key optimisations applied:</strong></p>
+            <ul>
+              <li><strong>Advertising interval</strong> — increasing from 100ms to 1000ms reduces average current dramatically since advertising is the most power-hungry state. Use directed advertising only when needed.</li>
+              <li><strong>Connection interval</strong> — negotiate the longest acceptable connection interval with the central (typically 500ms–4s for sensor devices). Longer intervals = longer sleep between events.</li>
+              <li><strong>DCDC regulators</strong> — enable both REG0 (1.8V DCDC) and REG1 (main DCDC) in the board configuration. The default LDO is significantly less efficient.</li>
+              <li><strong>RAM retention</strong> — only retain the RAM sections actually used. Configure <code>CONFIG_RAM_POWER_DOWN_LIBRARY</code> or manually power down unused RAM blocks.</li>
+              <li><strong>Peripheral shutdown</strong> — disable all unused peripherals (SPI, I2C, UART) between measurement cycles. Zephyr's <code>pm_device_action_run()</code> handles this cleanly.</li>
+              <li><strong>System Off vs System On sleep</strong> — for very infrequent wake-ups (e.g., hourly logging), System Off with GPIO wake-up reaches ~0.5µA. For frequent events, System On with CPU sleep is faster to resume.</li>
+            </ul>
+            <p><strong>Tool used:</strong> Nordic's Power Profiler Kit II (PPK2) — indispensable for real-time current measurement during development.</p>
+          </div>
+          <button class="blog__toggle">Read More <i class="uil uil-angle-down"></i></button>
+        </article>
+
+        <!-- Blog 3 -->
+        <article class="blog__card card-item">
+          <div class="blog__header">
+            <span class="blog__tag tag--medical">Medical</span>
+            <span class="blog__read-time"><i class="uil uil-clock"></i> 7 min read</span>
+          </div>
+          <h3 class="blog__title">ECG Signal Acquisition — From AD8232 to Digital</h3>
+          <p class="blog__excerpt">The AD8232 simplifies ECG front-end design but introduces subtle challenges around lead-off detection, baseline wander, and ADC sampling rate that directly affect signal quality.</p>
+          <div class="blog__content">
+            <p>The AD8232 is a single-chip ECG front-end that handles instrumentation amplifier, right-leg drive, and high-pass filter in one package. But clean ECG output requires careful system design around it.</p>
+            <p><strong>Design considerations:</strong></p>
+            <ul>
+              <li><strong>Sampling rate</strong> — ECG requires minimum 250 SPS for accurate QRS detection. At 500 SPS you get comfortable headroom. Using Raspberry Pi's ADC (via ADS1015/MCP3008) limits you — use ADS1115 at 860 SPS for better resolution.</li>
+              <li><strong>Lead-off detection</strong> — AD8232 provides LOD+ and LOD- outputs. Poll these before processing samples. Attempting to detect heartbeats with disconnected leads produces noise that looks like arrhythmia.</li>
+              <li><strong>Baseline wander</strong> — movement artifacts and breathing cause slow baseline drift. A high-pass filter at 0.05Hz in firmware removes this without distorting the QRS complex.</li>
+              <li><strong>Power supply noise</strong> — the AD8232 is sensitive to power rail noise. Decouple with 100nF ceramic + 10µF electrolytic close to the VCC pin. Use a dedicated 3.3V LDO if possible.</li>
+              <li><strong>MAX30100 integration</strong> — combining SpO₂ (MAX30100) with ECG (AD8232) on the same device requires careful I2C timing. Run MAX30100 interrupt-driven and ADC sampling on a separate timer to avoid interference.</li>
+            </ul>
+            <p><strong>Key insight:</strong> ECG is 99% analog design and 1% digital processing. Spending time on PCB layout (ground planes, lead routing, shielding) gives better results than any digital filter.</p>
+          </div>
+          <button class="blog__toggle">Read More <i class="uil uil-angle-down"></i></button>
+        </article>
+
+        <!-- Blog 4 -->
+        <article class="blog__card card-item">
+          <div class="blog__header">
+            <span class="blog__tag tag--iot">IoT</span>
+            <span class="blog__read-time"><i class="uil uil-clock"></i> 5 min read</span>
+          </div>
+          <h3 class="blog__title">ESP32 BLE + MQTT — Designing Reliable IoT Data Pipelines</h3>
+          <p class="blog__excerpt">Running BLE and WiFi simultaneously on ESP32 is possible but requires understanding the radio coexistence mechanism and careful task architecture to avoid dropped packets on both sides.</p>
+          <div class="blog__content">
+            <p>ESP32's dual-mode radio (BLE + WiFi) is powerful but the two share the same 2.4GHz antenna. Understanding coexistence is critical for reliable simultaneous operation.</p>
+            <p><strong>Architecture decisions:</strong></p>
+            <ul>
+              <li><strong>Task separation</strong> — run BLE scan/connect on Core 0 and WiFi/MQTT on Core 1. ESP-IDF's <code>xTaskCreatePinnedToCore()</code> makes this straightforward. Never block the BLE event loop with MQTT operations.</li>
+              <li><strong>MQTT QoS selection</strong> — QoS 0 for high-frequency sensor data (acceptable loss), QoS 1 for alarms and critical events (guaranteed delivery). QoS 2 is too overhead-heavy for constrained devices.</li>
+              <li><strong>Reconnect strategy</strong> — implement exponential backoff for MQTT reconnection: 1s, 2s, 4s, 8s, max 60s. Aggressive reconnection floods the broker and drains battery.</li>
+              <li><strong>Offline buffering</strong> — store missed MQTT publishes in a ring buffer (NVS flash) during WiFi outages. Flush on reconnect. This prevents data loss in poor coverage areas.</li>
+              <li><strong>BLE data flow</strong> — collect data via BLE GATT notifications from peripheral sensors into a queue. MQTT task drains the queue and publishes in batches. This decouples the two radios cleanly.</li>
+            </ul>
+            <p><strong>Topic design tip:</strong> Structure topics hierarchically — <code>device/{device_id}/sensor/{type}/data</code>. This allows wildcard subscriptions on the backend for fleet monitoring.</p>
+          </div>
+          <button class="blog__toggle">Read More <i class="uil uil-angle-down"></i></button>
+        </article>
+
+        <!-- Blog 5 -->
+        <article class="blog__card card-item">
+          <div class="blog__header">
+            <span class="blog__tag tag--hardware">Hardware</span>
+            <span class="blog__read-time"><i class="uil uil-clock"></i> 6 min read</span>
+          </div>
+          <h3 class="blog__title">Analog Front-End Design for Industrial &amp; Medical Sensors</h3>
+          <p class="blog__excerpt">From 4–20mA loops to transimpedance amplifiers for gas sensors — analog signal conditioning is where firmware meets hardware, and getting it wrong corrupts every measurement downstream.</p>
+          <div class="blog__content">
+            <p>Industrial sensors speak in currents and voltages that MCU ADCs cannot read directly. The signal conditioning chain between sensor and ADC determines measurement accuracy more than any software calibration can fix.</p>
+            <p><strong>4–20mA current loop:</strong></p>
+            <ul>
+              <li>Convert to voltage using a precision shunt resistor (typically 250Ω → 1V to 5V range). Use a 0.1% tolerance resistor — 1% error here propagates directly to measurement error.</li>
+              <li>Add a 100nF filter capacitor across the shunt to suppress noise. Cut-off frequency: Fc = 1/(2π·R·C).</li>
+              <li>Use ADS1115 (16-bit) over internal MCU ADC (12-bit) for industrial measurements where ±0.1% accuracy is required.</li>
+            </ul>
+            <p><strong>Transimpedance amplifier (TIA) for gas sensors:</strong></p>
+            <ul>
+              <li>Electrochemical gas sensors like SGX-7NO produce femtoamp-to-nanoamp currents proportional to concentration. A TIA converts this current to a readable voltage: Vout = Igas × Rfeedback.</li>
+              <li>Choose Rfeedback based on full-scale current. For NO sensors at 100ppm, typical output current is 40–200nA, so Rfeedback of 10MΩ gives 0.4V–2V output.</li>
+              <li>Use a precision voltage reference (MCP1525 = 2.5V, 0.4% accuracy) as the TIA reference voltage — power supply noise on the reference rail directly appears on the output.</li>
+              <li>PCB layout: guard rings around the TIA input node. Any leakage current (even 1pA on PCB surface) competes with the sensor signal at these impedance levels.</li>
+            </ul>
+            <p><strong>Key rule:</strong> Solve the analog problem in hardware. Software calibration can compensate for offset and gain errors, but it cannot fix noise, non-linearity, or impedance mismatch.</p>
+          </div>
+          <button class="blog__toggle">Read More <i class="uil uil-angle-down"></i></button>
+        </article>
+
+        <!-- Blog 6 -->
+        <article class="blog__card card-item">
+          <div class="blog__header">
+            <span class="blog__tag tag--medical">Medical</span>
+            <span class="blog__read-time"><i class="uil uil-clock"></i> 5 min read</span>
+          </div>
+          <h3 class="blog__title">Medical Alarm Design — Safety Firmware Patterns</h3>
+          <p class="blog__excerpt">A medical device alarm that fires one second late, or worse, fails to fire at all, is not a software bug — it's a patient safety incident. Here's how I approach alarm firmware architecture.</p>
+          <div class="blog__content">
+            <p>Medical alarm design is guided by IEC 60601-1-8 (alarm systems) and IEC 62304 (software lifecycle). The principles apply even in R&D devices not yet in clinical trials.</p>
+            <p><strong>Alarm priority levels:</strong></p>
+            <ul>
+              <li><strong>HIGH</strong> — immediate patient danger (SpO₂ &lt; 85%, flow failure). Continuous audio + visual. Cannot be silenced for more than 2 minutes.</li>
+              <li><strong>MEDIUM</strong> — deteriorating condition (SpO₂ 85–90%). Intermittent audio. Can be acknowledged.</li>
+              <li><strong>LOW / ADVISORY</strong> — informational (sensor disconnected, battery low). Visual only acceptable.</li>
+            </ul>
+            <p><strong>Firmware patterns:</strong></p>
+            <ul>
+              <li><strong>Independent alarm task</strong> — never couple alarm evaluation to the measurement task. A separate high-priority RTOS task evaluates alarm conditions every 100ms regardless of measurement state.</li>
+              <li><strong>Watchdog timer</strong> — hardware watchdog must be kicked by the alarm task specifically. If the alarm task hangs, the device resets — this is intentional and required.</li>
+              <li><strong>Alarm persistence</strong> — once a HIGH alarm triggers, it stays active until the condition clears AND an operator acknowledges. Auto-clearing alarms are dangerous in clinical settings.</li>
+              <li><strong>Fault injection testing</strong> — intentionally break sensors in test builds to verify every alarm path fires correctly. Unit tests are insufficient for safety-critical paths.</li>
+              <li><strong>Power-fail alarm state</strong> — store last alarm state to non-volatile memory before power loss. On restart, if the device was alarming, restore that state rather than booting clean.</li>
+            </ul>
+            <p><strong>Philosophy:</strong> Design alarms to fail safe. If the alarm subsystem itself has an error, the device should alert — not stay silent.</p>
+          </div>
+          <button class="blog__toggle">Read More <i class="uil uil-angle-down"></i></button>
+        </article>
+
       </div>
     </section>
 
@@ -754,6 +906,9 @@
           </li>
           <li>
             <a href="#portfolio" class="footer__link">Projects</a>
+          </li>
+          <li>
+            <a href="#blog" class="footer__link">Blog</a>
           </li>
           <li>
             <a href="#contact" class="footer__link">Contact-Me</a>
