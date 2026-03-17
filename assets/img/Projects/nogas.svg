@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="220" viewBox="0 0 400 220">
+  <defs>
+    <linearGradient id="bg6" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <linearGradient id="bar1" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#facc15"/>
+      <stop offset="100%" style="stop-color:#ca8a04"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="220" fill="url(#bg6)" rx="10"/>
+  <!-- Molecule dots for NO gas -->
+  <circle cx="90" cy="70" r="14" fill="#facc15" opacity="0.8"/>
+  <text x="90" y="75" font-family="monospace" font-size="10" fill="#0f172a" text-anchor="middle" font-weight="bold">N</text>
+  <circle cx="130" cy="70" r="14" fill="#ef4444" opacity="0.8"/>
+  <text x="130" y="75" font-family="monospace" font-size="10" fill="#fff" text-anchor="middle" font-weight="bold">O</text>
+  <line x1="104" y1="70" x2="116" y2="70" stroke="#fff" stroke-width="3"/>
+  <!-- Signal chain -->
+  <rect x="180" y="55" width="60" height="35" rx="5" fill="#1e3a5f" stroke="#facc15" stroke-width="1.5"/>
+  <text x="210" y="70" font-family="monospace" font-size="7" fill="#facc15" text-anchor="middle">SGX-7NO</text>
+  <text x="210" y="82" font-family="monospace" font-size="7" fill="#fde68a" text-anchor="middle">Sensor</text>
+  <line x1="240" y1="72" x2="260" y2="72" stroke="#facc15" stroke-width="1.5"/>
+  <polygon points="258,68 266,72 258,76" fill="#facc15"/>
+  <rect x="265" y="55" width="60" height="35" rx="5" fill="#1e3a5f" stroke="#facc15" stroke-width="1.5"/>
+  <text x="295" y="70" font-family="monospace" font-size="7" fill="#facc15" text-anchor="middle">ADS1115</text>
+  <text x="295" y="82" font-family="monospace" font-size="7" fill="#fde68a" text-anchor="middle">16-bit ADC</text>
+  <!-- Bar chart for concentration -->
+  <text x="30" y="120" font-family="monospace" font-size="9" fill="#64748b">CONCENTRATION (ppm)</text>
+  <rect x="30"  y="150" width="22" height="30" rx="2" fill="url(#bar1)" opacity="0.5"/>
+  <rect x="60"  y="135" width="22" height="45" rx="2" fill="url(#bar1)" opacity="0.6"/>
+  <rect x="90"  y="125" width="22" height="55" rx="2" fill="url(#bar1)" opacity="0.7"/>
+  <rect x="120" y="118" width="22" height="62" rx="2" fill="url(#bar1)" opacity="0.8"/>
+  <rect x="150" y="128" width="22" height="52" rx="2" fill="url(#bar1)" opacity="0.75"/>
+  <rect x="180" y="140" width="22" height="40" rx="2" fill="url(#bar1)" opacity="0.65"/>
+  <rect x="210" y="145" width="22" height="35" rx="2" fill="url(#bar1)" opacity="0.6"/>
+  <line x1="25" y1="180" x2="380" y2="180" stroke="#334155" stroke-width="1"/>
+  <!-- Threshold line -->
+  <line x1="25" y1="133" x2="380" y2="133" stroke="#ef4444" stroke-width="1" stroke-dasharray="5,3"/>
+  <text x="335" y="130" font-family="monospace" font-size="8" fill="#ef4444">THRESHOLD</text>
+  <!-- Label -->
+  <rect x="10" y="10" width="170" height="24" rx="4" fill="#facc15" opacity="0.15"/>
+  <text x="20" y="27" font-family="monospace" font-size="12" fill="#facc15" font-weight="bold">NO Gas · High Precision</text>
+  <!-- TIA badge -->
+  <rect x="265" y="185" width="110" height="18" rx="9" fill="#facc15" opacity="0.15"/>
+  <text x="277" y="198" font-family="monospace" font-size="9" fill="#facc15">Transimpedance Amp</text>
+</svg>

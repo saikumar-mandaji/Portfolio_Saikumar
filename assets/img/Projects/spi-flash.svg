@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="220" viewBox="0 0 400 220">
+  <defs>
+    <linearGradient id="bg9" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="220" fill="url(#bg9)" rx="10"/>
+  <!-- MCU block -->
+  <rect x="30" y="60" width="110" height="100" rx="6" fill="#1e3a5f" stroke="#34d399" stroke-width="2"/>
+  <text x="85" y="85"  font-family="monospace" font-size="9" fill="#34d399" text-anchor="middle">nRF52832</text>
+  <text x="85" y="100" font-family="monospace" font-size="8" fill="#6ee7b7" text-anchor="middle">Zephyr RTOS</text>
+  <!-- SPI pins -->
+  <text x="40" y="120" font-family="monospace" font-size="8" fill="#34d399">MOSI</text>
+  <text x="40" y="132" font-family="monospace" font-size="8" fill="#34d399">MISO</text>
+  <text x="40" y="144" font-family="monospace" font-size="8" fill="#34d399">SCLK</text>
+  <text x="40" y="156" font-family="monospace" font-size="8" fill="#34d399">CS</text>
+  <!-- SPI bus lines -->
+  <line x1="140" y1="118" x2="260" y2="118" stroke="#34d399" stroke-width="1.5"/>
+  <line x1="140" y1="130" x2="260" y2="130" stroke="#34d399" stroke-width="1.5"/>
+  <line x1="140" y1="142" x2="260" y2="142" stroke="#34d399" stroke-width="1.5"/>
+  <line x1="140" y1="154" x2="260" y2="154" stroke="#f59e0b" stroke-width="1.5"/>
+  <!-- SPI labels -->
+  <text x="185" y="113" font-family="monospace" font-size="7" fill="#64748b">SPI BUS</text>
+  <!-- Flash chip block -->
+  <rect x="260" y="60" width="110" height="100" rx="6" fill="#1e3a5f" stroke="#34d399" stroke-width="2"/>
+  <text x="315" y="90"  font-family="monospace" font-size="9" fill="#34d399" text-anchor="middle">W25Q16</text>
+  <text x="315" y="103" font-family="monospace" font-size="8" fill="#6ee7b7" text-anchor="middle">SPI Flash</text>
+  <text x="315" y="118" font-family="monospace" font-size="8" fill="#6ee7b7" text-anchor="middle">16Mbit</text>
+  <!-- Operations -->
+  <text x="270" y="135" font-family="monospace" font-size="7" fill="#f59e0b">READ</text>
+  <text x="270" y="147" font-family="monospace" font-size="7" fill="#f59e0b">WRITE</text>
+  <text x="270" y="159" font-family="monospace" font-size="7" fill="#f59e0b">ERASE</text>
+  <!-- Clock signal waveform -->
+  <rect x="30" y="175" width="340" height="30" rx="4" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+  <text x="40" y="188" font-family="monospace" font-size="7" fill="#64748b">CLK:</text>
+  <polyline points="65,187 65,182 80,182 80,192 95,192 95,182 110,182 110,192 125,192 125,182 140,182 140,192 155,192 155,182 170,182 170,192 185,192 185,182 200,182 200,192 215,192 215,182 230,182 230,192 245,192 245,182 260,182 260,192 275,192 275,182 290,182 290,192 305,192 305,182 320,182 320,192 335,192 335,187" fill="none" stroke="#34d399" stroke-width="1.5"/>
+  <!-- Label -->
+  <rect x="10" y="10" width="215" height="24" rx="4" fill="#34d399" opacity="0.15"/>
+  <text x="20" y="27" font-family="monospace" font-size="12" fill="#34d399" font-weight="bold">Zephyr RTOS · SPI · W25Q16</text>
+</svg>

@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="220" viewBox="0 0 400 220">
+  <defs>
+    <linearGradient id="bg10" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="220" fill="url(#bg10)" rx="10"/>
+  <!-- ESP32 center chip -->
+  <rect x="155" y="75" width="90" height="70" rx="6" fill="#1e3a5f" stroke="#f97316" stroke-width="2"/>
+  <text x="200" y="100" font-family="monospace" font-size="9" fill="#f97316" text-anchor="middle" font-weight="bold">ESP32</text>
+  <text x="200" y="114" font-family="monospace" font-size="7" fill="#fdba74" text-anchor="middle">BLE + WiFi</text>
+  <text x="200" y="128" font-family="monospace" font-size="7" fill="#fdba74" text-anchor="middle">Dual Core</text>
+  <!-- Left: BLE device -->
+  <rect x="30" y="85" width="75" height="50" rx="5" fill="#1e3a5f" stroke="#818cf8" stroke-width="1.5"/>
+  <text x="67" y="106" font-family="monospace" font-size="8" fill="#818cf8" text-anchor="middle">BLE</text>
+  <text x="67" y="118" font-family="monospace" font-size="7" fill="#a5b4fc" text-anchor="middle">Peripheral</text>
+  <text x="67" y="129" font-family="monospace" font-size="7" fill="#a5b4fc" text-anchor="middle">Device</text>
+  <!-- BLE connection -->
+  <line x1="105" y1="110" x2="155" y2="110" stroke="#818cf8" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <polygon points="153,106 161,110 153,114" fill="#818cf8"/>
+  <text x="128" y="106" font-family="monospace" font-size="7" fill="#818cf8" text-anchor="middle">BLE</text>
+  <!-- Right: Cloud/Broker -->
+  <rect x="295" y="85" width="75" height="50" rx="5" fill="#1e3a5f" stroke="#38bdf8" stroke-width="1.5"/>
+  <text x="332" y="103" font-family="monospace" font-size="8" fill="#38bdf8" text-anchor="middle">MQTT</text>
+  <text x="332" y="115" font-family="monospace" font-size="7" fill="#7dd3fc" text-anchor="middle">Broker</text>
+  <text x="332" y="127" font-family="monospace" font-size="7" fill="#7dd3fc" text-anchor="middle">Cloud IoT</text>
+  <!-- WiFi/MQTT connection -->
+  <line x1="245" y1="110" x2="295" y2="110" stroke="#38bdf8" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <polygon points="293,106 301,110 293,114" fill="#38bdf8"/>
+  <text x="268" y="106" font-family="monospace" font-size="7" fill="#38bdf8" text-anchor="middle">WiFi</text>
+  <!-- Data flow bottom -->
+  <rect x="30" y="155" width="340" height="30" rx="4" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+  <text x="40" y="167" font-family="monospace" font-size="7" fill="#64748b">TOPIC:</text>
+  <text x="85" y="167" font-family="monospace" font-size="8" fill="#f97316">device/esp32/sensors/data</text>
+  <text x="40" y="179" font-family="monospace" font-size="7" fill="#64748b">QoS:</text>
+  <text x="70" y="179" font-family="monospace" font-size="8" fill="#38bdf8">1 · Publish/Subscribe · Real-time</text>
+  <!-- Label -->
+  <rect x="10" y="10" width="220" height="24" rx="4" fill="#f97316" opacity="0.15"/>
+  <text x="20" y="27" font-family="monospace" font-size="12" fill="#f97316" font-weight="bold">ESP32 · BLE + MQTT · Cloud IoT</text>
+</svg>

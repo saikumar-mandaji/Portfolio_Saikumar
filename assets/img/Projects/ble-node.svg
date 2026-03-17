@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="220" viewBox="0 0 400 220">
+  <defs>
+    <linearGradient id="bg8" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="220" fill="url(#bg8)" rx="10"/>
+  <!-- BLE symbol center -->
+  <circle cx="200" cy="105" r="35" fill="#1e293b" stroke="#818cf8" stroke-width="2"/>
+  <!-- BLE logo lines -->
+  <line x1="200" y1="75" x2="200" y2="135" stroke="#818cf8" stroke-width="2"/>
+  <line x1="200" y1="75"  x2="215" y2="88"  stroke="#818cf8" stroke-width="2"/>
+  <line x1="200" y1="135" x2="215" y2="122" stroke="#818cf8" stroke-width="2"/>
+  <line x1="200" y1="95"  x2="188" y2="85"  stroke="#818cf8" stroke-width="2"/>
+  <line x1="200" y1="115" x2="188" y2="125" stroke="#818cf8" stroke-width="2"/>
+  <!-- Wireless rings -->
+  <circle cx="200" cy="105" r="55" fill="none" stroke="#818cf8" stroke-width="1" stroke-dasharray="6,4" opacity="0.5"/>
+  <circle cx="200" cy="105" r="75" fill="none" stroke="#818cf8" stroke-width="0.7" stroke-dasharray="4,5" opacity="0.3"/>
+  <circle cx="200" cy="105" r="95" fill="none" stroke="#818cf8" stroke-width="0.5" stroke-dasharray="3,6" opacity="0.15"/>
+  <!-- Peripheral devices -->
+  <rect x="20" y="40"  width="60" height="28" rx="4" fill="#1e3a5f" stroke="#818cf8" stroke-width="1"/>
+  <text x="50" y="52"  font-family="monospace" font-size="7" fill="#818cf8" text-anchor="middle">Sensor</text>
+  <text x="50" y="63"  font-family="monospace" font-size="7" fill="#a5b4fc" text-anchor="middle">Node 1</text>
+  <rect x="20" y="150" width="60" height="28" rx="4" fill="#1e3a5f" stroke="#818cf8" stroke-width="1"/>
+  <text x="50" y="162" font-family="monospace" font-size="7" fill="#818cf8" text-anchor="middle">Sensor</text>
+  <text x="50" y="173" font-family="monospace" font-size="7" fill="#a5b4fc" text-anchor="middle">Node 2</text>
+  <rect x="320" y="40"  width="60" height="28" rx="4" fill="#1e3a5f" stroke="#818cf8" stroke-width="1"/>
+  <text x="350" y="52"  font-family="monospace" font-size="7" fill="#818cf8" text-anchor="middle">Mobile</text>
+  <text x="350" y="63"  font-family="monospace" font-size="7" fill="#a5b4fc" text-anchor="middle">Gateway</text>
+  <rect x="320" y="150" width="60" height="28" rx="4" fill="#1e3a5f" stroke="#818cf8" stroke-width="1"/>
+  <text x="350" y="162" font-family="monospace" font-size="7" fill="#818cf8" text-anchor="middle">Monitor</text>
+  <text x="350" y="173" font-family="monospace" font-size="7" fill="#a5b4fc" text-anchor="middle">Dashboard</text>
+  <!-- Dashed connections -->
+  <line x1="80" y1="54"  x2="148" y2="90"  stroke="#818cf8" stroke-width="1" stroke-dasharray="3,3" opacity="0.5"/>
+  <line x1="80" y1="164" x2="148" y2="118" stroke="#818cf8" stroke-width="1" stroke-dasharray="3,3" opacity="0.5"/>
+  <line x1="320" y1="54"  x2="252" y2="90"  stroke="#818cf8" stroke-width="1" stroke-dasharray="3,3" opacity="0.5"/>
+  <line x1="320" y1="164" x2="252" y2="118" stroke="#818cf8" stroke-width="1" stroke-dasharray="3,3" opacity="0.5"/>
+  <!-- Label -->
+  <rect x="10" y="10" width="190" height="24" rx="4" fill="#818cf8" opacity="0.15"/>
+  <text x="20" y="27" font-family="monospace" font-size="12" fill="#818cf8" font-weight="bold">nRF52840 · BLE 5.0 · Low Power</text>
+</svg>

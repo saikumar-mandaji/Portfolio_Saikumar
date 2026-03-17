@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="220" viewBox="0 0 400 220">
+  <defs>
+    <linearGradient id="bg5" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0f1e"/>
+      <stop offset="100%" style="stop-color:#0f172a"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="220" fill="url(#bg5)" rx="10"/>
+  <!-- Grid -->
+  <line x1="0" y1="50"  x2="400" y2="50"  stroke="#1e293b" stroke-width="0.5"/>
+  <line x1="0" y1="90"  x2="400" y2="90"  stroke="#1e293b" stroke-width="0.5"/>
+  <line x1="0" y1="130" x2="400" y2="130" stroke="#1e293b" stroke-width="0.5"/>
+  <line x1="0" y1="170" x2="400" y2="170" stroke="#1e293b" stroke-width="0.5"/>
+  <line x1="80"  y1="0" x2="80"  y2="220" stroke="#1e293b" stroke-width="0.5"/>
+  <line x1="160" y1="0" x2="160" y2="220" stroke="#1e293b" stroke-width="0.5"/>
+  <line x1="240" y1="0" x2="240" y2="220" stroke="#1e293b" stroke-width="0.5"/>
+  <line x1="320" y1="0" x2="320" y2="220" stroke="#1e293b" stroke-width="0.5"/>
+  <!-- ECG waveform path (P-QRS-T complex x2) -->
+  <polyline points="0,110 30,110 40,105 50,110 60,108 70,60 75,150 80,110 90,105 100,110 130,110 160,108 170,55 175,145 180,110 190,105 200,110 230,110 260,108 270,55 275,145 280,110 290,105 300,110 330,110 360,108 370,55 375,145 380,110 400,110"
+    fill="none" stroke="#22c55e" stroke-width="2" stroke-linejoin="round"/>
+  <!-- HR Display -->
+  <rect x="20" y="15" width="120" height="28" rx="4" fill="#0f172a" stroke="#22c55e" stroke-width="1"/>
+  <text x="30" y="27" font-family="monospace" font-size="9" fill="#64748b">HEART RATE</text>
+  <text x="30" y="39" font-family="monospace" font-size="12" fill="#22c55e" font-weight="bold">72 BPM</text>
+  <!-- SpO2 Display -->
+  <rect x="155" y="15" width="100" height="28" rx="4" fill="#0f172a" stroke="#38bdf8" stroke-width="1"/>
+  <text x="163" y="27" font-family="monospace" font-size="9" fill="#64748b">SpO2</text>
+  <text x="163" y="39" font-family="monospace" font-size="12" fill="#38bdf8" font-weight="bold">98.5%</text>
+  <!-- Temp Display -->
+  <rect x="268" y="15" width="100" height="28" rx="4" fill="#0f172a" stroke="#f97316" stroke-width="1"/>
+  <text x="276" y="27" font-family="monospace" font-size="9" fill="#64748b">TEMP</text>
+  <text x="276" y="39" font-family="monospace" font-size="12" fill="#f97316" font-weight="bold">36.8°C</text>
+  <!-- Tech badges -->
+  <rect x="10" y="185" width="70" height="18" rx="9" fill="#22c55e" opacity="0.15"/>
+  <text x="18" y="198" font-family="monospace" font-size="9" fill="#22c55e">MAX30100</text>
+  <rect x="88" y="185" width="60" height="18" rx="9" fill="#22c55e" opacity="0.15"/>
+  <text x="97" y="198" font-family="monospace" font-size="9" fill="#22c55e">AD8232</text>
+  <rect x="156" y="185" width="65" height="18" rx="9" fill="#22c55e" opacity="0.15"/>
+  <text x="162" y="198" font-family="monospace" font-size="9" fill="#22c55e">DS18B20</text>
+  <rect x="229" y="185" width="65" height="18" rx="9" fill="#22c55e" opacity="0.15"/>
+  <text x="236" y="198" font-family="monospace" font-size="9" fill="#22c55e">Raspberry Pi</text>
+</svg>
