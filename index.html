@@ -449,7 +449,7 @@
     <!--=================== PROJECTS ===================-->
     <section class="portfolio section" id="portfolio">
       <h2 class="section__title">Projects</h2>
-      <span class="section__subtitle">13 Products · Medical · IoT · Industrial · Wearable</span>
+      <span class="section__subtitle">· Medical · IoT · Industrial · Wearable</span>
 
       <div class="projects__filter container">
         <button class="filter__btn active-filter" data-filter="all">All <span class="filter__count">13</span></button>
@@ -813,6 +813,105 @@
               <li><strong>Power-fail alarm state</strong> — store last alarm state to non-volatile memory before power loss. On restart, if the device was alarming, restore that state rather than booting clean.</li>
             </ul>
             <p><strong>Philosophy:</strong> Design alarms to fail safe. If the alarm subsystem itself has an error, the device should alert — not stay silent.</p>
+          </div>
+          <button class="blog__toggle">Read More <i class="uil uil-angle-down"></i></button>
+        </article>
+
+        <!-- Blog 7 -->
+        <article class="blog__card card-item">
+          <div class="blog__header">
+            <span class="blog__tag tag--hardware">Hardware</span>
+            <span class="blog__read-time"><i class="uil uil-clock"></i> 7 min read</span>
+          </div>
+          <h3 class="blog__title">Custom Hardware Design for Nano-Ampere ULP Systems</h3>
+          <p class="blog__excerpt">Achieving nano-ampere sleep current is not just a firmware problem — it demands custom PCB design, careful component selection, and hardware-level power path optimisation that datasheets alone won't tell you.</p>
+          <div class="blog__content">
+            <p>When working on ultra-low-power products with Si Labs BGM220, hitting the theoretical sleep current numbers from the datasheet requires solving several hardware problems that most reference designs ignore.</p>
+            <p><strong>Power path design:</strong></p>
+            <ul>
+              <li><strong>Leakage is the enemy</strong> — at nA targets, even a 10MΩ pull-up resistor leaks 330nA at 3.3V. Audit every resistor on power-sensitive nets. Replace pull-ups on unused pins with software-configured internal pull-ups that disengage in sleep.</li>
+              <li><strong>Voltage regulator quiescent current</strong> — standard LDOs have 50–200µA Iq. For nA targets, use a nano-power LDO (Iq = 25nA range) or run directly off battery with protection-only circuitry.</li>
+              <li><strong>Load switch isolation</strong> — sensors, LEDs, and peripherals must be power-gated via a P-channel MOSFET or dedicated load switch. If a peripheral draws 100µA idle and is continuously powered, no firmware trick recovers that.</li>
+              <li><strong>Capacitor leakage</strong> — use ceramics exclusively. Tantalum and electrolytic caps have significant leakage at nA budget levels.</li>
+            </ul>
+            <p><strong>PCB layout for leakage control:</strong></p>
+            <ul>
+              <li>Guard rings around high-impedance nodes to intercept surface leakage before it reaches sensitive pins.</li>
+              <li>Conformal coating on production boards — humidity causes surface leakage orders of magnitude above dry-lab measurements.</li>
+              <li>Separate analog and digital ground planes joined at a single star point near power entry.</li>
+            </ul>
+            <p><strong>Firmware side (BGM220):</strong></p>
+            <ul>
+              <li>Use EM4 (Energy Mode 4) for deepest sleep — RAM not retained but sub-100nA achievable with GPIO/RTC wake.</li>
+              <li>Disable all unused peripherals explicitly before sleep — even a peripheral left in reset draws microamps on some SoCs.</li>
+              <li>Measure actual current with a dedicated power analyser — never trust simulation. Real boards always have surprises.</li>
+            </ul>
+            <p><strong>Result achieved:</strong> Through hardware + firmware co-optimisation, sleep current below 500nA was consistently achieved on production hardware, enabling multi-year coin cell operation.</p>
+          </div>
+          <button class="blog__toggle">Read More <i class="uil uil-angle-down"></i></button>
+        </article>
+
+        <!-- Blog 8 -->
+        <article class="blog__card card-item">
+          <div class="blog__header">
+            <span class="blog__tag tag--ble">BLE</span>
+            <span class="blog__read-time"><i class="uil uil-clock"></i> 6 min read</span>
+          </div>
+          <h3 class="blog__title">Building Custom BLE Beacon Systems for Embedded Products</h3>
+          <p class="blog__excerpt">Generic iBeacon or Eddystone specs rarely fit real product requirements. Custom beacon firmware lets you pack exactly the data you need — sensor readings, device state, battery level — into advertising packets with zero connection overhead.</p>
+          <div class="blog__content">
+            <p>For projects where data needs to broadcast to multiple listeners simultaneously without connection latency, custom BLE beacons are the right architecture.</p>
+            <p><strong>Custom advertising payload design:</strong></p>
+            <ul>
+              <li><strong>Manufacturer Specific Data (AD type 0xFF)</strong> — pack up to 27 bytes per advertising packet. Define a custom company ID prefix followed by your payload struct.</li>
+              <li><strong>Tight packing</strong> — a typical sensor beacon: 2B device ID + 2B temperature (0.01°C resolution) + 1B battery % + 1B status flags = 6 bytes total. Compact and extensible.</li>
+              <li><strong>Sequence counter</strong> — a 1-byte rolling counter lets listeners detect missed packets and assess link quality independently of RSSI.</li>
+              <li><strong>Lightweight obfuscation</strong> — XOR payload with a key derived from device ID to deter casual sniffing of proprietary formats on shared radio environments.</li>
+            </ul>
+            <p><strong>Advertising interval strategy:</strong></p>
+            <ul>
+              <li>Fast advertising (100ms) for active/alarm states, slow (2–5s) for idle — a state-machine in firmware drives interval switching based on device condition.</li>
+              <li>Randomise interval slightly (±10ms) to avoid systematic collision with other devices on the same channel hopping pattern.</li>
+            </ul>
+            <p><strong>Gateway/receiver side:</strong></p>
+            <ul>
+              <li>Filter on company ID immediately — ignore all unrecognised advertising packets to minimise processing load on the gateway.</li>
+              <li>Device registry keyed on BLE MAC: track last-seen timestamp and flag devices as lost after 3× their normal interval.</li>
+              <li>Average RSSI over 5 consecutive packets before any proximity decision — single-packet RSSI is too noisy for reliable distance estimation.</li>
+            </ul>
+            <p><strong>Key advantage:</strong> 50+ beacons can be monitored simultaneously by a single gateway with no connection slots consumed — far more scalable than maintaining concurrent connections for fleet monitoring.</p>
+          </div>
+          <button class="blog__toggle">Read More <i class="uil uil-angle-down"></i></button>
+        </article>
+
+        <!-- Blog 9 -->
+        <article class="blog__card card-item">
+          <div class="blog__header">
+            <span class="blog__tag tag--tools">Tools</span>
+            <span class="blog__read-time"><i class="uil uil-clock"></i> 5 min read</span>
+          </div>
+          <h3 class="blog__title">Python UART Debug Tools — Real-Time Embedded Device Analysis</h3>
+          <p class="blog__excerpt">When a device misbehaves in the field, UART is your lifeline. I built custom Python serial tools to capture, parse, visualise, and log device data — far beyond what any terminal emulator offers.</p>
+          <div class="blog__content">
+            <p>Rather than relying on generic terminal emulators, I write project-specific Python tools using <code>pyserial</code> that understand the device's exact data format and surface problems immediately.</p>
+            <p><strong>Core architecture:</strong></p>
+            <ul>
+              <li><strong>Serial reader thread</strong> — read UART in a background thread; pass data to the main thread via <code>queue.Queue</code> so no bytes are dropped while the main thread processes output.</li>
+              <li><strong>Structured log format</strong> — define a lightweight log protocol on the device: <code>[TIMESTAMP][LEVEL][MODULE] message</code>. Python parses and colour-codes by level: DEBUG=white, INFO=green, WARN=yellow, ERROR=red.</li>
+              <li><strong>Binary packet parser</strong> — for sensor data sent as packed structs, use Python's <code>struct.unpack()</code> matching the exact layout defined in firmware. Any struct mismatch becomes immediately visible as garbage output.</li>
+            </ul>
+            <p><strong>Visualisation:</strong></p>
+            <ul>
+              <li>Real-time plotting with <code>matplotlib</code> — sensor readings, ADC values, RSSI over time. Catches drift, noise spikes, and glitches that scrolling text hides entirely.</li>
+              <li>CSV export with PC timestamps — logging a full day of device operation and analysing patterns in pandas has caught multiple intermittent bugs that never appeared in short test sessions.</li>
+            </ul>
+            <p><strong>Specific tools built:</strong></p>
+            <ul>
+              <li><strong>BLE beacon sniffer parser</strong> — device in observer mode outputs raw advertising data over UART; Python tool decodes custom beacon payloads and shows all nearby devices in a live table with RSSI, device ID, and sensor values.</li>
+              <li><strong>Power event logger</strong> — firmware logs sleep/wake events with timestamps over UART; Python calculates actual sleep durations, wake frequency, and estimated average current — no power analyser required for initial debugging.</li>
+              <li><strong>Sensor calibration tool</strong> — interactive script sending calibration commands over UART, reading raw ADC values back, computing correction coefficients, and writing them to device NVS flash — the entire calibration workflow automated in one tool.</li>
+            </ul>
+            <p><strong>Key insight:</strong> A logic analyser captures what the hardware does. A custom Python tool captures what the firmware thinks. The gap between those two is often exactly where the bug lives.</p>
           </div>
           <button class="blog__toggle">Read More <i class="uil uil-angle-down"></i></button>
         </article>

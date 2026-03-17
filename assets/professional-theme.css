@@ -962,6 +962,7 @@ button {
 .tag--medical  { background: rgba(239,68,68,0.12);  color: #ef4444; }
 .tag--iot      { background: rgba(6,182,212,0.12);  color: #06b6d4; }
 .tag--hardware { background: rgba(251,191,36,0.12); color: #f59e0b; }
+.tag--tools    { background: rgba(168,85,247,0.12);  color: #a855f7; }
 
 .blog__read-time {
   font-size: 0.7rem;
