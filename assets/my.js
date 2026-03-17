@@ -189,23 +189,6 @@ function sendToAPI(body) {
   });
 })();
 
-// ==================== BLOG TOGGLE ====================
-(function() {
-  var toggleBtns = document.querySelectorAll('.blog__toggle');
-  toggleBtns.forEach(function(btn) {
-    btn.addEventListener('click', function() {
-      var card = btn.closest('.blog__card');
-      var content = card.querySelector('.blog__content');
-      var isOpen = content.style.display === 'block';
-      content.style.display = isOpen ? 'none' : 'block';
-      btn.textContent = isOpen ? 'Read More ' : 'Show Less ';
-      var icon = document.createElement('i');
-      icon.className = isOpen ? 'uil uil-angle-down' : 'uil uil-angle-up';
-      btn.appendChild(icon);
-      btn.classList.toggle('expanded', !isOpen);
-    });
-  });
-})();
 
 // ==================== FORM SUBMISSION ====================
 function submitForm() {

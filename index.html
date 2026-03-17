@@ -687,7 +687,7 @@
             </ul>
             <p><strong>Lesson learned:</strong> Sector erase on W25Q16 takes up to 400ms. Without polling the BUSY bit in the status register, subsequent read/write operations silently fail. Always implement a timeout-based busy-wait loop.</p>
           </div>
-          <button class="blog__toggle">Read More <i class="uil uil-angle-down"></i></button>
+
         </article>
 
         <!-- Blog 2 -->
@@ -696,22 +696,30 @@
             <span class="blog__tag tag--ble">BLE</span>
             <span class="blog__read-time"><i class="uil uil-clock"></i> 6 min read</span>
           </div>
-          <h3 class="blog__title">Ultra Low Power BLE — nRF52840 Power Optimization</h3>
-          <p class="blog__excerpt">Getting from 3mA average to 8µA average current on nRF52840 required understanding every layer of the BLE stack's power behaviour, from advertising intervals to DCDCs and RAM retention.</p>
+          <h3 class="blog__title">nRF52840 BLE GATT Profile Design for Medical Sensor Devices</h3>
+          <p class="blog__excerpt">Designing a clean GATT profile is the difference between a BLE device that "works in demos" and one that integrates reliably into mobile apps, handles reconnections gracefully, and survives real-world usage.</p>
           <div class="blog__content">
-            <p>On battery-powered BLE devices, power is everything. The nRF52840 can run at &lt;10µA average in optimized configurations, but the default settings are far from optimal.</p>
-            <p><strong>Key optimisations applied:</strong></p>
+            <p>Most embedded developers treat GATT as an afterthought — pick a characteristic UUID, throw data in, done. On production medical sensor devices, poor GATT design causes app crashes, data loss on reconnect, and months of debugging.</p>
+            <p><strong>Service and characteristic structure:</strong></p>
             <ul>
-              <li><strong>Advertising interval</strong> — increasing from 100ms to 1000ms reduces average current dramatically since advertising is the most power-hungry state. Use directed advertising only when needed.</li>
-              <li><strong>Connection interval</strong> — negotiate the longest acceptable connection interval with the central (typically 500ms–4s for sensor devices). Longer intervals = longer sleep between events.</li>
-              <li><strong>DCDC regulators</strong> — enable both REG0 (1.8V DCDC) and REG1 (main DCDC) in the board configuration. The default LDO is significantly less efficient.</li>
-              <li><strong>RAM retention</strong> — only retain the RAM sections actually used. Configure <code>CONFIG_RAM_POWER_DOWN_LIBRARY</code> or manually power down unused RAM blocks.</li>
-              <li><strong>Peripheral shutdown</strong> — disable all unused peripherals (SPI, I2C, UART) between measurement cycles. Zephyr's <code>pm_device_action_run()</code> handles this cleanly.</li>
-              <li><strong>System Off vs System On sleep</strong> — for very infrequent wake-ups (e.g., hourly logging), System Off with GPIO wake-up reaches ~0.5µA. For frequent events, System On with CPU sleep is faster to resume.</li>
+              <li><strong>One service per functional domain</strong> — separate Vitals Service (HR, SpO₂, temperature) from Device Info Service (battery, firmware version, serial). Mixing concerns into one service makes the mobile side brittle.</li>
+              <li><strong>Notify vs Indicate</strong> — use Notify for high-frequency sensor data (no acknowledgement, lower overhead). Use Indicate for critical alarms and configuration confirmations (acknowledged delivery). Never use Indicate for streaming data — it will saturate the connection.</li>
+              <li><strong>Characteristic descriptors</strong> — always include a CCCD (Client Characteristic Configuration Descriptor) on notifiable characteristics. The central must write it to enable notifications — if your firmware doesn't handle CCCD writes, notifications silently never start.</li>
+              <li><strong>Data packing</strong> — pack multi-field sensor readings into a single characteristic rather than one characteristic per sensor value. Fewer notifications = lower power + lower connection event load.</li>
             </ul>
-            <p><strong>Tool used:</strong> Nordic's Power Profiler Kit II (PPK2) — indispensable for real-time current measurement during development.</p>
+            <p><strong>Reconnection and state handling:</strong></p>
+            <ul>
+              <li>Reset all CCCD states on disconnect. The next central to connect must re-subscribe. Retaining CCCD state across connections causes silent data floods to unexpected clients.</li>
+              <li>Buffer the last N sensor readings in a ring buffer on the device. On reconnection, flush the buffer before resuming live streaming — this prevents data gaps in clinical recordings.</li>
+              <li>Implement a connection timeout watchdog: if the central stops responding (GATT timeout), trigger a disconnect and restart advertising rather than hanging in a half-connected state.</li>
+            </ul>
+            <p><strong>MTU negotiation:</strong></p>
+            <ul>
+              <li>Request MTU of 247 bytes (maximum for nRF52840 with data length extension). This allows packing multiple sensor samples per notification — critical for ECG streaming at 500 SPS.</li>
+              <li>Always handle the case where the central rejects the MTU upgrade and falls back to 23 bytes. Your characteristic write handler must cope with both sizes.</li>
+            </ul>
+            <p><strong>Key lesson:</strong> Document your GATT profile as a table (UUID, properties, format, units, range) before writing a single line of firmware. Every ambiguity in the profile becomes a bug in the mobile app integration.</p>
           </div>
-          <button class="blog__toggle">Read More <i class="uil uil-angle-down"></i></button>
         </article>
 
         <!-- Blog 3 -->
@@ -734,7 +742,7 @@
             </ul>
             <p><strong>Key insight:</strong> ECG is 99% analog design and 1% digital processing. Spending time on PCB layout (ground planes, lead routing, shielding) gives better results than any digital filter.</p>
           </div>
-          <button class="blog__toggle">Read More <i class="uil uil-angle-down"></i></button>
+
         </article>
 
         <!-- Blog 4 -->
@@ -757,7 +765,7 @@
             </ul>
             <p><strong>Topic design tip:</strong> Structure topics hierarchically — <code>device/{device_id}/sensor/{type}/data</code>. This allows wildcard subscriptions on the backend for fleet monitoring.</p>
           </div>
-          <button class="blog__toggle">Read More <i class="uil uil-angle-down"></i></button>
+
         </article>
 
         <!-- Blog 5 -->
@@ -785,7 +793,7 @@
             </ul>
             <p><strong>Key rule:</strong> Solve the analog problem in hardware. Software calibration can compensate for offset and gain errors, but it cannot fix noise, non-linearity, or impedance mismatch.</p>
           </div>
-          <button class="blog__toggle">Read More <i class="uil uil-angle-down"></i></button>
+
         </article>
 
         <!-- Blog 6 -->
@@ -814,7 +822,7 @@
             </ul>
             <p><strong>Philosophy:</strong> Design alarms to fail safe. If the alarm subsystem itself has an error, the device should alert — not stay silent.</p>
           </div>
-          <button class="blog__toggle">Read More <i class="uil uil-angle-down"></i></button>
+
         </article>
 
         <!-- Blog 7 -->
@@ -848,7 +856,7 @@
             </ul>
             <p><strong>Result achieved:</strong> Through hardware + firmware co-optimisation, sleep current below 500nA was consistently achieved on production hardware, enabling multi-year coin cell operation.</p>
           </div>
-          <button class="blog__toggle">Read More <i class="uil uil-angle-down"></i></button>
+
         </article>
 
         <!-- Blog 8 -->
@@ -881,7 +889,7 @@
             </ul>
             <p><strong>Key advantage:</strong> 50+ beacons can be monitored simultaneously by a single gateway with no connection slots consumed — far more scalable than maintaining concurrent connections for fleet monitoring.</p>
           </div>
-          <button class="blog__toggle">Read More <i class="uil uil-angle-down"></i></button>
+
         </article>
 
         <!-- Blog 9 -->
@@ -913,7 +921,7 @@
             </ul>
             <p><strong>Key insight:</strong> A logic analyser captures what the hardware does. A custom Python tool captures what the firmware thinks. The gap between those two is often exactly where the bug lives.</p>
           </div>
-          <button class="blog__toggle">Read More <i class="uil uil-angle-down"></i></button>
+
         </article>
 
       </div>
