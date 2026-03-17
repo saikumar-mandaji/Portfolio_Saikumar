@@ -986,13 +986,7 @@ button {
 }
 
 .blog__content {
-  display: block;
-  font-size: var(--smaller-font-size);
-  color: var(--text-color);
-  line-height: 1.8;
-  border-top: 1px solid var(--divider);
-  padding-top: 1rem;
-  margin-top: 0.5rem;
+  display: none;
 }
 
 .blog__content p {
