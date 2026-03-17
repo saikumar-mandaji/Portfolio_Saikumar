@@ -449,16 +449,15 @@
     <!--=================== PROJECTS ===================-->
     <section class="portfolio section" id="portfolio">
       <h2 class="section__title">Projects</h2>
-      <span class="section__subtitle">13 Products · Medical · IoT · Industrial · Wearable</span>
+      <span class="section__subtitle">12 Products · Medical · IoT · Industrial · Wearable</span>
 
       <div class="projects__filter container">
-        <button class="filter__btn active-filter" data-filter="all">All <span class="filter__count">13</span></button>
+        <button class="filter__btn active-filter" data-filter="all">All <span class="filter__count">12</span></button>
         <button class="filter__btn" data-filter="medical">Medical <span class="filter__count">5</span></button>
-        <button class="filter__btn" data-filter="iot">IoT <span class="filter__count">4</span></button>
+        <button class="filter__btn" data-filter="iot">IoT <span class="filter__count">3</span></button>
         <button class="filter__btn" data-filter="industrial">Industrial <span class="filter__count">2</span></button>
         <button class="filter__btn" data-filter="wearable">Wearable <span class="filter__count">2</span></button>
         <button class="filter__btn" data-filter="personal">Personal <span class="filter__count">1</span></button>
-        <button class="filter__btn" data-filter="rl">R&L <span class="filter__count">1</span></button>
       </div>
 
       <div class="projects__grid container">
@@ -486,8 +485,8 @@
           <h3 class="project__title">IoT Payphone System</h3>
           <p class="project__desc">RFID-authenticated payphone system for student calling over GSM. Remote cloud interface for parents and admins to monitor usage and manage access.</p>
           <div class="project__tags">
-            <span>STM32</span><span>RC522 RFID</span><span>SIM800L GSM</span>
-            <span>I2C</span><span>UART</span><span>REST API</span><span>Cloud Dashboard</span>
+            <span>ATmega2560</span><span>RC522 RFID</span><span>GSM Module</span>
+            <span>SPI</span><span>UART</span><span>REST API</span><span>Cloud Dashboard</span>
           </div>
         </div>
 
@@ -528,8 +527,8 @@
           <h3 class="project__title">Patient Vitals Monitor (BLE)</h3>
           <p class="project__desc">Ultra-low-power BLE device for continuous patient vital signs and body temperature monitoring, integrated with mobile app for real-time data visualization and alerts.</p>
           <div class="project__tags">
-            <span>nRF52840</span><span>BLE 5.0</span><span>MAX30102</span>
-            <span>NTC Thermistor</span><span>Zephyr RTOS</span><span>GATT</span><span>Mobile App</span>
+            <span>Si Labs BGM220</span><span>BLE 5.0</span><span>MAX30102</span>
+            <span>NTC Thermistor</span><span>GATT</span><span>Mobile App</span>
           </div>
         </div>
 
@@ -540,10 +539,10 @@
             <i class="uil uil-temperature project__icon"></i>
           </div>
           <h3 class="project__title">ULP BLE Temperature Logger</h3>
-          <p class="project__desc">BLE temperature logging system optimized for energy harvesting environments, ensuring long-term operation with minimal power consumption and reliable data transmission.</p>
+          <p class="project__desc">BLE temperature logging system on Si Labs BGM220 achieving nano-ampere sleep current via energy harvesting, ensuring long-term operation with minimal power consumption and reliable data transmission.</p>
           <div class="project__tags">
-            <span>nRF52840</span><span>BLE 5.0</span><span>Energy Harvesting</span>
-            <span>Zephyr RTOS</span><span>Low Power Modes</span><span>SPI</span>
+            <span>Si Labs BGM220</span><span>BLE 5.0</span><span>Energy Harvesting</span>
+            <span>nA Sleep Current</span><span>Low Power Modes</span><span>SPI</span>
           </div>
         </div>
 
@@ -570,7 +569,7 @@
           <h3 class="project__title">Industrial IoT PLC Interface</h3>
           <p class="project__desc">IoT interface reading signals from PLC systems and sending digital control signals back, enabling integration between legacy industrial systems and modern IoT platforms.</p>
           <div class="project__tags">
-            <span>STM32</span><span>RS485 / Modbus</span><span>Digital I/O</span>
+            <span>ESP32</span><span>RS485 / Modbus</span><span>Digital I/O</span>
             <span>MQTT</span><span>PLC Signals</span><span>Cloud Integration</span>
           </div>
         </div>
@@ -584,7 +583,7 @@
           <h3 class="project__title">Industrial IoT Data Logger</h3>
           <p class="project__desc">Versatile data logger supporting RS485, 4–20mA, and 0–10V signal inputs with real-time cloud synchronization for monitoring and analytics.</p>
           <div class="project__tags">
-            <span>STM32</span><span>RS485</span><span>4–20mA</span>
+            <span>ESP32</span><span>RS485</span><span>4–20mA</span>
             <span>0–10V ADC</span><span>ADS1115</span><span>MQTT</span><span>Cloud Sync</span>
           </div>
         </div>
@@ -626,8 +625,8 @@
           <h3 class="project__title">Smart Wrist Wearable</h3>
           <p class="project__desc">Smart wearable monitoring vital parameters and ambient air quality. Sensor fusion, BLE communication, and mobile app for continuous health and environmental insights.</p>
           <div class="project__tags">
-            <span>nRF52840</span><span>BLE 5.0</span><span>MAX30102</span>
-            <span>CCS811 Air Quality</span><span>Sensor Fusion</span><span>Zephyr RTOS</span><span>Mobile App</span>
+            <span>Si Labs BGM220</span><span>BLE 5.0</span><span>MAX30102</span>
+            <span>CCS811 Air Quality</span><span>Sensor Fusion</span><span>Mobile App</span>
           </div>
         </div>
 
@@ -642,20 +641,6 @@
           <div class="project__tags">
             <span>Custom PCB</span><span>ATtiny</span><span>PWM</span>
             <span>Touch Sensing</span><span>WS2812 LEDs</span><span>KiCad</span>
-          </div>
-        </div>
-
-        <!-- 14. Zephyr SPI Flash (R&L) -->
-        <div class="project__card card-item" data-category="rl">
-          <div class="project__header">
-            <span class="project__badge badge--rl">R&amp;L</span>
-            <i class="uil uil-database project__icon"></i>
-          </div>
-          <h3 class="project__title">Zephyr RTOS SPI Flash Driver</h3>
-          <p class="project__desc">Research and learning project implementing a SPI flash memory driver on nRF52832 using Zephyr RTOS with full read, write, and erase operations.</p>
-          <div class="project__tags">
-            <span>nRF52832</span><span>Zephyr RTOS</span><span>W25Q16</span>
-            <span>SPI</span><span>Device Tree</span><span>Embedded C</span>
           </div>
         </div>
 
