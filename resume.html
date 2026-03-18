@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saikumar Mandaji — Resume</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:   #0f172a;
+      --blue:   #1d4ed8;
+      --slate:  #334155;
+      --muted:  #64748b;
+      --border: #e2e8f0;
+      --bg:     #f8fafc;
+      --white:  #ffffff;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      font-size: 13.5px;
+      line-height: 1.55;
+      color: var(--navy);
+      background: var(--bg);
+    }
+
+    .page {
+      max-width: 820px;
+      margin: 2rem auto;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    }
+
+    /* ── HEADER ── */
+    .header {
+      background: var(--navy);
+      padding: 2rem 2.5rem 1.75rem;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 1rem;
+      align-items: start;
+    }
+
+    .header__name {
+      font-size: 26px;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: -0.3px;
+    }
+
+    .header__title {
+      font-size: 13px;
+      color: #93c5fd;
+      font-weight: 500;
+      margin-top: 3px;
+      letter-spacing: 0.02em;
+    }
+
+    .header__contact {
+      text-align: right;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .header__contact a,
+    .header__contact span {
+      font-size: 12px;
+      color: #cbd5e1;
+      text-decoration: none;
+      font-family: 'Roboto Mono', monospace;
+    }
+
+    .header__contact a:hover { color: #93c5fd; }
+
+    /* ── BODY ── */
+    .body {
+      display: grid;
+      grid-template-columns: 1fr 220px;
+    }
+
+    .main   { padding: 1.75rem 2rem 2rem 2.5rem; border-right: 1px solid var(--border); }
+    .sidebar { padding: 1.75rem 1.5rem 2rem; background: #f1f5f9; }
+
+    /* ── SECTION ── */
+    .section { margin-bottom: 1.6rem; }
+    .section:last-child { margin-bottom: 0; }
+
+    .section__title {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--blue);
+      border-bottom: 1.5px solid var(--blue);
+      padding-bottom: 4px;
+      margin-bottom: 0.9rem;
+    }
+
+    /* ── SUMMARY ── */
+    .summary p {
+      color: var(--slate);
+      font-size: 13px;
+      line-height: 1.65;
+    }
+
+    /* ── EXPERIENCE ── */
+    .exp__item { margin-bottom: 1.2rem; }
+    .exp__item:last-child { margin-bottom: 0; }
+
+    .exp__header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 0.5rem;
+    }
+
+    .exp__role {
+      font-size: 13.5px;
+      font-weight: 600;
+      color: var(--navy);
+    }
+
+    .exp__date {
+      font-size: 11px;
+      color: var(--muted);
+      font-family: 'Roboto Mono', monospace;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .exp__company {
+      font-size: 12px;
+      color: var(--blue);
+      font-weight: 500;
+      margin-bottom: 5px;
+    }
+
+    .exp__bullets {
+      padding-left: 1.1rem;
+      margin-top: 4px;
+    }
+
+    .exp__bullets li {
+      font-size: 12.5px;
+      color: var(--slate);
+      margin-bottom: 3px;
+      line-height: 1.5;
+    }
+
+    .exp__bullets li::marker { color: var(--blue); }
+
+    /* ── PROJECTS ── */
+    .proj__item {
+      margin-bottom: 0.85rem;
+      padding-bottom: 0.85rem;
+      border-bottom: 1px dashed var(--border);
+    }
+    .proj__item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+
+    .proj__header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 0.5rem;
+    }
+
+    .proj__name {
+      font-size: 12.5px;
+      font-weight: 600;
+      color: var(--navy);
+    }
+
+    .proj__cat {
+      font-size: 10px;
+      font-weight: 600;
+      padding: 1px 7px;
+      border-radius: 10px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .cat-medical    { background: #fee2e2; color: #b91c1c; }
+    .cat-iot        { background: #dcfce7; color: #15803d; }
+    .cat-industrial { background: #fef9c3; color: #a16207; }
+    .cat-wearable   { background: #ede9fe; color: #6d28d9; }
+    .cat-personal   { background: #ffedd5; color: #c2410c; }
+
+    .proj__tech {
+      font-size: 11px;
+      color: var(--muted);
+      font-family: 'Roboto Mono', monospace;
+      margin-top: 2px;
+    }
+
+    /* ── SIDEBAR SECTIONS ── */
+    .skill__group { margin-bottom: 1rem; }
+    .skill__group:last-child { margin-bottom: 0; }
+
+    .skill__label {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 4px;
+    }
+
+    .skill__tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+    }
+
+    .skill__tag {
+      font-size: 10.5px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      color: var(--slate);
+      padding: 2px 7px;
+      border-radius: 4px;
+      font-family: 'Roboto Mono', monospace;
+    }
+
+    .edu__item { margin-bottom: 0.75rem; }
+    .edu__degree {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--navy);
+      line-height: 1.4;
+    }
+    .edu__school {
+      font-size: 11.5px;
+      color: var(--blue);
+    }
+    .edu__date {
+      font-size: 11px;
+      color: var(--muted);
+      font-family: 'Roboto Mono', monospace;
+    }
+
+    .highlight {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 6px;
+      font-size: 12px;
+      color: var(--slate);
+    }
+
+    .highlight__num {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--blue);
+      line-height: 1;
+    }
+
+    /* ── PRINT ── */
+    @media print {
+      body { background: white; font-size: 12.5px; }
+      .page {
+        max-width: 100%;
+        margin: 0;
+        border: none;
+        border-radius: 0;
+        box-shadow: none;
+      }
+      a { color: inherit; text-decoration: none; }
+    }
+
+    @media screen and (max-width: 680px) {
+      .body { grid-template-columns: 1fr; }
+      .main { border-right: none; border-bottom: 1px solid var(--border); }
+      .header { grid-template-columns: 1fr; }
+      .header__contact { text-align: left; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div>
+      <div class="header__name">Saikumar Mandaji</div>
+      <div class="header__title">Embedded Firmware Engineer &nbsp;·&nbsp; PCB Designer &nbsp;·&nbsp; IoT Developer</div>
+    </div>
+    <div class="header__contact">
+      <a href="tel:+917095797212">+91 70957 97212</a>
+      <a href="mailto:mandajisaikumar@gmail.com">mandajisaikumar@gmail.com</a>
+      <a href="https://www.linkedin.com/in/mandaji-saikumar" target="_blank">linkedin.com/in/mandaji-saikumar</a>
+      <span>Hyderabad, Telangana, India</span>
+    </div>
+  </div>
+
+  <!-- BODY -->
+  <div class="body">
+
+    <!-- MAIN COLUMN -->
+    <div class="main">
+
+      <!-- Summary -->
+      <div class="section summary">
+        <div class="section__title">Professional Summary</div>
+        <p>Embedded Firmware Engineer with 6+ years of experience delivering production-grade firmware for medical devices, IoT systems, and industrial platforms. Proven expertise in ARM Cortex MCUs (STM32, nRF52840, Si Labs BGM220), BLE 5.0 stack, RTOS-based architectures, and ultra-low-power hardware design achieving nano-ampere sleep currents. Experienced in full product lifecycle — from PCB design and sensor integration to cloud connectivity and field deployment.</p>
+      </div>
+
+      <!-- Experience -->
+      <div class="section">
+        <div class="section__title">Experience</div>
+
+        <div class="exp__item">
+          <div class="exp__header">
+            <span class="exp__role">Embedded Firmware Engineer</span>
+            <span class="exp__date">Apr 2024 — Present</span>
+          </div>
+          <div class="exp__company">Caropet &nbsp;·&nbsp; Hyderabad, India</div>
+          <ul class="exp__bullets">
+            <li>Developing medical-grade firmware for oxygen therapy, gas monitoring, and patient vitals devices on STM32 and Si Labs BGM220 platforms.</li>
+            <li>Designed ultra-low-power BLE systems achieving sub-500nA sleep current through custom PCB power path optimisation and energy harvesting.</li>
+            <li>Implemented IEC 62304-aligned alarm management with independent watchdog-backed alarm tasks and power-fail state persistence.</li>
+            <li>Built custom Python UART debug and calibration tools, reducing firmware validation time by automating sensor coefficient workflows.</li>
+          </ul>
+        </div>
+
+        <div class="exp__item">
+          <div class="exp__header">
+            <span class="exp__role">IoT & Firmware Developer</span>
+            <span class="exp__date">Apr 2020 — Apr 2024</span>
+          </div>
+          <div class="exp__company">Niltech &nbsp;·&nbsp; Hyderabad, India</div>
+          <ul class="exp__bullets">
+            <li>Engineered firmware for the BeetleGuard LoRa network — 250 devices/hub, 5 hubs in production — with real-time cloud monitoring dashboard.</li>
+            <li>Delivered firmware for 2500+ deployed IoT payphones with RFID authentication, GSM communication, and remote fleet management.</li>
+            <li>Developed industrial IoT data loggers supporting RS485, 4–20mA, and 0–10V inputs with MQTT-based cloud synchronisation on ESP32.</li>
+            <li>Designed and deployed ECG monitoring prototype on nRF52840 with AD8232 ECG front-end, MAX30102 SpO₂, and BLE 5.0 data streaming.</li>
+          </ul>
+        </div>
+
+        <div class="exp__item">
+          <div class="exp__header">
+            <span class="exp__role">Embedded Systems Intern</span>
+            <span class="exp__date">Aug 2019 — Apr 2020</span>
+          </div>
+          <div class="exp__company">Niltech &nbsp;·&nbsp; Hyderabad, India</div>
+          <ul class="exp__bullets">
+            <li>Assisted in firmware development for IoT and automation projects on STM32 and AVR platforms.</li>
+            <li>Implemented peripheral drivers (SPI, I2C, UART) and contributed to sensor integration and testing workflows.</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Projects -->
+      <div class="section">
+        <div class="section__title">Key Projects</div>
+
+        <div class="proj__item">
+          <div class="proj__header">
+            <span class="proj__name">BeetleGuard — LoRa Environmental Monitor</span>
+            <span class="proj__cat cat-iot">IoT</span>
+          </div>
+          <div class="proj__tech">STM32 · LoRa SX1278 · FreeRTOS · AWS IoT · 250 nodes/hub · 5 hubs in production</div>
+        </div>
+
+        <div class="proj__item">
+          <div class="proj__header">
+            <span class="proj__name">Oxygen Therapy System</span>
+            <span class="proj__cat cat-medical">Medical</span>
+          </div>
+          <div class="proj__tech">STM32 · MAX30102 SpO₂ · Flow Control · Medical Alarms · Watchdog · IEC 62304</div>
+        </div>
+
+        <div class="proj__item">
+          <div class="proj__header">
+            <span class="proj__name">Patient Vitals Monitor (BLE)</span>
+            <span class="proj__cat cat-medical">Medical</span>
+          </div>
+          <div class="proj__tech">Si Labs BGM220 · BLE 5.0 · MAX30102 · NTC Thermistor · GATT · Mobile App</div>
+        </div>
+
+        <div class="proj__item">
+          <div class="proj__header">
+            <span class="proj__name">ULP BLE Temperature Logger</span>
+            <span class="proj__cat cat-iot">IoT</span>
+          </div>
+          <div class="proj__tech">Si Labs BGM220 · BLE 5.0 · Energy Harvesting · nA Sleep Current · Custom PCB</div>
+        </div>
+
+        <div class="proj__item">
+          <div class="proj__header">
+            <span class="proj__name">Industrial IoT Data Logger</span>
+            <span class="proj__cat cat-industrial">Industrial</span>
+          </div>
+          <div class="proj__tech">ESP32 · RS485 · 4–20mA · 0–10V ADC · ADS1115 · MQTT · Cloud Sync</div>
+        </div>
+
+        <div class="proj__item">
+          <div class="proj__header">
+            <span class="proj__name">Smart Wrist Wearable — Vitals & Air Quality</span>
+            <span class="proj__cat cat-wearable">Wearable</span>
+          </div>
+          <div class="proj__tech">Si Labs BGM220 · BLE 5.0 · MAX30102 · CCS811 · Sensor Fusion · Mobile App</div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+
+      <!-- Highlights -->
+      <div class="section">
+        <div class="section__title">Highlights</div>
+        <div class="highlight">
+          <span class="highlight__num">6+</span>
+          <span>Years Experience</span>
+        </div>
+        <div class="highlight">
+          <span class="highlight__num">13</span>
+          <span>Products Shipped</span>
+        </div>
+        <div class="highlight">
+          <span class="highlight__num">2500+</span>
+          <span>Devices Deployed</span>
+        </div>
+        <div class="highlight">
+          <span class="highlight__num">&lt;500</span>
+          <span>nA Sleep Current</span>
+        </div>
+      </div>
+
+      <!-- Skills -->
+      <div class="section">
+        <div class="section__title">Technical Skills</div>
+
+        <div class="skill__group">
+          <div class="skill__label">MCU Platforms</div>
+          <div class="skill__tags">
+            <span class="skill__tag">STM32</span>
+            <span class="skill__tag">nRF52840</span>
+            <span class="skill__tag">BGM220</span>
+            <span class="skill__tag">ESP32</span>
+            <span class="skill__tag">ATmega2560</span>
+            <span class="skill__tag">Raspberry Pi</span>
+          </div>
+        </div>
+
+        <div class="skill__group">
+          <div class="skill__label">Languages</div>
+          <div class="skill__tags">
+            <span class="skill__tag">Embedded C</span>
+            <span class="skill__tag">C++</span>
+            <span class="skill__tag">Python</span>
+          </div>
+        </div>
+
+        <div class="skill__group">
+          <div class="skill__label">RTOS</div>
+          <div class="skill__tags">
+            <span class="skill__tag">FreeRTOS</span>
+            <span class="skill__tag">Zephyr RTOS</span>
+          </div>
+        </div>
+
+        <div class="skill__group">
+          <div class="skill__label">Wireless</div>
+          <div class="skill__tags">
+            <span class="skill__tag">BLE 5.0</span>
+            <span class="skill__tag">LoRa</span>
+            <span class="skill__tag">GSM</span>
+            <span class="skill__tag">WiFi</span>
+          </div>
+        </div>
+
+        <div class="skill__group">
+          <div class="skill__label">Protocols</div>
+          <div class="skill__tags">
+            <span class="skill__tag">SPI</span>
+            <span class="skill__tag">I2C</span>
+            <span class="skill__tag">UART</span>
+            <span class="skill__tag">RS485</span>
+            <span class="skill__tag">Modbus</span>
+            <span class="skill__tag">MQTT</span>
+          </div>
+        </div>
+
+        <div class="skill__group">
+          <div class="skill__label">Hardware</div>
+          <div class="skill__tags">
+            <span class="skill__tag">PCB Design</span>
+            <span class="skill__tag">KiCad</span>
+            <span class="skill__tag">Analog AFE</span>
+            <span class="skill__tag">ULP Design</span>
+          </div>
+        </div>
+
+        <div class="skill__group">
+          <div class="skill__label">Standards</div>
+          <div class="skill__tags">
+            <span class="skill__tag">IEC 62304</span>
+            <span class="skill__tag">IEC 60601</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Education -->
+      <div class="section">
+        <div class="section__title">Education</div>
+        <div class="edu__item">
+          <div class="edu__degree">Diploma — Electronics &amp; Communication Engineering</div>
+          <div class="edu__school">Jyothishmathi Institute of Technology</div>
+          <div class="edu__date">2013 – 2016</div>
+        </div>
+      </div>
+
+      <!-- Tools -->
+      <div class="section">
+        <div class="section__title">Tools &amp; Platforms</div>
+        <div class="skill__tags" style="gap:5px">
+          <span class="skill__tag">VS Code</span>
+          <span class="skill__tag">STM32CubeIDE</span>
+          <span class="skill__tag">Simplicity Studio</span>
+          <span class="skill__tag">Git</span>
+          <span class="skill__tag">pyserial</span>
+          <span class="skill__tag">AWS IoT</span>
+          <span class="skill__tag">MQTT Broker</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
