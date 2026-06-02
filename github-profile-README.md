@@ -95,7 +95,7 @@ Firmware engineer with **5+ years** building production-grade embedded systems f
 ## What I'm Working On
 
 - 🔬 Medical device firmware on **Si Labs BGM220** and **STM32** at Caropet Technologies
-- 📶 **nRF54L15** (Nordic's latest BLE 6.0 SoC) evaluation and bring-up
+- 📶 Porting BLE firmware to **nRF54L15** on nRF Connect SDK — migrating peripheral drivers from nRF52840, Device Tree reconfiguration for Cortex-M33, and benchmarking BLE sleep current against the nRF52840 baseline
 - 🐍 Python tooling for UART-based embedded device analysis and automated calibration
 
 ---
