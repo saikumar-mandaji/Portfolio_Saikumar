@@ -1154,36 +1154,6 @@ button {
   border-top: 1px solid var(--divider);
 }
 
-.blog__toggle {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-  margin-top: 0.9rem;
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: var(--primary-color);
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 0;
-  font-family: var(--body-font);
-  transition: var(--transition-base);
-}
-
-.blog__toggle:hover {
-  color: var(--primary-color-alt);
-  gap: 0.5rem;
-}
-
-.blog__toggle i {
-  font-size: 1rem;
-  transition: transform 0.3s ease;
-}
-
-.blog__card--open .blog__toggle i {
-  transform: rotate(180deg);
-}
-
 .blog__card {
   cursor: pointer;
 }

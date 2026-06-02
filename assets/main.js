@@ -1294,17 +1294,8 @@ document.querySelectorAll('.blog__card').forEach(card => {
   const content = card.querySelector('.blog__content');
   if (!content) return;
 
-  const btn = document.createElement('button');
-  btn.className = 'blog__toggle';
-  btn.innerHTML = 'Read more <i class="uil uil-angle-down"></i>';
-  card.appendChild(btn);
-
-  btn.addEventListener('click', (e) => {
-    e.stopPropagation();
+  card.addEventListener('click', () => {
     const isOpen = content.classList.toggle('is-open');
     card.classList.toggle('blog__card--open', isOpen);
-    btn.innerHTML = isOpen
-      ? 'Read less <i class="uil uil-angle-up"></i>'
-      : 'Read more <i class="uil uil-angle-down"></i>';
   });
 });
