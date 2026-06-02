@@ -398,7 +398,23 @@ button {
 .home__buttons {
   display: flex;
   gap: 1rem;
-  flex-wrap: wrap;
+}
+
+.home__cv-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 1rem;
+  font-size: var(--small-font-size);
+  font-weight: var(--font-medium);
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: var(--transition-base);
+}
+
+.home__cv-link:hover {
+  color: var(--primary-color-alt);
+  gap: 0.6rem;
 }
 
 .home__scroll {
