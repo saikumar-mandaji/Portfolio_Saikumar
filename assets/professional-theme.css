@@ -918,6 +918,40 @@ button {
   padding: 0.15rem 0.5rem;
 }
 
+.project__img {
+  margin: -1.5rem -1.5rem 0 -1.5rem;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  overflow: hidden;
+  height: 180px;
+  background-color: var(--input-color);
+}
+
+.project__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.project__card:hover .project__img img {
+  transform: scale(1.04);
+}
+
+.project__nda {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--text-color-light);
+  border: 1px dashed rgba(var(--primary-color-rgb), 0.3);
+  border-radius: 0.25rem;
+  padding: 0.15rem 0.5rem;
+}
+
 /* ==================== BLOG ==================== */
 .blog__grid {
   display: grid;

@@ -150,6 +150,10 @@
               <span class="about__info-title">15+</span>
               <span class="about__info-name">MCU Platforms<br>Worked With</span>
             </div>
+            <div class="about__info-item">
+              <span class="about__info-title">2500+</span>
+              <span class="about__info-name">Devices<br>Deployed</span>
+            </div>
           </div>
         </div>
       </div>
@@ -201,7 +205,7 @@
               <div class="tech-data">
                 <div class="tech-data-item" data-skill="Programming Languages">
                   <span class="tech-data-label"><i class="fa fa-file-code-o"></i> Languages:</span>
-                  <span class="tech-data-value">C/C++, Python, Embedded C, MicroPython, JavaScript</span>
+                  <span class="tech-data-value">C/C++, Python, Embedded C, MicroPython</span>
                 </div>
                 <div class="tech-data-item" data-skill="Development Environments">
                   <span class="tech-data-label"><i class="fa fa-terminal"></i> IDEs/Tools:</span>
@@ -394,12 +398,12 @@
                 <span class="experience__date">Apr 2020 – Apr 2024</span>
               </div>
               <ul class="experience__list">
-                <li>Built IoT products using ESP32, STM32, Raspberry Pi & ARM SoCs.</li>
-                <li>Improved system reliability (+35%) and scalability (+50%) across product lines.</li>
-                <li>Integrated ML models on edge devices (TF Lite, PyTorch, MediaPipe).</li>
-                <li>Automated testing with Python; reduced manual effort by 40%.</li>
-                <li>Developed firmware for 2500+ Smart Card Payphones deployed in the field.</li>
-                <li>Mentored over 200 interns in embedded systems and IoT development.</li>
+                <li>Delivered firmware for IoT, industrial, and wearable products end-to-end — from bare-metal bring-up through production deployment on ESP32, STM32, and Raspberry Pi.</li>
+                <li>Designed and shipped firmware for 2500+ RFID Smart Card Payphones, each with GSM calling, cloud sync, and remote dashboard access.</li>
+                <li>Built LoRa-based environmental monitoring system (BeetleGuard) handling 250 sensor nodes per hub — 5 hubs currently active in the field.</li>
+                <li>Developed edge ML inference pipelines on constrained hardware using TF Lite and MediaPipe for vision-based applications.</li>
+                <li>Wrote project-specific Python UART tools — serial parsers, real-time matplotlib plotters, binary packet decoders, and automated calibration scripts — eliminating manual testing bottlenecks.</li>
+                <li>Mentored 200+ interns in embedded systems, guiding hands-on hardware bring-up and firmware debugging.</li>
               </ul>
             </div>
           </div>
@@ -452,7 +456,7 @@
         <button class="filter__btn active-filter" data-filter="all">All <span class="filter__count">13</span></button>
         <button class="filter__btn" data-filter="medical">Medical <span class="filter__count">6</span></button>
         <button class="filter__btn" data-filter="iot">IoT <span class="filter__count">3</span></button>
-        <button class="filter__btn" data-filter="industrial">Industrial <span class="filter__count">2</span></button>
+        <button class="filter__btn" data-filter="industrial">Industrial <span class="filter__count">3</span></button>
         <button class="filter__btn" data-filter="wearable">Wearable <span class="filter__count">2</span></button>
         <button class="filter__btn" data-filter="personal">Personal <span class="filter__count">1</span></button>
       </div>
@@ -461,12 +465,15 @@
 
         <!-- 1. BeetleGuard -->
         <div class="project__card card-item" data-category="iot">
+          <div class="project__img">
+            <img src="assets/img/Projects/lora.png" alt="BeetleGuard production LoRa boards">
+          </div>
           <div class="project__header">
             <span class="project__badge badge--iot">IoT</span>
             <i class="uil uil-trees project__icon"></i>
           </div>
           <h3 class="project__title">BeetleGuard</h3>
-          <p class="project__desc">Scalable LoRa monitoring system handling 250 devices/hub for real-time environment tracking. Built IoT cloud platform with 5 hubs currently active in production.</p>
+          <p class="project__desc">Scalable LoRa monitoring system handling 250 devices/hub for real-time environment tracking. FreeRTOS task architecture with dedicated sensor, radio, and cloud sync tasks. 5 hubs active in production.</p>
           <div class="project__tags">
             <span>STM32</span><span>LoRa SX1278</span><span>FreeRTOS</span>
             <span>SPI</span><span>UART</span><span>AWS IoT</span><span>Cloud Dashboard</span>
@@ -475,12 +482,15 @@
 
         <!-- 2. IoT Payphone -->
         <div class="project__card card-item" data-category="iot">
+          <div class="project__img">
+            <img src="assets/img/Projects/rpi.jpeg" alt="IoT Payphone enclosure — deployed unit">
+          </div>
           <div class="project__header">
             <span class="project__badge badge--iot">IoT</span>
             <i class="uil uil-circuit project__icon"></i>
           </div>
           <h3 class="project__title">IoT Payphone System</h3>
-          <p class="project__desc">RFID-authenticated payphone system for student calling over GSM, with Raspberry Pi handling cloud sync, data export, and a remote dashboard for parents and admins to monitor usage and manage access.</p>
+          <p class="project__desc">RFID-authenticated payphone for student GSM calling — 2500+ units deployed. Raspberry Pi handles cloud sync, usage logging, and a remote dashboard for parent and admin access.</p>
           <div class="project__tags">
             <span>Raspberry Pi</span><span>RC522 RFID</span><span>GSM Module</span>
             <span>SPI</span><span>UART</span><span>REST API</span><span>Data Export</span><span>Cloud Dashboard</span>
@@ -491,10 +501,10 @@
         <div class="project__card card-item" data-category="medical">
           <div class="project__header">
             <span class="project__badge badge--medical">Medical</span>
-            <i class="uil uil-heart-medical project__icon"></i>
+            <span class="project__nda">&#128274; Under NDA</span>
           </div>
           <h3 class="project__title">Oxygen Therapy System</h3>
-          <p class="project__desc">Critical oxygen delivery system dynamically adjusting flow based on SpO₂ readings. Implemented medical-grade alarms and safety mechanisms for patient monitoring.</p>
+          <p class="project__desc">SpO₂-driven closed-loop oxygen flow control on STM32. Independent alarm task evaluating SpO₂ thresholds every 100ms; hardware watchdog kicked exclusively by the alarm task. Designed to IEC 62304 Class B software lifecycle.</p>
           <div class="project__tags">
             <span>STM32</span><span>MAX30102 SpO₂</span><span>Flow Control Valve</span>
             <span>ADC</span><span>Medical Alarms</span><span>Watchdog</span><span>IEC 62304</span>
@@ -505,10 +515,10 @@
         <div class="project__card card-item" data-category="medical">
           <div class="project__header">
             <span class="project__badge badge--medical">Medical</span>
-            <i class="uil uil-flask project__icon"></i>
+            <span class="project__nda">&#128274; Under NDA</span>
           </div>
           <h3 class="project__title">Standalone Diagnostic Analyzer</h3>
-          <p class="project__desc">Standalone biochemical analysis system generating diagnostic reports to assist clinicians in identifying metabolic conditions. Focused on reliable sensing and automated report generation.</p>
+          <p class="project__desc">Standalone biochemical analyzer for urine metabolite identification. Optical sensor array driven by STM32 ADC with calibration coefficients stored in flash. Outputs formatted diagnostic reports over UART to a local printer.</p>
           <div class="project__tags">
             <span>STM32</span><span>Optical Sensors</span><span>ADC</span>
             <span>UART</span><span>Standalone UI</span><span>Report Generation</span>
@@ -519,10 +529,10 @@
         <div class="project__card card-item" data-category="medical">
           <div class="project__header">
             <span class="project__badge badge--medical">Medical</span>
-            <i class="uil uil-heart-rate project__icon"></i>
+            <span class="project__nda">&#128274; Under NDA</span>
           </div>
           <h3 class="project__title">Patient Vitals Monitor (BLE)</h3>
-          <p class="project__desc">Ultra-low-power BLE device for continuous patient vital signs and body temperature monitoring, integrated with mobile app for real-time data visualization and alerts.</p>
+          <p class="project__desc">Ultra-low-power vital signs monitor on Si Labs BGM220. Custom GATT service packs HR, SpO₂, and NTC temperature into a single characteristic notification. Sub-500nA sleep current achieved via load-switch isolation and EM4 deep sleep.</p>
           <div class="project__tags">
             <span>Si Labs BGM220</span><span>BLE 5.0</span><span>MAX30102</span>
             <span>NTC Thermistor</span><span>GATT</span><span>Mobile App</span>
@@ -531,12 +541,15 @@
 
         <!-- 6. ULP BLE Temp Logger -->
         <div class="project__card card-item" data-category="iot">
+          <div class="project__img">
+            <img src="assets/img/Projects/esp.jpeg" alt="Custom compact ESP32 IoT board — wearable form factor">
+          </div>
           <div class="project__header">
             <span class="project__badge badge--iot">IoT</span>
             <i class="uil uil-temperature project__icon"></i>
           </div>
           <h3 class="project__title">ULP BLE Temperature Logger</h3>
-          <p class="project__desc">BLE temperature logging system on Si Labs BGM220 achieving nano-ampere sleep current via energy harvesting, ensuring long-term operation with minimal power consumption and reliable data transmission.</p>
+          <p class="project__desc">BLE temperature logger on Si Labs BGM220 with nano-ampere sleep current. Removed all pull-up resistors on sleep-sensitive nets; replaced with software-configured internal pull-ups that disengage in EM4 sleep. Energy harvesting enables indefinite coin-cell operation.</p>
           <div class="project__tags">
             <span>Si Labs BGM220</span><span>BLE 5.0</span><span>Energy Harvesting</span>
             <span>nA Sleep Current</span><span>Low Power Modes</span><span>SPI</span>
@@ -545,12 +558,15 @@
 
         <!-- 7. Food Sanitization -->
         <div class="project__card card-item" data-category="industrial">
+          <div class="project__img">
+            <img src="assets/img/Projects/hs.jpeg" alt="Food sanitization machine — 3D printed enclosure">
+          </div>
           <div class="project__header">
             <span class="project__badge badge--industrial">Industrial</span>
             <i class="uil uil-shield-check project__icon"></i>
           </div>
           <h3 class="project__title">Food Sanitization Machine</h3>
-          <p class="project__desc">Standalone food sanitization system ensuring hygiene and safety using controlled processing. Focused on automation, reliability, and user-friendly operation.</p>
+          <p class="project__desc">Standalone food sanitization unit with timed processing cycles. STM32 drives relay-controlled actuators via a state machine with door-interlock safety — cycle cannot start unless interlock is closed. 3D printed enclosure with integrated chamber.</p>
           <div class="project__tags">
             <span>STM32</span><span>Relay Control</span><span>Timer Logic</span>
             <span>HMI</span><span>Automation</span><span>Safety Interlocks</span>
@@ -559,12 +575,15 @@
 
         <!-- 8. Industrial PLC Interface -->
         <div class="project__card card-item" data-category="industrial">
+          <div class="project__img">
+            <img src="assets/img/Projects/ha.jpeg" alt="Industrial relay control board with Hi-Link AC modules and ESP32">
+          </div>
           <div class="project__header">
             <span class="project__badge badge--industrial">Industrial</span>
             <i class="uil uil-processor project__icon"></i>
           </div>
           <h3 class="project__title">Industrial IoT PLC Interface</h3>
-          <p class="project__desc">IoT interface reading signals from PLC systems and sending digital control signals back, enabling integration between legacy industrial systems and modern IoT platforms.</p>
+          <p class="project__desc">ESP32-based bridge between legacy PLC digital I/O and MQTT cloud. Reads RS485/Modbus registers from the PLC and publishes to AWS IoT; subscribes to control topics and drives relay outputs. Hi-Link AC-DC modules provide mains-isolated 5V on-board.</p>
           <div class="project__tags">
             <span>ESP32</span><span>RS485 / Modbus</span><span>Digital I/O</span>
             <span>MQTT</span><span>PLC Signals</span><span>Cloud Integration</span>
@@ -573,12 +592,15 @@
 
         <!-- 9. Industrial Data Logger -->
         <div class="project__card card-item" data-category="industrial">
+          <div class="project__img">
+            <img src="assets/img/Projects/pc.jpeg" alt="Industrial data logger PCB with TFT display and terminal blocks">
+          </div>
           <div class="project__header">
             <span class="project__badge badge--industrial">Industrial</span>
             <i class="uil uil-chart-line project__icon"></i>
           </div>
           <h3 class="project__title">Industrial IoT Data Logger</h3>
-          <p class="project__desc">Versatile data logger supporting RS485, 4–20mA, and 0–10V signal inputs with real-time cloud synchronization for monitoring and analytics.</p>
+          <p class="project__desc">Multi-input data logger supporting RS485/Modbus, 4–20mA (250Ω shunt + ADS1115), and 0–10V inputs. On-board TFT shows live channel readings; ESP32 publishes to MQTT broker with QoS 1 for guaranteed alarm delivery.</p>
           <div class="project__tags">
             <span>ESP32</span><span>RS485</span><span>4–20mA</span>
             <span>0–10V ADC</span><span>ADS1115</span><span>MQTT</span><span>Cloud Sync</span>
@@ -589,10 +611,10 @@
         <div class="project__card card-item" data-category="medical">
           <div class="project__header">
             <span class="project__badge badge--medical">Medical</span>
-            <i class="uil uil-cloud-wind project__icon"></i>
+            <span class="project__nda">&#128274; Under NDA</span>
           </div>
           <h3 class="project__title">Therapeutic Gas Monitor</h3>
-          <p class="project__desc">Standalone gas therapy monitoring system for clinical applications ensuring accurate concentration measurement, safety controls, and reliable operation in medical environments.</p>
+          <p class="project__desc">Nitric oxide therapy monitor using an electrochemical gas sensor (SGX-7NO) with a transimpedance amplifier — 10MΩ feedback resistor, MCP1525 2.5V precision reference, PCB guard rings on all high-impedance nodes. Alarm thresholds per IEC 60601-1-8.</p>
           <div class="project__tags">
             <span>STM32</span><span>Electrochemical Sensor</span><span>ADS1115</span>
             <span>MCP1525</span><span>Trans-impedance Amp</span><span>Medical Alarms</span>
@@ -606,7 +628,7 @@
             <i class="uil uil-shield project__icon"></i>
           </div>
           <h3 class="project__title">ULP Women Safety Device</h3>
-          <p class="project__desc">Ultra-low-power wearable with BLE for real-time emergency alerts and status transmission. Optimized for long battery life with low-power firmware and mobile app integration.</p>
+          <p class="project__desc">nRF52840-based safety wearable with gesture-triggered BLE emergency alert. Accelerometer interrupt wakes from deep sleep; firmware validates gesture pattern before alerting to prevent false triggers. Load-switch gating of all peripherals during idle.</p>
           <div class="project__tags">
             <span>nRF52840</span><span>BLE 5.0</span><span>Accelerometer</span>
             <span>Ultra Low Power</span><span>Emergency Alerts</span><span>Mobile App</span>
@@ -620,7 +642,7 @@
             <i class="uil uil-watch project__icon"></i>
           </div>
           <h3 class="project__title">Smart Wrist Wearable</h3>
-          <p class="project__desc">Smart wearable monitoring vital parameters and ambient air quality. Sensor fusion, BLE communication, and mobile app for continuous health and environmental insights.</p>
+          <p class="project__desc">Si Labs BGM220 wearable combining MAX30102 vitals and CCS811 air quality in one BLE GATT service. I²C bus shared between sensors with interrupt-driven scheduling to prevent bus contention. Single characteristic packs all sensor data to minimise connection events.</p>
           <div class="project__tags">
             <span>Si Labs BGM220</span><span>BLE 5.0</span><span>MAX30102</span>
             <span>CCS811 Air Quality</span><span>Sensor Fusion</span><span>Mobile App</span>
@@ -631,10 +653,10 @@
         <div class="project__card card-item" data-category="medical">
           <div class="project__header">
             <span class="project__badge badge--medical">Medical</span>
-            <i class="uil uil-heart-rate project__icon"></i>
+            <span class="project__nda">&#128274; Under NDA</span>
           </div>
           <h3 class="project__title">ECG Monitoring System</h3>
-          <p class="project__desc">Embedded system for real-time ECG and vitals acquisition using nRF with AD8232 ECG front-end, MAX30100 pulse/SpO₂ sensor, and DS18B20 temperature sensor for physiological signal processing.</p>
+          <p class="project__desc">nRF52840 acquiring ECG at 500 SPS via AD8232 + ADC. Lead-off detection (LOD± pins) prevents false arrhythmia detection from disconnected electrodes. 0.05Hz high-pass firmware filter removes baseline wander without distorting QRS. MAX30100 on I²C runs interrupt-driven alongside timer-based ECG sampling.</p>
           <div class="project__tags">
             <span>nRF52840</span><span>AD8232</span><span>MAX30100</span>
             <span>DS18B20</span><span>BLE 5.0</span><span>ADC</span><span>Signal Conditioning</span>
@@ -643,12 +665,15 @@
 
         <!-- 14. Modern Flame Diya -->
         <div class="project__card card-item" data-category="personal">
+          <div class="project__img">
+            <img src="assets/img/Projects/diya.jpeg" alt="Modern Flame Diya — custom gold PCB with flame LED strip">
+          </div>
           <div class="project__header">
             <span class="project__badge badge--personal">Personal</span>
             <i class="uil uil-fire project__icon"></i>
           </div>
           <h3 class="project__title">Modern Flame Diya</h3>
-          <p class="project__desc">Electronic diya with realistic LED flame effect using custom PCB and circuitry. Features touch control, adjustable brightness, and portable battery design.</p>
+          <p class="project__desc">Custom KiCad PCB with ATtiny driving WS2812 LEDs in a realistic flame animation via PWM. Touch-capacitive control with three brightness modes. Circular gold PCB with upright flame-shaped LED strip — fully self-contained with USB-C charging.</p>
           <div class="project__tags">
             <span>Custom PCB</span><span>ATtiny</span><span>PWM</span>
             <span>Touch Sensing</span><span>WS2812 LEDs</span><span>KiCad</span>
