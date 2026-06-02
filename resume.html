@@ -391,7 +391,10 @@
       /* Keep header on page 1 */
       .header { page-break-after: avoid; }
 
-      a { color: inherit !important; text-decoration: none !important; }
+      /* Keep header links white on dark gradient */
+      .header__contact a { color: #cbd5e1 !important; text-decoration: none !important; }
+      /* Body links inherit text color */
+      .main a, .sidebar a { color: inherit !important; text-decoration: none !important; }
     }
 
     @media screen and (max-width: 680px) {
