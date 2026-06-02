@@ -7,7 +7,7 @@ Hyderabad, Telangana, India &nbsp;|&nbsp; [mandajisaikumar@gmail.com](mailto:man
 
 ## Professional Summary
 
-Embedded Firmware Engineer with **5+ years** delivering production-grade firmware for medical devices, industrial IoT platforms, and smart wearables. Expertise in ARM Cortex MCUs (STM32, nRF52840, Si Labs BGM220), Bluetooth LE 5.0 stack, RTOS-based multi-task architectures, and hardware-firmware co-design achieving **sub-500nA sleep currents**. Strong grounding in medical device software standards (IEC 62304, IEC 60601-1-8) and full product lifecycle — from PCB design and sensor integration to field deployment of **2500+ devices**.
+Embedded Firmware Engineer with **5+ years** delivering production-grade firmware for medical devices, industrial IoT platforms, and smart wearables. Expertise in ARM Cortex MCUs (STM32, nRF52840, Si Labs BGM220), Bluetooth LE 5.0 stack, RTOS-based multi-task architectures, and hardware-firmware co-design achieving **sub-500nA sleep currents**. Experience across the full product lifecycle — sensor integration, PCB design, cloud connectivity, and field deployment of **2500+ devices**.
 
 ---
 
@@ -16,12 +16,12 @@ Embedded Firmware Engineer with **5+ years** delivering production-grade firmwar
 ### Embedded Firmware Engineer
 **Caropet Technologies Pvt Ltd** &nbsp;·&nbsp; Hyderabad, India &nbsp;·&nbsp; *Apr 2024 — Present*
 
-- Architected firmware for **5+ medical devices** — oxygen therapy systems, therapeutic gas monitors, and PediaSense pediatric monitor — on STM32 and Si Labs BGM220, following **IEC 62304 Class B** software lifecycle requirements.
-- Achieved **sub-500nA sleep current** on BGM220-based BLE wearables through hardware-firmware co-optimisation: nano-power LDO selection, P-channel MOSFET load-switch isolation of all peripherals, and EM4 deep sleep with GPIO/RTC wake.
-- Designed custom BLE GATT profiles and beacon systems — advertising payload packing, CCCD state management, MTU negotiation (247 bytes), and reconnection watchdog for reliable medical fleet monitoring.
-- Implemented fail-safe medical alarm subsystems per **IEC 60601-1-8**: independent high-priority RTOS alarm task (100ms evaluation cycle), hardware watchdog, and NVM-backed alarm state persistence across power cycles.
-- Designed analog front-end circuits including transimpedance amplifiers (10MΩ feedback, MCP1525 2.5V precision reference, PCB guard rings) for electrochemical gas sensors; signal conditioning for SpO₂, pressure, and NTC thermistor inputs.
-- Built Python UART debug tooling: real-time matplotlib plotters, binary struct parsers, BLE beacon sniffers, and automated calibration scripts for production firmware validation.
+- Architected firmware for **5+ medical devices** — oxygen therapy systems, therapeutic gas monitors, and PediaSense pediatric monitor — on STM32 and Si Labs BGM220, with focus on safety-critical reliability and real-time data acquisition.
+- Achieved **sub-500nA sleep current** on BGM220-based BLE wearables through hardware-firmware co-optimisation — deep sleep modes, peripheral power gating, and wake-on-event architecture.
+- Designed custom BLE GATT profiles and beacon systems — advertising payload packing, CCCD state management, MTU negotiation, and reconnection watchdog for reliable medical fleet monitoring.
+- Implemented safety-critical alarm firmware — dedicated high-priority RTOS alarm task independent of measurement tasks, hardware watchdog integration, and non-volatile alarm state persistence across power cycles.
+- Designed analog front-end signal conditioning for electrochemical gas sensors, SpO₂/PPG, pressure, and thermistor inputs across medical device product lines.
+- Built Python UART debug tooling — real-time plotters, binary struct parsers, BLE beacon sniffers, and automated calibration scripts for production firmware validation.
 
 ---
 
@@ -30,10 +30,9 @@ Embedded Firmware Engineer with **5+ years** delivering production-grade firmwar
 
 - Built **BeetleGuard** LoRa monitoring system with FreeRTOS task architecture supporting 250 sensor nodes/hub; **5 production hubs** currently active in the field with AWS IoT cloud integration.
 - Delivered end-to-end firmware for **2500+ deployed smart card payphones**: RFID authentication, GSM calling, Raspberry Pi cloud sync, REST API, and remote fleet management dashboard.
-- Developed industrial IoT data loggers on ESP32 handling RS485/Modbus, 4–20mA current loops (250Ω shunt + ADS1115 16-bit ADC), and 0–10V analog inputs; MQTT QoS-1 for guaranteed cloud alarm delivery.
-- Prototyped ECG monitoring system on nRF52840 with AD8232 front-end: lead-off detection, 0.05Hz high-pass firmware filter for baseline wander removal, 500 SPS ADC sampling, BLE GATT streaming to mobile app.
-- Integrated TF Lite / MediaPipe inference pipelines on ESP32-S3 for vision-based edge applications; automated Python testing tooling for serial device validation.
-- Mentored **200+ interns** in embedded systems and IoT, guiding hardware bring-up, RTOS fundamentals, and firmware debugging methodology.
+- Developed industrial IoT data loggers on ESP32 supporting RS485/Modbus, 4–20mA, and 0–10V analog inputs with real-time MQTT cloud synchronisation.
+- Prototyped ECG monitoring system on nRF52840 with physiological signal acquisition, lead-off detection, and BLE GATT streaming to a mobile app.
+- Integrated TF Lite and MediaPipe ML inference on ESP32-S3 for vision-based edge applications; automated device validation with Python serial test tooling.
 
 ---
 
@@ -50,10 +49,10 @@ Embedded Firmware Engineer with **5+ years** delivering production-grade firmwar
 | Project | Domain | Tech Stack | Outcome |
 |---|---|---|---|
 | **BeetleGuard — LoRa Monitor** | IoT | STM32 · LoRa SX1278 · FreeRTOS · AWS IoT | 250 nodes/hub · 5 hubs in production |
-| **Oxygen Therapy System** | Medical | STM32 · MAX30102 · Flow Control Valve · IEC 62304 | SpO₂ closed-loop control with IEC 60601-1-8 alarms |
-| **Therapeutic Gas Monitor** | Medical | STM32 · SGX-7NO · TIA · ADS1115 · MCP1525 | Electrochemical NO sensor with transimpedance AFE |
-| **Patient Vitals Monitor (BLE)** | Medical | BGM220 · BLE 5.0 · MAX30102 · GATT | Custom GATT profile · sub-500nA sleep |
-| **ECG Monitoring System** | Medical | nRF52840 · AD8232 · MAX30100 · BLE 5.0 | 500 SPS · lead-off detection · GATT streaming |
+| **Oxygen Therapy System** | Medical | STM32 · MAX30102 · Flow Control Valve | SpO₂ closed-loop control with safety-critical alarm architecture |
+| **Therapeutic Gas Monitor** | Medical | STM32 · Electrochemical Sensor · Analog AFE | Gas concentration monitoring with fail-safe alarms |
+| **Patient Vitals Monitor (BLE)** | Medical | BGM220 · BLE 5.0 · MAX30102 · GATT | Custom GATT profile · sub-500nA sleep current |
+| **ECG Monitoring System** | Medical | nRF52840 · ECG AFE · BLE 5.0 | Physiological signal acquisition · BLE GATT streaming |
 | **Industrial IoT Data Logger** | Industrial | ESP32 · RS485 · 4–20mA · ADS1115 · MQTT | Multi-input logger with TFT display |
 | **IoT Payphone System** | IoT | Raspberry Pi · RC522 · GSM · REST API | 2500+ units deployed in field |
 | **ULP BLE Temperature Logger** | IoT | BGM220 · BLE 5.0 · Energy Harvesting | nA sleep current · coin-cell multi-year operation |
@@ -71,9 +70,9 @@ Embedded Firmware Engineer with **5+ years** delivering production-grade firmwar
 | **RTOS** | FreeRTOS · Zephyr RTOS · Embedded Linux |
 | **Wireless** | Bluetooth LE 5.3 · LoRa/LoRaWAN · Wi-Fi · GSM · Thread · Zigbee |
 | **Protocols** | SPI · I²C · UART · CAN · RS-485 · Modbus · USB · MIPI · MQTT |
-| **Hardware & PCB** | KiCad · EasyEDA Pro · Altium Designer · Analog AFE · ULP Design · Multi-layer PCB · LTspice |
+| **PCB Design** | EasyEDA Pro |
 | **Debug & Test** | JTAG/SWD · Logic Analyser · Oscilloscope · Power Profiler · BT Protocol Analyser · Python Serial Tools |
-| **Standards** | IEC 62304 (Class B) · IEC 60601-1-8 |
+| **Medical Domain** | Safety-Critical Firmware · Medical Alarms · Analog AFE |
 | **Tools** | VS Code · STM32CubeIDE · Simplicity Studio · Segger · ESP-IDF · nRF SDK · PlatformIO · Git · AWS IoT |
 
 ---

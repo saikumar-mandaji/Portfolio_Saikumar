@@ -349,7 +349,7 @@
       <!-- Summary -->
       <div class="section summary">
         <div class="section__title">Professional Summary</div>
-        <p>Embedded Firmware Engineer with 5+ years delivering production-grade firmware for medical devices, industrial IoT platforms, and smart wearables. Expertise in ARM Cortex MCUs (STM32, nRF52840, Si Labs BGM220), Bluetooth LE 5.0 stack, RTOS-based multi-task architectures, and hardware-firmware co-design achieving sub-500nA sleep currents. Strong grounding in medical device software standards (IEC 62304, IEC 60601-1-8) and full product lifecycle — from PCB design and sensor integration to field deployment of 2500+ devices.</p>
+        <p>Embedded Firmware Engineer with 5+ years delivering production-grade firmware for medical devices, industrial IoT platforms, and smart wearables. Expertise in ARM Cortex MCUs (STM32, nRF52840, Si Labs BGM220), Bluetooth LE 5.0 stack, RTOS-based multi-task architectures, and hardware-firmware co-design achieving sub-500nA sleep currents. Experience across the full product lifecycle — sensor integration, PCB design, cloud connectivity, and field deployment of 2500+ devices.</p>
       </div>
 
       <!-- Experience -->
@@ -364,11 +364,11 @@
           </div>
           <div class="exp__company">Caropet Technologies Pvt Ltd &nbsp;·&nbsp; Hyderabad, India</div>
           <ul class="exp__bullets">
-            <li>Architected firmware for <strong>5+ medical devices</strong> — oxygen therapy systems, therapeutic gas monitors, and PediaSense pediatric monitor — on STM32 and Si Labs BGM220, following <strong>IEC 62304 Class B</strong> software lifecycle requirements.</li>
+            <li>Architected firmware for <strong>5+ medical devices</strong> — oxygen therapy systems, therapeutic gas monitors, and PediaSense pediatric monitor — on STM32 and Si Labs BGM220, with focus on safety-critical reliability and real-time data acquisition.</li>
             <li>Achieved <strong>sub-500nA sleep current</strong> on BGM220-based BLE wearables through hardware-firmware co-optimisation: nano-power LDO selection, P-channel MOSFET load-switch isolation of all peripherals, and EM4 deep sleep with GPIO/RTC wake.</li>
-            <li>Designed custom BLE GATT profiles and beacon systems — engineered advertising payload packing, CCCD state management, MTU negotiation (247 bytes), and reconnection watchdog for reliable medical fleet monitoring.</li>
-            <li>Implemented fail-safe medical alarm subsystems per <strong>IEC 60601-1-8</strong>: independent high-priority RTOS alarm task (100ms evaluation cycle), hardware watchdog kicked exclusively by alarm task, NVM-backed alarm state persistence across power cycles.</li>
-            <li>Designed analog front-end circuits: <strong>transimpedance amplifiers</strong> (10MΩ feedback, MCP1525 2.5V reference, PCB guard rings) for electrochemical gas sensors; signal conditioning for SpO₂, pressure, and NTC thermistor inputs.</li>
+            <li>Designed custom BLE GATT profiles and beacon systems — advertising payload packing, CCCD state management, MTU negotiation, and reconnection watchdog for reliable medical fleet monitoring.</li>
+            <li>Implemented safety-critical alarm firmware — dedicated high-priority RTOS alarm task independent of measurement tasks, hardware watchdog integration, and non-volatile alarm state persistence across power cycles.</li>
+            <li>Designed analog front-end signal conditioning circuits for electrochemical gas sensors, SpO₂/PPG, pressure, and thermistor inputs — enabling accurate multi-sensor acquisition across medical device product lines.</li>
             <li>Built project-specific Python UART debug tools — real-time matplotlib plotters, binary struct parsers, BLE beacon sniffers, and automated calibration scripts — reducing firmware validation and field debugging time.</li>
           </ul>
         </div>
@@ -383,10 +383,9 @@
           <ul class="exp__bullets">
             <li>Built <strong>BeetleGuard</strong> LoRa environmental monitoring system: FreeRTOS task architecture supporting 250 sensor nodes/hub, SPI/UART peripheral drivers, AWS IoT cloud integration — <strong>5 hubs active in production.</strong></li>
             <li>Delivered end-to-end firmware for <strong>2500+ deployed smart card payphones</strong> — RFID authentication, GSM calling, Raspberry Pi cloud sync, REST API, and remote fleet management dashboard.</li>
-            <li>Developed industrial IoT data loggers on ESP32 handling RS485/Modbus, 4–20mA current loops (250Ω shunt + ADS1115 16-bit ADC), and 0–10V analog inputs; MQTT QoS-1 for guaranteed cloud alarm delivery.</li>
-            <li>Prototyped ECG monitoring system on nRF52840: AD8232 front-end at 500 SPS, lead-off detection (LOD± pins), 0.05Hz high-pass firmware filter for baseline wander, BLE GATT streaming to mobile app.</li>
-            <li>Integrated TF Lite / MediaPipe ML inference pipelines on ESP32-S3 for vision-based edge applications; wrote Python test automation reducing manual device validation effort.</li>
-            <li>Mentored <strong>200+ interns</strong> in embedded systems and IoT, guiding hardware bring-up, RTOS fundamentals, and firmware debugging methodology.</li>
+            <li>Developed industrial IoT data loggers on ESP32 supporting RS485/Modbus, 4–20mA, and 0–10V analog inputs with real-time MQTT cloud synchronisation.</li>
+            <li>Prototyped ECG monitoring system on nRF52840 with physiological signal acquisition, lead-off detection, and BLE GATT streaming to a mobile app.</li>
+            <li>Integrated TF Lite and MediaPipe ML inference on ESP32-S3 for vision-based edge applications; automated device validation with Python serial test tooling.</li>
           </ul>
         </div>
 
@@ -423,7 +422,7 @@
             <span class="proj__name">Oxygen Therapy System</span>
             <span class="proj__cat cat-medical">Medical</span>
           </div>
-          <div class="proj__desc">SpO₂ closed-loop oxygen flow control. Independent alarm task, hardware watchdog, NVM alarm persistence. IEC 62304 Class B · IEC 60601-1-8.</div>
+          <div class="proj__desc">SpO₂ closed-loop oxygen flow control with safety-critical alarm architecture — independent RTOS alarm task, hardware watchdog, and NVM alarm state persistence.</div>
           <div class="proj__tech">STM32 · MAX30102 SpO₂ · Flow Control Valve · ADC · Medical Alarms · Watchdog</div>
         </div>
 
@@ -432,7 +431,7 @@
             <span class="proj__name">Therapeutic Gas Monitor (Nitric Oxide)</span>
             <span class="proj__cat cat-medical">Medical</span>
           </div>
-          <div class="proj__desc">Transimpedance amplifier (10MΩ, MCP1525 ref, PCB guard rings) for electrochemical NO sensor. Alarm thresholds per IEC 60601-1-8.</div>
+          <div class="proj__desc">Standalone clinical gas monitor — analog front-end for electrochemical NO sensor with safety-critical alarm thresholds and reliable concentration measurement.</div>
           <div class="proj__tech">STM32 · SGX-7NO · ADS1115 · MCP1525 · TIA · Medical Alarms</div>
         </div>
 
@@ -441,7 +440,7 @@
             <span class="proj__name">Patient Vitals Monitor (BLE)</span>
             <span class="proj__cat cat-medical">Medical</span>
           </div>
-          <div class="proj__desc">Ultra-low-power BLE vitals monitor on BGM220. Custom GATT profile, single packed characteristic notification, sub-500nA sleep via EM4 + load-switch isolation.</div>
+          <div class="proj__desc">Ultra-low-power BLE vitals monitor on BGM220 — custom GATT profile with packed characteristic notifications; sub-500nA sleep current for multi-year battery life.</div>
           <div class="proj__tech">Si Labs BGM220 · BLE 5.0 · MAX30102 · NTC Thermistor · GATT · Mobile App</div>
         </div>
 
@@ -450,7 +449,7 @@
             <span class="proj__name">Industrial IoT Data Logger</span>
             <span class="proj__cat cat-industrial">Industrial</span>
           </div>
-          <div class="proj__desc">Multi-input industrial logger: RS485/Modbus, 4–20mA (shunt + ADS1115), 0–10V. TFT live display. MQTT QoS-1 for cloud alarm delivery.</div>
+          <div class="proj__desc">Multi-input industrial logger supporting RS485/Modbus, 4–20mA, and 0–10V signals — live TFT display with real-time MQTT cloud synchronisation.</div>
           <div class="proj__tech">ESP32 · RS485 · 4–20mA · 0–10V ADC · ADS1115 · MQTT · Cloud Sync</div>
         </div>
 
@@ -459,7 +458,7 @@
             <span class="proj__name">ECG Monitoring System</span>
             <span class="proj__cat cat-medical">Medical</span>
           </div>
-          <div class="proj__desc">nRF52840 ECG at 500 SPS via AD8232. Lead-off detection prevents false arrhythmia. 0.05Hz HPF firmware filter removes baseline wander. BLE GATT streaming.</div>
+          <div class="proj__desc">nRF52840-based ECG monitor — physiological signal acquisition with lead-off detection, firmware signal filtering, and real-time BLE GATT streaming to a mobile app.</div>
           <div class="proj__tech">nRF52840 · AD8232 · MAX30100 · DS18B20 · BLE 5.0 · ADC · Signal Conditioning</div>
         </div>
 
@@ -555,14 +554,9 @@
         </div>
 
         <div class="skill__group">
-          <div class="skill__label">Hardware &amp; PCB</div>
+          <div class="skill__label">PCB Design</div>
           <div class="skill__tags">
-            <span class="skill__tag">KiCad</span>
             <span class="skill__tag">EasyEDA Pro</span>
-            <span class="skill__tag">Analog AFE</span>
-            <span class="skill__tag">ULP Design</span>
-            <span class="skill__tag">Multi-layer PCB</span>
-            <span class="skill__tag">LTspice</span>
           </div>
         </div>
 
@@ -579,10 +573,11 @@
         </div>
 
         <div class="skill__group">
-          <div class="skill__label">Standards</div>
+          <div class="skill__label">Medical Domain</div>
           <div class="skill__tags">
-            <span class="skill__tag">IEC 62304</span>
-            <span class="skill__tag">IEC 60601-1-8</span>
+            <span class="skill__tag">Safety-Critical Firmware</span>
+            <span class="skill__tag">Medical Alarms</span>
+            <span class="skill__tag">Analog AFE</span>
           </div>
         </div>
 
