@@ -102,8 +102,6 @@ Firmware engineer with **5+ years** building production-grade embedded systems f
 
 <div align="center">
 
-*Open to firmware engineering roles in medical devices, industrial IoT, and wearables*
-
 **Hyderabad, India · [Portfolio](https://saikumar-mandaji.github.io/Portfolio_Saikumar/) · [LinkedIn](https://linkedin.com/in/mandaji-saikumar)**
 
 </div>
