@@ -68,9 +68,11 @@ Firmware engineer with **5+ years** building production-grade embedded systems f
 
 <div align="center">
 
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=saikumar-mandaji&show_icons=true&theme=default&hide_border=true&title_color=1D4ED8&icon_color=1D4ED8&text_color=334155)
-&nbsp;&nbsp;
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=saikumar-mandaji&layout=compact&hide_border=true&title_color=1D4ED8&text_color=334155&langs_count=6)
+![Stats](https://github-profile-summary-cards.vercel.app/api/cards/stats?username=saikumar-mandaji&theme=default)
+&nbsp;
+![Languages](https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=saikumar-mandaji&theme=default)
+
+![Profile Details](https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=saikumar-mandaji&theme=default)
 
 </div>
 
@@ -80,11 +82,13 @@ Firmware engineer with **5+ years** building production-grade embedded systems f
 
 | Project | Domain | Description |
 |---|---|---|
-| [**ECG Monitoring**](https://github.com/saikumar-mandaji/ecg_test_code) | Medical | nRF52840 ECG acquisition — physiological signal processing + BLE GATT streaming |
-| [**MQTT Reader**](https://github.com/saikumar-mandaji/MQTT_Reader) | IoT | Python MQTT client for real-time embedded device data logging and visualisation |
-| [**Real-Time Stress Detection**](https://github.com/saikumar-mandaji/Real_Time_Body_Stress_Detection) | ML + Embedded | Physiological signal-based stress detection on embedded hardware |
-| [**Neonatal Cry Detection**](https://github.com/saikumar-mandaji/Neonatal-cry-detection-system) | Medical AI | Audio ML system for neonatal monitoring |
-| [**Portfolio**](https://github.com/saikumar-mandaji/Portfolio_Saikumar) | Web | Professional embedded firmware engineer portfolio — source code |
+| [**nRF52840 PPG — MAX30102**](https://github.com/saikumar-mandaji/nrf52840-ppg-max30102) | Medical | SpO₂ + heart rate via MAX30102, I²C driver, ratio-of-ratios SpO₂, BLE GATT notify |
+| [**ESP32 IoT Data Logger**](https://github.com/saikumar-mandaji/esp32-mqtt-logger) | Industrial | RS485/Modbus, 4–20mA (ADS1115), MQTT QoS-1 alarms, ESP-IDF |
+| [**UART Debug Tools**](https://github.com/saikumar-mandaji/uart-debug-tools) | Tools | Serial reader, binary packet parser, real-time plotter, calibration tool |
+| [**BLE Beacon Scanner**](https://github.com/saikumar-mandaji/ble-beacon-scanner) | IoT | Custom advertising payload decoder, live fleet table, missed-packet detection |
+| [**Modern Flame Diya**](https://github.com/saikumar-mandaji/modern-flame-diya) | Personal | ATtiny85 WS2812 flame animation, capacitive touch, custom PCB |
+| [**MQTT Reader**](https://github.com/saikumar-mandaji/MQTT_Reader) | IoT | Python MQTT subscriber with Docker/Mosquitto for embedded device data logging |
+| [**Portfolio**](https://github.com/saikumar-mandaji/Portfolio_Saikumar) | Web | Professional firmware engineer portfolio — live at saikumar-mandaji.github.io |
 
 ---
 
