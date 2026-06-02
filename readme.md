@@ -65,7 +65,7 @@ Embedded Firmware Engineer with **5+ years** delivering production-grade firmwar
 
 | Domain | Skills |
 |---|---|
-| **MCU Platforms** | STM32F4/F7/H7 · nRF52840 · nRF52832 · Si Labs BGM220 · ESP32/S3/C3 · ATtiny85 · RP2040 · Raspberry Pi |
+| **MCU Platforms** | STM32 · nRF54L15 · nRF52840 · nRF52832 · Si Labs BGM220 · ESP32/S3/C3 · ATtiny85 · RP2040 · Raspberry Pi |
 | **Languages** | Embedded C · C++ · Python · MicroPython |
 | **RTOS** | FreeRTOS · Zephyr RTOS · Embedded Linux |
 | **Wireless** | Bluetooth LE 5.3 · LoRa/LoRaWAN · Wi-Fi · GSM · Thread · Zigbee |

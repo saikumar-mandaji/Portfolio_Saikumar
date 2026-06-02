@@ -210,7 +210,7 @@
               <div class="tech-data">
                 <div class="tech-data-item" data-skill="Bluetooth LE">
                   <span class="tech-data-label"><i class="fa fa-bluetooth"></i> BLE/Thread:</span>
-                  <span class="tech-data-value">nRF52840, nRF52832, SiLabs BGM220, Dialog DA14531</span>
+                  <span class="tech-data-value">nRF54L15, nRF52840, nRF52832, SiLabs BGM220, Dialog DA14531</span>
                 </div>
                 <div class="tech-data-item" data-skill="WiFi Integration">
                   <span class="tech-data-label"><i class="fa fa-wifi"></i> Wi-Fi/BLE:</span>
@@ -218,7 +218,7 @@
                 </div>
                 <div class="tech-data-item" data-skill="ARM Architecture">
                   <span class="tech-data-label"><i class="fa fa-microchip"></i> ARM Cortex:</span>
-                  <span class="tech-data-value">STM32F4/F7/H7, TI CC2640, RP2040 (Pi Pico)</span>
+                  <span class="tech-data-value">STM32, TI CC2640, RP2040 (Pi Pico)</span>
                 </div>
                 <div class="tech-data-item" data-skill="8-bit MCUs">
                   <span class="tech-data-label"><i class="fa fa-hdd-o"></i> AVR:</span>
@@ -537,10 +537,10 @@
             <span class="project__nda">&#128274; Under NDA</span>
           </div>
           <h3 class="project__title">Oxygen Therapy System</h3>
-          <p class="project__desc">SpO₂-driven closed-loop oxygen flow control on STM32. Independent alarm task evaluating SpO₂ thresholds every 100ms; hardware watchdog kicked exclusively by the alarm task. Designed to IEC 62304 Class B software lifecycle.</p>
+          <p class="project__desc">SpO₂-driven closed-loop oxygen flow control on STM32. Independent high-priority alarm task, hardware watchdog, and NVM-backed alarm state persistence for safety-critical medical operation.</p>
           <div class="project__tags">
             <span>STM32</span><span>MAX30102 SpO₂</span><span>Flow Control Valve</span>
-            <span>ADC</span><span>Medical Alarms</span><span>Watchdog</span><span>IEC 62304</span>
+            <span>ADC</span><span>Medical Alarms</span><span>Watchdog</span>
           </div>
         </div>
 
@@ -647,7 +647,7 @@
             <span class="project__nda">&#128274; Under NDA</span>
           </div>
           <h3 class="project__title">Therapeutic Gas Monitor</h3>
-          <p class="project__desc">Nitric oxide therapy monitor using an electrochemical gas sensor (SGX-7NO) with a transimpedance amplifier — 10MΩ feedback resistor, MCP1525 2.5V precision reference, PCB guard rings on all high-impedance nodes. Alarm thresholds per IEC 60601-1-8.</p>
+          <p class="project__desc">Standalone clinical gas monitor measuring nitric oxide concentration via electrochemical sensor with custom analog front-end. Safety-critical alarm thresholds with fail-safe firmware architecture for reliable medical operation.</p>
           <div class="project__tags">
             <span>STM32</span><span>Electrochemical Sensor</span><span>ADS1115</span>
             <span>MCP1525</span><span>Trans-impedance Amp</span><span>Medical Alarms</span>
