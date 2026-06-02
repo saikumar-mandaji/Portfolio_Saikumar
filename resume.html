@@ -310,16 +310,88 @@
 
     /* ── PRINT ── */
     @media print {
-      body { background: white; font-size: 12px; }
+      /* Force background colors and gradients to print */
+      * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+
+      @page {
+        size: A4 portrait;
+        margin: 8mm 10mm;
+      }
+
+      body {
+        background: white;
+        font-size: 11px;
+        line-height: 1.45;
+        margin: 0;
+        padding: 0;
+      }
+
       .page {
         max-width: 100%;
+        width: 100%;
         margin: 0;
         border: none;
-        border-radius: 0;
+        border-radius: 0 !important;
         box-shadow: none;
       }
-      a { color: inherit !important; text-decoration: none; }
-      .header { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+      /* Tighten header for print */
+      .header {
+        padding: 1.2rem 1.8rem 1rem;
+        border-radius: 0 !important;
+      }
+
+      .header__name  { font-size: 22px; }
+      .header__title { font-size: 11px; }
+      .header__contact a,
+      .header__contact span { font-size: 10px; }
+
+      /* Tighten body */
+      .main   { padding: 1rem 1.2rem 1rem 1.6rem; }
+      .sidebar { padding: 1rem 1rem 1rem; }
+
+      /* Tighten sections */
+      .section        { margin-bottom: 1rem; }
+      .section__title { font-size: 8.5px; padding-bottom: 3px; margin-bottom: 0.6rem; }
+      .summary p      { font-size: 11px; }
+
+      /* Tighten experience */
+      .exp__item       { margin-bottom: 0.85rem; }
+      .exp__role       { font-size: 12px; }
+      .exp__company    { font-size: 10.5px; margin-bottom: 3px; }
+      .exp__date       { font-size: 10px; }
+      .exp__bullets li { font-size: 11px; margin-bottom: 2px; line-height: 1.4; }
+
+      /* Tighten projects */
+      .proj__item   { margin-bottom: 0.55rem; padding-bottom: 0.55rem; }
+      .proj__name   { font-size: 11px; }
+      .proj__desc   { font-size: 10px; line-height: 1.4; }
+      .proj__tech   { font-size: 9.5px; }
+
+      /* Tighten sidebar */
+      .skill__group  { margin-bottom: 0.6rem; }
+      .skill__label  { font-size: 10px; margin-bottom: 3px; }
+      .skill__tag    { font-size: 9px; padding: 1px 5px; }
+      .edu__degree   { font-size: 10.5px; }
+      .edu__school   { font-size: 10px; }
+      .edu__date     { font-size: 9.5px; }
+      .highlight__num   { font-size: 14px; }
+      .highlight__label { font-size: 8.5px; }
+
+      /* Prevent broken sections across pages */
+      .exp__item,
+      .proj__item,
+      .skill__group,
+      .edu__item,
+      .section { page-break-inside: avoid; }
+
+      /* Keep header on page 1 */
+      .header { page-break-after: avoid; }
+
+      a { color: inherit !important; text-decoration: none !important; }
     }
 
     @media screen and (max-width: 680px) {
