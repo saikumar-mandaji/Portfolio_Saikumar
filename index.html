@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Saikumar | Embedded Firmware Engineer</title>
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
   <meta name="description" content="Professional portfolio of Saikumar Mandaji — Embedded Firmware Engineer specializing in ARM Cortex, BLE, RTOS, and sensor systems for medical and industrial applications.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1071,20 +1072,20 @@
           </div>
         </div>
 
-        <form action="" class="contact__form grid" onsubmit="return submitForm()">
+        <form action="https://formspree.io/f/FORMSPREE_ID" method="POST" class="contact__form grid" id="contact-form">
           <div class="contact__inputs grid">
             <div class="contact__content">
               <label for="name" class="content__label">Name</label>
-              <input type="text" id="name" class="contact__input" placeholder="Enter your name" />
+              <input type="text" id="name" name="name" class="contact__input" placeholder="Enter your name" required />
             </div>
             <div class="contact__content">
               <label for="email" class="content__label">Email</label>
-              <input type="email" id="email" class="contact__input" placeholder="Enter your email" />
+              <input type="email" id="email" name="email" class="contact__input" placeholder="Enter your email" required />
             </div>
           </div>
           <div class="contact__content">
             <label for="message" class="content__label">Message</label>
-            <textarea id="message" cols="0" rows="7" class="contact__input" placeholder="Type your message here..."></textarea>
+            <textarea id="message" name="message" cols="0" rows="7" class="contact__input" placeholder="Type your message here..." required></textarea>
           </div>
           <div class="form__actions">
             <button type="submit" class="button button--flex" id="bt">
